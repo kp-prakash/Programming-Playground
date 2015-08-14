@@ -1,0 +1,530 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <!--
+    Author: Srihari Sridharan
+    Date: 20131003
+    -->
+    <meta charset="UTF-8">
+    <title>Marionette</title>
+</head>
+<body>
+    <header id="header">
+    </header>
+    <section id="main">
+    </section>
+    <footer id="footer">
+    </footer>
+    <script src="lib\jquery.min.js"></script>
+    <script src="lib\underscore-min.js"></script>
+    <script src="lib\backbone-min.js"></script>
+    <script src="lib\backbone.marionette.js"></script>
+    <link rel="stylesheet" type="text/css" href="content/site.css" />
+    <script type="text/html" id="headerTemplate">
+        <h1>Contact Manager</h1>
+        <hr/>
+    </script>
+    <script type="text/html" id="footerTemplate">
+        <h6>&copy; 2013 Srihari Sridharan</h6>
+    </script>
+    <script type="text/html" id="mainTemplate">
+        <div class="row">
+            <label>First Name:</label>
+            <span><%= firstName %></span>
+        </div>
+        <div class="row">
+            <label>Last Name:</label>
+            <span><%= lastName %></span>
+        </div>
+        <div class="row">
+            <label>Email:</label>
+            <span><%= email %></span>
+        </div>
+        <hr/>
+    </script>
+    <script type="text/html" id="contactsList">
+        <h2>Contacts</h2>
+        <div></div>
+    </script>
+    <script>
+        /*------------------------------------------------------------------
+         * Application object, initializers and intialize events.
+         *------------------------------------------------------------------*/
+        //Create an application object
+        var application = new Marionette.Application();
+
+        //Initializers
+        var SampleModule1 = function(options){
+            console.log('Sample Module 1 Initialized! = ' + options.initialize);
+        };
+
+        var SampleModule2 = function(options){
+            console.log('Sample Module 2 Initialized! = ' + options.initialize);
+        };
+
+        //Add a module initializer
+        //IMPORTANT: Initializers are fired in the order in
+        //which they are added to the application object.
+
+        application.addInitializer(function(options){
+            application.sampleModule2 = new SampleModule2(options);
+        });
+
+        application.addInitializer(function(options){
+            application.sampleModule1 = new SampleModule1(options);
+        });
+
+        application.on('initialize:before',function(options){            
+            options.initialize = true;
+            console.log('Application initialize:before fired!');
+        });
+
+        application.on('initialize:after',function(options){
+            console.log('Application initialize:after fired!');
+        });
+
+        application.on('start',function(options){
+            Backbone.history.start();
+            console.log('Application start fired!');
+        });
+
+        var options = {};
+        //Calling start() triggers all the initializers.
+        application.start(options);
+
+        /*------------------------------------------------------------------
+         * Event Aggregator
+         *------------------------------------------------------------------*/
+
+        /* Modules in an application should be completely ignorant of
+         * one another. The only way they should communicate is through
+         * application wide events.        
+         * Marionette makes this kind of decoupling largely possible via
+         * the event aggregator that is automatically attached to the
+         * application object.
+         */
+
+         application.vent.on('custom:event1', function(){
+            console.log('Custom Event 1 triggered!');
+            application.vent.trigger('custom:event2');
+         });
+
+         application.vent.on('custom:event2', function(){
+            console.log('Custom Event 2 triggered!');
+         })
+
+         application.vent.trigger('custom:event1');
+
+         
+        /*------------------------------------------------------------------
+         * Region - usually created with new Marionette.Region({ el: 'selector'})
+         *------------------------------------------------------------------*/
+
+        //Adding a region by supplying a selector
+        application.addRegions({
+            headerRegion: '#header'
+        });
+
+        //Custom Region Type
+        var MainRegion = Marionette.Region.extend({
+            el: '#main'
+        });
+
+        application.mainRegion = new MainRegion();
+
+        //Custom Region Type With Selector
+        var FooterRegion = Backbone.Marionette.Region.extend({});
+        application.addRegions({
+            footerRegion:{
+                regionType: FooterRegion,
+                selector: "#footer"
+            }
+        });
+
+        //Define the item view
+        var ContactView = Marionette.ItemView.extend({
+            template: '#mainTemplate',
+        });
+
+        //Define the collection view
+        var ContactsView = Marionette.CollectionView.extend({
+            template: '#contactsList',
+            itemViewContainer:'div',
+            childView: ContactView
+        }); 
+
+        var HeaderView = Marionette.ItemView.extend({
+            template: "#headerTemplate"
+        });
+
+        var FooterView = Marionette.ItemView.extend({
+            template: "#footerTemplate"
+        });
+
+        //Define the model
+        var Contact = Backbone.Model.extend({
+            defaults: {
+                firstName: "first name",
+                lastName: "last name",
+                email: "first.last@abc.com"
+            }
+        });
+
+        var Contacts = Backbone.Collection.extend({
+            model: Contact,
+            sort: false
+        });
+
+        //Create contact instances.
+        var contact1 = new Contact({
+            firstName: "John",
+            lastName: "Miller",
+            email: "John.Miller@gmail.com"
+        });
+
+        var contact2 = new Contact({
+            firstName: "Ken",
+            lastName: "Robert",
+            email: "Ken.Robert@gmail.com"
+        });
+
+        var contact3 = new Contact({
+            firstName: "Keith",
+            lastName: "Mathews",
+            email: "Keith.Mathews@gmail.com"
+        });
+
+        //Construct the collection
+        var contacts = new Contacts();
+        contacts.add(contact2);
+        contacts.add(contact1);
+        contacts.add(contact3);
+        contacts.comparator = 'firstName';
+
+        //Instantiate the ContactsView
+        var contactsView = new ContactsView({
+            collection: contacts
+        });
+    
+        //This is how you instantiate a view with model.
+        // var contactView = new ContactView({
+        //     model: contact
+        // });
+
+        //Instantiate the views.
+        var headerView = new HeaderView();
+        var footerView = new FooterView();
+
+        //Getting a region using the getRegion() method.
+        var headerRegion = application.getRegion("headerRegion");
+
+        //Show the views in regions.
+        headerRegion.show(headerView);
+
+        //Regions can also be accessed as shown below.
+        application.mainRegion.show(contactsView);
+        application.footerRegion.show(footerView);
+
+        /*
+        Removing a region
+        Regions can also be removed with the removeRegion method, passing 
+        in the name of the region to remove as a string value:
+
+        application.removeRegion('footerRegion');
+        
+        Removing a region will properly close it before removing it from
+        the application object.
+        */
+
+        /*------------------------------------------------------------------
+         * Modules - Introduction
+         *------------------------------------------------------------------*/
+         //Simplest way to create a module.
+        var module1 = application.module('module1');
+
+        //Creating a module with public and private members and methods.
+        var taxModule = application.module('taxModule', 
+            function(taxModule,Backbone,Marionette,$,_){
+                console.log("Module created!");
+                //Private member
+                var privateMember = "This is a private member!";
+
+                //Public member
+                taxModule.publicMember = "This is a public member!";
+
+                //Private method
+                var privateMethod = function (option) {
+                    if(option) {
+                        console.log("This private method was called from a public method!");
+                        console.log("Accessing private member - " + privateMember);
+                    }
+                    else{
+                        console.log("Private method called!");
+                    }
+                };
+
+                //Public method.
+                taxModule.publicMethod = function () {
+                    console.log("Public method called!");
+                    privateMethod(true);
+                };
+        });
+        
+        //Access the public members
+        console.log(taxModule.publicMember);
+        taxModule.publicMethod();
+
+        //Syntax for custom arguments
+        /*application.module("clientModule", 
+            function (clientModule, App, Backbone, 
+                        Marionette, $, _, customArg1, customArg2) {
+        // Create your module here!
+        }, customArg1, customArg2);*/
+
+        /* 'this' keyword */
+        //'this' keyword is available within the function
+        // and actually refers to the module. Replace 'taxModule'
+        // in the code snippet above with 'this' and remove
+        // 'taxModule' from list of arguments.
+
+        /*Split Definitions*/
+        //Example: Assume this code is in a file
+        application.module("clientModule", function(){
+            this.someData = "This is public data.";
+        });
+
+        //Example: This code is in another file
+        application.module("clientModule", function(){
+            // Private Data And Functions
+            var privateData = "This is private data.";
+
+            var privateFunction = function(){
+                console.log(privateData);
+            }
+
+            this.someFunction = function(){
+                console.log("Split definition demo!");
+                privateFunction();
+                console.log(this.someData);
+            }
+        });
+
+        var clientModule = application.module("clientModule");
+        clientModule.someFunction();
+
+        /*------------------------------------------------------------------
+        * Accessing Modules
+        *------------------------------------------------------------------*/
+        //2 ways to access a module
+        //Already we created the clientModule
+
+        //More preferred as it clearly conveys the intent and the result.
+        //Advantage: Clearly conveys intent.
+        //NOTE: Marionette does not report error when you spell the module
+        //incorrectly. Unless and until you access a member you will not know this.
+        var clientModuleRef1 = application.module("clientModule");
+
+        //Less preferred as it is not as clear as above.
+        //Also, the module should be created before it is accessed like this.
+        var clientModuleRef2 = application.clientModule;
+        console.log("Comparing client module instances : " 
+            + (clientModuleRef1 === clientModuleRef2));
+
+        /*------------------------------------------------------------------
+        * Submodules
+        *------------------------------------------------------------------*/
+
+        //Module object does not have its own module()
+        //method to create a sub module.
+
+        //Instead use the 'parentModule.subModule' notation for the module name.
+        //Now, this single statement below creates both parent and sub module in one go!
+        var subModule = application.module("parentModule.subModule");
+        var parentModule = application.parentModule;
+        console.log("Parent module name: " + parentModule.moduleName);
+        console.log("Sub module name: " + subModule.moduleName);
+
+        //NOTE:
+
+        //The app object is accessible inside the module!
+        var app = parentModule.app;
+        console.log("Accessing and evaluating 'app' object inside module: " 
+            + (app === application));
+
+        //Accessing sub modules. All the below examples work. The first is preferred.
+        var child1 = application.module("parent.child");
+        var child2 = application.module("parent").child;
+        var child3 = application.parent.child;
+        console.log("Comparing child instances!");
+        console.log((child1 === child2));
+        console.log((child3 === child2));
+        console.log((child1 === child3));
+
+        /*------------------------------------------------------------------
+        * Starting And Stopping Modules
+        *------------------------------------------------------------------*/
+
+        /*
+         Application Start Sequence
+         ----------- ----- --------
+         * fires the initialize:before event
+         * starts all of the defined modules
+         * runs all of the initializers in the order they were added
+         * fires the initialize:after event
+         * fires the start event
+         */
+
+        /*
+         Module Start Sequence
+         ------ ----- --------
+         * fires the before:start event
+         * starts all of its defined submodules
+         * runs all of its initializers in the order they were added
+         * fires the start event
+         */
+
+         /*
+         Module Stop Sequence
+         ------ ---- --------
+         * fires the before:stop event
+         * stops its submodules
+         * runs its finalizers in the order they were added
+         * fires the stop event
+         */
+
+        /*------------------------------------------------------------------
+        * Module Initializers and Finalizers
+        *------------------------------------------------------------------*/
+
+         var complexModule = application.module("complexModule", function () {
+            //When startWithParent is set to false, the module is not started
+            //when its parent module (or application start for root level modules)
+            //gets started. Instead we need to call the start manually.
+            this.startWithParent = false;
+
+            var User = function(){
+                this.firstName = "Ken";
+                this.lastName = "Thomas";                
+                var getFirstName = function(){
+                    return firstName;
+                };
+                var getLastName = function(){
+                    return lastName;
+                };
+            };
+
+            User.prototype.getFullName = function () {
+                return this.firstName + ' ' + this.lastName;
+            };
+
+            this.on('before:start',function (){
+                console.log("Inside complexModule before:start event handler.");
+            });
+
+            var module = this; //Used a meaningful name to create a closure.
+            this.addInitializer(function (){
+                console.log("Called complex module initializer!");
+                module.user = new User();
+            });
+
+            this.addFinalizer(function(){
+                console.log("Called complex module finalizer!");
+                module.user = null;
+            });
+
+            this.on('start', function (){
+                console.log('Inside complexModule start event handler.');
+            });
+
+            this.on('before:stop', function (){
+                console.log('Inside complexModule before:stop event handler.');
+            });
+
+            this.on('stop', function (){
+                console.log('Inside complexModule stop event handler.');
+            });
+         });
+        
+        //NOTE: The start() call is needed as 'startWithParent' is set to 'false'
+        complexModule.start();
+        console.log(complexModule.user.getFullName());
+        complexModule.stop();
+
+        /*------------------------------------------------------------------
+        * Automatic And Manual Starting
+        *------------------------------------------------------------------*/
+        
+        /*
+
+        TECHNIQUE #1
+
+        // Set 'startWithParent' inside function to false.
+        App.module("myModule", function(){
+            // Assign 'startWithParent' to false
+            this.startWithParent = false;
+        });
+
+        TECHNIQUE #2
+
+        // Pass in an object
+        App.module("myModule", {
+            startWithParent: false,
+            define: function(){
+                // Define the module here
+            }
+        });
+
+        App.start();
+
+        // myModule wasn't started, so we need to do it manually
+        var data = "Data that will be passed along here to all sub modules!";
+        App.module('myModule').start(data);
+        */
+
+        /*------------------------------------------------------------------
+        * Modules and Events
+        *------------------------------------------------------------------*/
+        var eventSampleModule = application.module("eventSampleModule", function (){
+            this.on("sample:event",function (){
+                console.log("Sample event handled by 'eventSampleModule'.");
+            });
+        });
+
+        eventSampleModule.trigger("sample:event");
+
+        /*Event Aggregator Usage*/
+        var eventAggregator = new Backbone.Wreqr.EventAggregator(); 
+
+        //Subscribe for the event! 
+        eventAggregator.on('eventName', function() { 
+            console.log('Event Handled by eventAggregator!'); 
+        }); 
+
+        //Raise the event! 
+        eventAggregator.trigger('eventName');
+
+        /**/
+        var requestResponse = new Backbone.Wreqr.RequestResponse(); 
+
+        //Set the handler! 
+        requestResponse.setHandler('eventName', function() { 
+            return 'Data returned in response for a request!'; 
+        }); 
+
+        //Raise the request and obtain response! 
+        var result = requestResponse.request('eventName'); 
+        console.log(result);
+
+        /*Command Usage*/
+        var commands = new Backbone.Wreqr.Commands(); 
+
+        //Subscribe for the command handler! 
+        commands.setHandler('commandName', function() { 
+            console.log('Command Executed!'); 
+        }); 
+
+        //Execute the command! 
+        commands.execute('commandName');
+    </script>
+</body>
+</html>

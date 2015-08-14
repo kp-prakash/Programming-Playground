@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Backbone</title>
+</head>
+<body>
+    <div id="content">
+        <!--Placeholder to load the view!-->
+    </div>
+    
+    <script src="lib\jquery.min.js"></script>
+    <script src="lib\underscore-min.js"></script>
+    <script src="lib\backbone-min.js"></script>
+    <script type="text/html" id="my-view-template">
+        <div class="row">
+            <label>First Name:</label>
+            <span><%= firstName %></span>
+        </div>
+        <div class="row">
+            <label>Last Name:</label>
+            <span><%= lastName %></span>
+        </div>
+        <div class="row">
+            <label>Email:</label>
+            <span><%= email %></span>
+        </div>
+    </script>
+    <script>
+        var MyView = Backbone.View.extend({
+            template: $("#my-view-template").html(),
+
+            //initialize method subscribes to model change
+            initialize: function() {
+                // bind the model change to rerender this view
+                this.listenTo(this.model, 'change', this.render);
+            },
+
+            close: function(){
+                // unbind the events that this view is listening to
+                this.stopListening();
+            },
+
+            render: function(){
+                // This alert is going to demonstrate a problem
+                alert("We're rendering the view");
+            }            
+        });
+
+        var Person = Backbone.Model.extend({
+            defaults:{
+                firstName: "first name",
+                lastName: "last name",
+                email: "first.last@abc.com"
+            }
+        });
+
+        var person1 = new Person();
+        
+        //create the first view instance
+        var zombieView = new MyView({
+            model: person1
+        });
+
+        zombieView.close(); // close the zombie
+
+        //second view instance
+        zombieView = new MyView({
+            model: person1
+        });
+
+        person1.set('email' , 'first.last@xyz.com');
+    </script>
+</body>
+</html>

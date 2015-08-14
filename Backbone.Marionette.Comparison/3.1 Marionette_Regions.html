@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Marionette</title>
+</head>
+<body>
+    <div id="content">
+        <!--Placeholder to load the view!-->
+    </div>
+
+    <script src="lib\jquery.min.js"></script>
+    <script src="lib\underscore-min.js"></script>
+    <script src="lib\backbone-min.js"></script>
+    <script src="lib\backbone.marionette.js"></script>
+
+    <script type="text/html" id="my-view-template">
+        <div class="row">
+            <label>First Name:</label>
+            <span><%= firstName %></span>
+        </div>
+        <div class="row">
+            <label>Last Name:</label>
+            <span><%= lastName %></span>
+        </div>
+        <div class="row">
+            <label>Email:</label>
+            <span><%= email %></span>
+        </div>
+    </script>
+    <script>
+        //Define a region
+        var myRegion = new Marionette.Region({
+            el: '#content'
+        });
+
+        var MyView = Marionette.ItemView.extend({
+            template: '#my-view-template',
+        });
+
+        var Person = Backbone.Model.extend({
+            defaults:{
+                firstName: "first name",
+                lastName: "last name",
+                email: "first.last@abc.com"
+            }
+        });
+
+        var person1 = new Person();
+        
+        //Instantiate the view.
+        var myView = new MyView({
+            model: person1
+        });
+
+        myRegion.show(myView);
+    </script>
+</body>
+</html>

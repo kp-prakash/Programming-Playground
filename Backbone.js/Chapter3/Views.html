@@ -1,0 +1,210 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Views</title>
+</head>
+<body>
+    <div id="todo">
+    </div>
+    <script type="text/template" id="item-template">
+        <div>
+            <input id="todo_complete" type="checkbox" <%= completed ? 'checked="checked"' : '' %>>
+            <%= title %>
+        </div>
+    </script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+    </script>
+    <script src="http://documentcloud.github.com/underscore/underscore-min.js">
+    </script>
+    <script src="http://documentcloud.github.com/backbone/backbone-min.js">
+    </script>-->
+    <script src="scripts/jquery-1.10.1.js"></script>
+    <script src="scripts/underscore.js"></script>
+    <script src="scripts/backbone.js"></script>
+    <script>
+
+        /*Views in Backbone don’t contain the HTML markup for your application; they contain
+        the logic behind the presentation of the model’s data to the user. A view’s render() 
+        method can be bound to a model’s change() event, enabling the view to instantly 
+        reflect model changes without requiring a full page refresh.*/
+
+        //Create a new model for todo.
+        var Todo = Backbone.Model.extend({
+            defaults: {
+                title: '',
+                completed: false
+            }
+        });
+
+        //Create an instance.
+        var myTodo = new Todo({
+            title: 'This is a test!'
+        });
+
+        //Create a new view by extending Backbone.View
+        var TodoView = Backbone.View.extend({
+            /*
+            If you want to create a new element for your view, set any combination of the following
+            properties on the view: tagName, id, and className. The framework will create a new
+            element for you, and a reference to it will be available at the el property. If nothing is
+            specified, tagName defaults to div.
+            */
+            tagName: 'li',
+            /*Load the template in memory using _ (underscore) by providing text template name.*/
+            todoTpl: _.template($('#item-template').html()),
+            /*Subscribe to the events.*/
+            events: {
+                'dblclick label': 'edit',
+                'keypress .edit': 'updateOnEnter',
+                'blur .edit': 'close'
+            },
+            /*
+            el is the central property for the view. Views can use el to compose their 
+            element’s content and then insert it into the DOM all at once, which makes for 
+            faster rendering because the browser performs the minimum required number of 
+            reflows and repaints.
+
+            If the element already exists in the page, you can set el as a CSS selector that matches
+            the element.
+            el: '#footer'
+
+            Alternatively, you can set el to an existing element when creating the view:
+            var todosView = new TodosView({el: $('#footer')});
+
+            The view.$el property is equivalent to $(view.el), and 
+            view.$(selector) is equivalent to $(view.el).find(selector).
+            */
+            initialize: function () {
+                this.$el = $('#todo');
+            },
+
+            /*A common Backbone convention is to return this at the end of render(). This is useful
+            for a number of reasons, including:
+            * Making views easily reusable in other parent views
+            * Creating a list of elements without rendering and painting each of them individually,
+            only to be drawn once the entire list is populated*/
+            render: function () {
+                this.$el.html(this.todoTpl(this.model.toJSON()));
+                this.input = this.$('.edit');
+                return this;
+            },
+            edit: function () {
+
+            },
+            close: function () {
+
+            },
+            updateOnEnter: function (e) {
+            }
+        });
+
+        var todoView = new TodoView({ model: myTodo });
+        todoView.render();
+
+        /*setElement Method*/
+        // We create two DOM elements representing buttons
+        // which could easily be containers or something else
+        var button1 = $('<button></button>');
+        var button2 = $('<button></button>');
+
+        //Define a view.
+        var View = Backbone.View.extend({
+            events: {
+                click: function (e) {
+                    console.log(view.el === e.target);
+                }
+            }
+        });
+
+
+        // Create a new instance of the view, applying it to button1.
+        var view = new View({ el: button1 });
+        button1.trigger('click');
+        //true
+        /*If you need to apply an existing Backbone view to a different DOM element, you can
+        use setElement. Overriding this.el needs to both change the DOM reference and
+        rebind events to the new element (and unbind from the old).
+                
+        setElement will create a cached $el reference for you, moving the delegated events for
+        a view from the old element to the new one.*/
+        view.setElement(button2);
+        button1.trigger('click');
+        button2.trigger('click'); //true
+
+        /*The el property represents the markup portion of the view that will be rendered; to get
+        the view to actually render to the page, you need to add it as a new element or append
+        it to an existing element.*/
+        var newView = new Backbone.View;
+        newView.setElement('<p><a><b>TEST</b></a></p>');
+        console.log(newView.$('a b').html()); //TEST
+
+        //A sample for ListView that doesn't use and item view.
+        // var ListView = Backbone.View.extend({
+        //      render: function () {
+        //      this.$el.html(this.model.toJSON());
+        //      }
+        // });
+        //Let us assume we construct the items using an itemview.
+        var ItemView = Backbone.View.extend({
+            events: {},
+            render: function () {
+                this.$el.html(this.model.toJSON());
+                return this;
+            }
+        });
+        /*Note the usage of return this; at the end of render. This common pattern enables us
+        to reuse the view as a subview. We can also use it to prerender the view prior to rendering.*/
+        //Create a ListView using the ItemView
+        var ListView = Backbone.View.extend({
+            render: function () {
+                //Get the items from the model.
+                var items = this.model.get('items');
+                // Loop through each of our items using the Underscore _.each iterator
+                _.each(items, function (item) {
+                    var itemView = new ItemView({ model: item });
+                    this.$el.append(itemView.render().el);
+                }, this);
+            }
+        });
+
+
+        /*events Hash
+        The events hash allows us to attach event listeners to either the el-relative 
+        custom selectors or directly to el if no selector is provided.
+
+        An event takes the form of a key-value pair 'eventName selector': 'callbackFunction', 
+        and a number of DOM event types are supported, including click, submit, mouseover,
+        dblclick, and more.
+
+        e.g.
+        events: {
+        'click .toggle': 'toggleCompleted',
+        'dblclick label': 'edit',
+        'click .destroy': 'clear',
+        'blur .edit': 'close'
+        },
+
+        */
+
+        /* IMPORTANT: What isn’t instantly obvious is that while Backbone uses jQuery’s .delegate() underneath,
+        it goes further by extending it so that this always refers to the current view object
+        within callback functions.
+        
+        NOTE: any string callback supplied to the events attribute must have a corresponding 
+        function with the same name within the scope of your view.*/
+
+        /*Note that you can also bind methods yourself using _.bind(this.viewEvent, this),
+        which is effectively what the value in each event’s key-value pair is doing. Here we use
+        _.bind to rerender our view when a model changes:*/
+
+        var TodoViewWithReRender = Backbone.View.extend({
+            initialize: function () {
+                this.model.bind('change', _.bind(this.render, this));
+            }
+        });
+        /*_.bind works on only one method at a time, but it supports currying; because it returns
+        the bound function, you can use _.bind on an anonymous function*/
+    </script>
+</body>
+</html>

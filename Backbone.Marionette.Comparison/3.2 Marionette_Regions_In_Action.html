@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Marionette</title>
+</head>
+<body>
+    <div id="content">
+        <!--Placeholder to load the view!-->
+    </div>
+
+    <script src="lib\jquery.min.js"></script>
+    <script src="lib\underscore-min.js"></script>
+    <script src="lib\backbone-min.js"></script>
+    <script src="lib\backbone.marionette.js"></script>
+
+    <script type="text/html" id="my-view-template">
+        <div class="row">
+            <label>First Name:</label>
+            <span><%= firstName %></span>
+        </div>
+        <div class="row">
+            <label>Last Name:</label>
+            <span><%= lastName %></span>
+        </div>
+        <div class="row">
+            <label>Email:</label>
+            <span><%= email %></span>
+        </div>
+    </script>
+    <script>
+        //Define a region
+        var myRegion = new Marionette.Region({
+            el: '#content'
+        });
+
+        //Define the view
+        var MyView = Marionette.ItemView.extend({
+            template: '#my-view-template',
+
+            //initialize method subscribes to model change
+            initialize: function() {
+                // bind the model change to rerender this view
+                this.listenTo(this.model, 'change:email', this.emailChanged);
+            },
+
+            //NO NEED TO EXPLICITLY DEFINE THE close() METHOD.
+
+            emailChanged: function(){
+                // This alert is going to demonstrate a problem
+                alert("Email address changed!");
+                this.render();
+            }
+        });
+
+        //Define the model
+        var Person = Backbone.Model.extend({
+            defaults:{
+                firstName: "first name",
+                lastName: "last name",
+                email: "first.last@abc.com"
+            }
+        });
+
+        //Create person instance.
+        var person1 = new Person();
+
+        //Instantiate the view.
+        var myView = new MyView({
+            model: person1
+        });
+
+        //Show the view in the region specified.
+        myRegion.show(myView);
+
+        //Create another instance for the same view
+        //making the previous instance a zombie
+        myView = new MyView({
+            model: person1
+        });
+
+        //Show the new view instance
+        myRegion.show(myView);
+
+        //Change the email to trigger the change:email 
+        //and ensure that the message is shown only once.
+        person1.set('email','first.last@xyz.com');
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>RESTful Persistence</title>
+</head>
+<body>
+    <div id="todo">
+    </div>
+    <script type="text/template" id="item-template">
+        <div>
+            <input id="todo_complete" type="checkbox" <%= completed ? 'checked="checked"' : '' %>>
+            <%= title %>
+        </div>
+    </script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+    </script>
+    <script src="http://documentcloud.github.com/underscore/underscore-min.js">
+    </script>
+    <script src="http://documentcloud.github.com/backbone/backbone-min.js">
+    </script>-->
+    <script src="scripts/jquery-1.10.1.js"></script>
+    <script src="scripts/underscore.js"></script>
+    <script src="scripts/backbone.js"></script>
+    <script>
+        /*Events are a basic inversion of control. Instead of having one function call another by
+        name, the second function is registered as a handler to be called when a specific event
+        occurs.*/
+
+        /*Backbone.Events is mixed into the other Backbone classes, including:
+        * Backbone
+        * Backbone.Model
+        * Backbone.Collection
+        * Backbone.Router
+        * Backbone.History
+        * Backbone.View
+        */
+
+        Backbone.on('event', function () {
+            console.log('Handled Backbone event');
+        });
+
+        Backbone.trigger('event');
+
+        //--------------------------------------------------------------------------
+        //on(), off(), and trigger()
+        //--------------------------------------------------------------------------
+
+        /*Backbone.Events can give any object the ability to bind and trigger custom events. We
+        can mix this module into any object easily, and there isn’t a requirement for events to
+        be declared before being bound to a callback handler.*/
+
+        var ourObject = {};
+        _.extend(ourObject, Backbone.Events);
+
+        ourObject.on('dance', function (message) {
+            console.log('We started ' + message);
+        });
+
+        ourObject.trigger('dance', 'dancing.'); //We started dancing. 
+
+        /*The official Backbone.js documentation recommends namespacing event names using
+        colons if you end up having quite a few of these on your page.*/
+
+        function dancing(msg) { console.log("We started " + msg); }
+
+        ourObject.on('dance:tap', dancing);
+        ourObject.on('dance:break', dancing);
+
+        ourObject.trigger('dance:tap', 'tap dancing!'); //We started tap dancing! 
+        ourObject.trigger('dance:break', 'break dancing!'); //We started break dancing! 
+
+        /*A special all event is made available in case you would like notifications for every event
+        that occurs on the object (for example, if you would like to screen events in a single
+        location). The all event can be used as follows:*/
+
+        ourObject.on('all', function (eventName) {
+            console.log("The name of the event passed was " + eventName);
+        });
+
+        /*off removes callback functions that were previously bound to an object. Going back to
+        our publish/subscribe comparison, think of it as an unsubscribe for custom events.*/
+
+        // Removes event bound to the object
+        ourObject.off("dance:tap");
+        ourObject.trigger('dance:tap', 'tap dancing!');
+        //The name of the event passed was dance:tap 
+        ourObject.trigger('dance:break', 'break dancing!');
+        //We started break dancing! 
+        //The name of the event passed was dance:break 
+    </script>
+</body>
+</html>

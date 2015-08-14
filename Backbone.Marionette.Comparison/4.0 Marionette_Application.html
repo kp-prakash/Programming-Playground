@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Marionette</title>
+</head>
+<body>
+    <header id="header"></header>
+    <section id="main"></section>
+    <footer id="footer"></footer>
+    <script src="lib\jquery.min.js"></script>
+    <script src="lib\underscore-min.js"></script>
+    <script src="lib\backbone-min.js"></script>
+    <script src="lib\backbone.marionette.js"></script>
+
+    <script type="text/html" id="headerTemplate">
+        <h1>Contact Manager</h1>
+        <hr/>
+    </script>
+    
+    <script type="text/html" id="footerTemplate">
+        <hr/>
+        &copy; 2013 Srihari Sridharan
+    </script>
+    
+    <script type="text/html" id="my-view-template">
+        <div class="row">
+            <label>First Name:</label>
+            <span><%= firstName %></span>
+        </div>
+        <div class="row">
+            <label>Last Name:</label>
+            <span><%= lastName %></span>
+        </div>
+        <div class="row">
+            <label>Email:</label>
+            <span><%= email %></span>
+        </div>
+    </script>    
+    <script>
+        //Create an application object
+        var application = new Marionette.Application();
+
+        //Add regions to the appplication.
+        //Shortcut for creating region objects.
+        application.addRegions({
+            header: "#header",
+            main: "#main",
+            footer: "#footer",
+        });
+
+        //Define the view
+        var MyView = Marionette.ItemView.extend({
+            template: '#my-view-template',
+        });
+
+        var HeaderView = Marionette.ItemView.extend({
+            template: "#headerTemplate"
+        });
+
+        var FooterView = Marionette.ItemView.extend({
+            template: "#footerTemplate"
+        });
+
+        //Define the model
+        var Person = Backbone.Model.extend({
+            defaults:{
+                firstName: "first name",
+                lastName: "last name",
+                email: "first.last@abc.com"
+            }
+        });
+
+        //Create person instance.
+        var person1 = new Person();
+
+        //Instantiate the view.
+        var myView = new MyView({
+            model: person1
+        });
+
+        var headerView = new HeaderView();
+
+        var footerView = new FooterView();
+
+        //Show the view in the region specified.
+        //Application.Region.Show(myView)
+        application.header.show(headerView);
+        application.main.show(myView);
+        application.footer.show(footerView);
+    </script>
+</body>
+</html>

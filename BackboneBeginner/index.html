@@ -1,0 +1,267 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    README: This code is based on the sample tutorial for beginners found at 
+    https://github.com/thomasdavis/backbonetutorials/tree/gh-pages/videos/beginner.
+    Please look for the comments / code in the following order to understand the whole sample.
+    STARTUP - Preliminary steps needed to get started.
+    Follow the steps in order, look for tags 'STEP # :' [# - denotes step number]
+    Orginal Author: Thomas Davis : http://thomasdav.is/
+    Rewritten (HTML5 Tags) with documentation and comments : Srihari Sridharan : http://bit.ly/zap-blog
+    -->
+    <meta charset="utf-8" />
+    <title>User Manager Using Backbone.js</title>
+    <!--STARTUP : Refer the required style sheets from cdnjs - one stop shop for
+    all your script content needs!-->
+    <!--HELPFUL PRACTICE: Do not prefix the protocol for cdn links, [http(s)], let
+    the browser do the hardwork. This also avoids unnecessary popups.-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.1.1/css/bootstrap.min.css" />
+</head>
+<body>
+    <!--STARTUP: Define sections denoting the container and the page.-->
+    <section class="container">
+        <h1>
+            User Manager</h1>
+        <hr />
+        <section class="page">
+        </section>
+    </section>
+    <!--
+    STEP 6 : Define a text template for a table which will be rendered in the Backbone view
+    Use underscore.js's _.each() function wire a collection and function to be executed for
+    each item in the collection.
+    Code below is self explanatory: <tr> is created for each item in the collection.
+    -->
+    <!--STEP 8 : Create backbone links using #, see the anchor tag below.
+    Create a new route for 'new' which will take us to the new user view.
+    We can create a new user, by entering user information, and get back to index view.
+    -->
+    <!--STEP 19 : Edit the user-list-template to add links for edit and delete at the row level-->
+    <script type="text/template" id="user-list-template">
+        <a href='#/new' class="btn btn-primary">New User</a>
+        <hr/>
+        <table class='table striped'>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Age</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <%_.each(users, function(user){%>
+                  <tr>
+                    <td><%=user.get('firstname') %></td>
+                    <td><%=user.get('lastname') %></td>
+                    <td><%=user.get('age') %></td>
+                    <td><a href="#/edit/<%= user.id %>" class="btn">Edit</a></td>
+                  </tr>
+                <%}) %>
+            </tbody>
+        </table>           
+    </script>
+    <!--STEP 14 : Define the edit-user-template-->
+    <!--
+    STEP 24 : Modify the template to handle both update and create.
+    If the user object is not null, show the values in the controls else show them as blank.
+    Add a hidden field for id.
+    STEP 25 : Modify the template once again, to add a new button for Delete.
+    Upon edit, the user can either be updated or deleted.
+    -->
+    <script type="text/template" id="edit-user-template">
+        <form class="edit-user-form">
+            <legend><%= user ? 'Update' : 'Create' %> User</legend>
+            <label for="firstname">First Name</label>
+            <input type="text" name="firstname" value="<%= user ? user.get('firstname') : '' %>" />
+            <label for="lastname">Last Name</label>
+            <input type="text" name="lastname" value="<%= user ? user.get('lastname') : '' %>" />
+            <label for="age">Age</label>
+            <input type="number" name="age" value="<%= user ? user.get('age') : '18' %>" min="18" max="130"/>
+            <hr/>
+            <button type="submit" class="btn"><%= user ? 'Update' : 'Create' %></button>
+            <% if(user) { %>
+                <input type="hidden" name="id" value="<%= user.id %>" />
+                <button type="button" class="btn btn-danger delete">Delete</button>
+            <% }; %>            
+        </form>
+    </script>
+    <!--STARTUP : Refer the required libraries from cdnjs - one stop shop for 
+    all your script content needs!-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+    <script>
+
+        //STEP 5 : Extend the Backbone collection to create a new Users collection 
+        //and define the base URL. Ajax prefilters are useful for hooking into all 
+        //AJAX request. In this case, we want to send all our AJAX request off to 
+        //a remote server instead of the same domain. So we use a prefilter to hook 
+        //in before the request is sent and prepend our custom origin server.
+        //The url used below in ajaxPrefilter could be replaced with a custom url 
+        //once you have your own REST based service.
+        $.ajaxPrefilter(function (options, originalOptions, jqXHR) {
+            options.url = 'https://backbonejs-beginner.herokuapp.com' + options.url;
+        });
+
+        var Users = Backbone.Collection.extend({
+            url: '/users'
+        });
+
+        //STEP 17: Extend Backbone.js model to create a User class.
+        var User = Backbone.Model.extend({
+            //Once we specify the urlRoot Backbone.js handles the different
+            //requests as shown below.
+            //PUT /users/id
+            //DELETE /users/id
+            //POST /users
+            urlRoot: '/users'
+        });
+
+        //STEP 16 : This is a utility function for serialization.
+        $.fn.serializeObject = function () {
+            var o = {};
+            var a = this.serializeArray();
+            $.each(a, function () {
+                if (o[this.name] !== undefined) {
+                    if (!o[this.name].push) {
+                        o[this.name] = [o[this.name]];
+                    }
+                    o[this.name].push(this.value || '');
+                } else {
+                    o[this.name] = this.value || '';
+                }
+            });
+            return o;
+        };
+
+        //STEP 11: Define a new view for EditUser by extending Backbone.View.
+        //Define a dummy render function and check if it works.
+        var EditUser = Backbone.View.extend({
+            el: '.page',
+            render: function (options) { //STEP 22 : Render function now takes in options.
+                //If id is passed in do a get request, else show a blank template.
+                var that = this; //Closure.
+                if (options.id) {
+                    //GET Request
+                    //STEP 28 : In order to access the user instance in the deleteUser function,
+                    //we need to add it as part of 'this' object. (Here it is 'that' - closure!)
+                    //Old code commented out as below!
+                    //var user = new User({id: options.id});
+                    //user.fetch({
+                    that.user = new User({ id: options.id });
+                    that.user.fetch({
+                        success: function (user) {
+                            //STEP 23 : Pass in the user into the template.
+                            var template = _.template($('#edit-user-template').html(), { user: user });
+                            that.$el.html(template);
+                        }
+                    }); //Triggers a get request GET /users/id
+                }
+                else {
+                    //STEP 13 : Hookup a call to the edit-user-template 
+                    //(to be created in the coming steps) and render the same.
+                    var template = _.template($('#edit-user-template').html(), { user: null });
+                    this.$el.html(template);
+                }
+            },
+
+            //STEP 15 : Listen for form submission. Backbone syntax for listening is shown below.
+            events: {
+                'submit .edit-user-form': 'saveUser',
+                //STEP : 26 Add a subscription for the delete button click.
+                'click .delete': 'deleteUser'
+            },
+
+            saveUser: function (ev) {
+                //currentTarget denotes the form that was submitted.
+                //jQuery doesn't serialize the form's content natively,
+                //we will use a small utility function to get the job done.
+                //(See STEP : 16 and STEP : 17 before moving further).
+                var userDetails = $(ev.currentTarget).serializeObject();
+
+                //STEP 18 : Create a user instance and save the details.
+                var user = new User();
+                //Call save  to save the user instance.
+                user.save(userDetails, {
+                    success: function (user) {
+                        //Navigate back to the list on success and we need to 
+                        //explicitly trigger the navigation as shown below.
+                        router.navigate('', { trigger: true });
+                    }
+                })
+            },
+
+            //STEP 27 : Implement delete functionality.
+            deleteUser: function (ev) {
+                //STEP 29 : Call the destroy function on the user object.
+                //DELETE users/id
+                this.user.destroy({
+                    success: function (user) {
+                        //Navigate back to the list on success and we need to 
+                        //explicitly trigger the navigation as shown below.
+                        router.navigate('', { trigger: true });
+                    }
+                })
+                return false;
+            }
+        });
+
+        //STEP 3 : Extend the backbone view and create a new view class the UserList
+        //Define a shell for the render function.
+        var UserList = Backbone.View.extend({
+            el: '.page',
+            render: function () {
+                var that = this; //Closure - Since the function below is anonymous, we use 
+                //a closure to ensure lifetime!
+                var users = new Users();
+                users.fetch({
+                    //STEP 7 : Use the template created in STEP 6 and render the template.
+                    //Pass on the users collection into the template.
+                    success: function (users) { //Pass the users collection inside on success.
+                        var template = _.template($('#user-list-template').html(), {
+                            users: users.models
+                        });
+                        that.$el.html(template);
+                    }
+                })
+            }
+        });
+
+        //STEP 1 : Create a new Router class by extending the Backbone.Router
+        var Router = Backbone.Router.extend({
+            routes: {
+                '': 'home',
+                'new': 'editUser', //STEP 9 : For a new user we want to show the edit user view.
+                'edit/:id': 'editUser' //STEP 20 : Create a new route for edit user.
+            }
+        });
+
+        //STEP 4 : Create a new instance of the UserList view and call the render() function
+        //inside the router.on callback.
+        var userList = new UserList();
+
+        //STEP 12 : Create a new instance of the UserList view and call the render() function
+        //inside the router.on callback.
+        var editUser = new EditUser();
+
+        //STEP 2 : Create a new instance of the router and subscribe to the on event.
+        //This gets raised when the user
+        //navigates to a certain route.
+        var router = new Router();
+        router.on('route:home', function () {
+            userList.render();
+        });
+
+        //STEP 10: Subscribe to the on event for editUser route.
+        router.on('route:editUser', function (id) { //STEP 21 : Pass on the id parameter in case of editUser.
+            //After STEP 21: Pass on this id into the render function's options argument as shown below.
+            editUser.render({ id: id });
+        });
+
+        //STARTUP : This call is required to kickstart the overall proceedings!
+        Backbone.history.start();
+    </script>
+</body>
+</html>

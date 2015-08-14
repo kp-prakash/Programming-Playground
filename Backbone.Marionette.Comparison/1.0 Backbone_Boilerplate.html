@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Backbone</title>
+</head>
+<body>
+    <div id="content">
+        <!--Placeholder to load the view!-->
+    </div>
+    
+    <script src="lib\jquery.min.js"></script>
+    <script src="lib\underscore-min.js"></script>
+    <script src="lib\backbone-min.js"></script>
+    <script type="text/html" id="my-view-template">
+        <div class="row">
+            <label>First Name:</label>
+            <span><%= firstName %></span>
+        </div>
+        <div class="row">
+            <label>Last Name:</label>
+            <span><%= lastName %></span>
+        </div>
+        <div class="row">
+            <label>Email:</label>
+            <span><%= email %></span>
+        </div>
+    </script>
+    <script>
+        var MyView = Backbone.View.extend({
+            template: $("#my-view-template").html(),
+            render: function(){
+                //compile the underscore js template
+                var compiledTemplate = _.template(this.template);
+
+                //render the template with model data
+                var data = this.model.toJSON();
+                var templateWithData = compiledTemplate(data);
+
+                // populate the view with the rendered html
+                this.$el.html(templateWithData);
+            }
+        });
+
+        var Person = Backbone.Model.extend({
+            defaults:{
+                firstName: "first name",
+                lastName: "last name",
+                email: "first.last@abc.com"
+            }
+        });
+
+        var person1 = new Person();
+
+        //Instantiate the view.
+        var myView = new MyView({
+            model: person1
+        });
+
+        //render the view
+        myView.render();
+
+        //Load the view in the DOM
+        $('#content').html(myView.el);
+    </script>
+</body>
+</html>

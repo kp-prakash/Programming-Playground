@@ -1,0 +1,238 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Models</title>
+</head>
+<body>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+    </script>
+    <script src="http://documentcloud.github.com/underscore/underscore-min.js">
+    </script>
+    <script src="http://documentcloud.github.com/backbone/backbone-min.js">
+    </script>-->
+    <script src="scripts/jquery-1.10.1.js"></script>
+    <script src="scripts/underscore.js"></script>
+    <script src="scripts/backbone.js"></script>
+    <script>
+        //---------------------------------------------------------------------------
+        //Introduction to Models.
+        //---------------------------------------------------------------------------
+        var Todo = Backbone.Model.extend({});
+        var todo1 = new Todo();
+        console.log(JSON.stringify(todo1));
+        //{}
+
+        //---------------------------------------------------------------------------
+
+        var todo2 = new Todo({
+            title: 'This is a title!',
+            completed: false
+        });
+        console.log(JSON.stringify(todo2));
+        //{"title":"This is a title!","completed":false} 
+
+        //---------------------------------------------------------------------------
+        //Initialization
+        //---------------------------------------------------------------------------
+
+        //The initialize() method is called when a new instance of a model is created.
+        var TodoWithInit = Backbone.Model.extend({
+            initialize: function () {
+                console.log('Model Initalized!');
+            }
+        });
+
+        var todoWithInit = new TodoWithInit();
+        //Model Initalized! 
+
+        //---------------------------------------------------------------------------
+
+        //Set default values using a property called defaults in your model
+        var TodoWithDefaults = Backbone.Model.extend({
+            defaults: {
+                title: '',
+                completed: false
+            }
+        });
+
+        var todoWithDefaults = new TodoWithDefaults();
+        console.log(JSON.stringify(todoWithDefaults));
+        //{"title":"","completed":false} 
+
+        //---------------------------------------------------------------------------
+
+        //Overriding defaults
+        var todoOverride = new TodoWithDefaults({
+            title: 'This todo is done, so take no action on this one.',
+            completed: true
+        });
+
+        console.log(JSON.stringify(todoOverride));
+        // {"title":"This todo is done, so take no action on this one.","completed":true}
+
+        //---------------------------------------------------------------------------
+        //Getters and Setters.
+        //---------------------------------------------------------------------------
+        console.log(todoWithDefaults.get('title')); // empty string
+        console.log(todoWithDefaults.get('completed')); // false
+
+        /*Model.set() sets a hash containing one or more attributes on the model. When any of
+        these attributes alter the state of the model, a change event is triggered on it. Change
+        events for each attribute are also triggered and can be bound to the model (such as
+        change:name, change:age).*/
+
+        var TodoSetterExample = Backbone.Model.extend({
+            title: 'This is the default title',
+            completed: false
+        });
+
+        var myTodoSetterExample = new TodoSetterExample({
+            title: 'Title set through initialization.'
+        });
+        console.log(JSON.stringify(myTodoSetterExample));
+        //{"title":"Title set through initialization."} 
+
+        //Model.set() - can be used to set single attribute as well as map of attributes.
+        myTodoSetterExample.set('title', "Set using Model.set()");
+        console.log(JSON.stringify(myTodoSetterExample));
+        //{"title":"Set using Model.set()"} 
+
+        //Setting a map of attributes.
+        myTodoSetterExample.set({
+            'title': "Both attributes are set using Model.set().",
+            'completed': true
+        });
+        console.log(JSON.stringify(myTodoSetterExample));
+        //{"title":"Both attributes are set using Model.set().","completed":true} 
+
+        //A new attribute can be added using Model.set()
+        myTodoSetterExample.set('newTitle', "New attribute Set using Model.set()");
+        console.log(JSON.stringify(myTodoSetterExample));
+        //{"title":"Both attributes are set using Model.set().","completed":true,"newTitle":"New attribute Set using Model.set()"} 
+
+        //---------------------------------------------------------------------------
+
+        /*Models expose an .attributes attribute, which represents an internal hash containing
+        the state of that model. This is generally in the form of a JSON object similar to the
+        model data you might find on the server, but it can take other forms.
+        Setting values through the .attributes attribute on a model bypasses triggers bound
+        to the model.*/
+
+        /*Passing {silent:true} on change doesn’t delay individual "change:attr" events; instead,
+        they are silenced entirely:*/
+
+        var Person = new Backbone.Model();
+        Person.set({ name: 'Srihari' }, { silent: true });
+        console.log(!Person.hasChanged(0)); //true
+        console.log(!Person.hasChanged('')); //true
+
+        //---------------------------------------------------------------------------
+        //Listening for Changes to Your Model
+        //---------------------------------------------------------------------------
+
+        var TodoWithListener = Backbone.Model.extend({
+            defaults: {
+                title: '',
+                completed: false
+            },
+            initialize: function () {
+                console.log('Model initialized.');
+                this.on('change', function () {
+                    console.log('On Change: Values changed!');
+                    console.log(JSON.stringify(this));
+                    //On Change: Values changed! 
+                    //{title: "Title set again for triggering on change.", completed: false}
+                });
+            }
+        });
+
+        var todoWithListener = new TodoWithListener();
+        //This set call will trigger the on change event.
+        todoWithListener.set('title', 'Title set again for triggering on change.');
+
+        /*You can also listen for changes to individual attributes in a Backbone model. In the
+        following example, we log a message whenever a specific attribute (the title of our Todo
+        model) is altered.
+
+        this.on('change:title', function(){
+        console.log('Title value for this model has changed.');
+        });
+
+        */
+
+        var TodoWithAttributeListener = Backbone.Model.extend({
+            defaults: {
+                title: '',
+                completed: false
+            },
+            initialize: function () {
+                console.log('Model initialized.');
+                this.on('change:title', function () {
+                    console.log('Title value for this model has changed.');
+                    console.log(JSON.stringify(this));
+                });
+            }
+        });
+
+        var newTodoWithAttributeListener = new TodoWithAttributeListener();
+        newTodoWithAttributeListener.set('title', 'New title set to trigger on change for title alone!');
+        newTodoWithAttributeListener.set('completed', true); //This should not trigger any change.
+
+        //---------------------------------------------------------------------------
+        //Validation
+        //---------------------------------------------------------------------------
+
+        //Make use of the unset() method, to remove an attribute by deleting it
+        //from the internal model attribute’s hash.
+        var TodoUnsetDemo = Backbone.Model.extend({
+            defaults: {
+                title: 'Default title!',
+                completed: false
+            }
+        });
+
+        var todoUnsetDemo = new TodoUnsetDemo();
+        console.log(JSON.stringify(todoUnsetDemo));
+        //{title: "Default title!", completed: false} 
+        todoUnsetDemo.unset('title');
+        console.log(JSON.stringify(todoUnsetDemo));
+        //{"completed":false}
+
+        /*Validation functions can be as simple or complex as necessary. If the attributes provided
+        are valid, nothing should be returned from .validate(). If they are invalid, an error
+        value should be returned instead.
+        Should an error be returned:
+        * An invalid event will be triggered, setting the validationError property on the
+        model with the value that is returned by this method.
+        * .save() will not continue and the attributes of the model will not be modified on
+        the server.
+        */
+
+        var TodoWithValidation = Backbone.Model.extend({
+            defaults: {
+                completed: false
+            },
+
+            validate: function () {
+                if (this.title === undefined) {
+                    return "Remember to enter the title for the todo";
+                }
+            },
+
+            initialize: function () {
+                console.log("The model has been initialized");
+                this.on("invalid", function (model, error) {
+                    console.log(error);
+                });
+            }
+        });
+
+        var myTodoWithValidation = new TodoWithValidation();
+        //Passing in validate:true forces validation.
+        myTodoWithValidation.set('completed', true, { validate: true });
+        // logs: Remember to set a title for your todo.
+        console.log('completed: ' + myTodoWithValidation.get('completed')); // completed: false
+    </script>
+</body>
+</html>
