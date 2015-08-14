@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TaskMonitor.DataImport" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="RootFolderPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">D:\Srihari S\Tasks\</Value>
+    </Setting>
+    <Setting Name="StartingDataImport" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Starting data import!</Value>
+    </Setting>
+    <Setting Name="UserName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">srihari.sridharan.r@gmail.com</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

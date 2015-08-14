@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <title>Web Workers: This is an example for web workers.</title>
+</head>
+<body>
+    <section id="container">
+        <h3>Generate Fibonacci Series</h3>
+        <input type="number" id="seriesLength" value="2" />
+        <input type="button" id="btnGenerate" value="Generate Series" />
+        <img src="Images\Progress.gif" id="imgProgress"/>
+        <ol id="log"></ol>
+    </section>
+</body>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript">
+var imgProgress = $('#imgProgress');
+    imgProgress.hide();
+
+    $("#btnGenerate").click(function (){
+        var worker = new Worker('fibonacci.js');
+        worker.onmessage = messageHandler;
+        worker.onerror = errorHandler;
+        worker.postMessage($('#seriesLength').val());
+        imgProgress.show();
+    });
+
+    function messageHandler(e) {
+        imgProgress.hide();
+        var results = e.data;
+        $('#log').html('');
+        $.each(results, function() {
+            logMessage(this);
+        });
+    }
+
+    function errorHandler (e) {
+        logMessage(e.message);
+    }
+
+    function logMessage(message) {
+        $('#log').append('<li>' + message + '</li>');
+    }
+</script>
+</html>

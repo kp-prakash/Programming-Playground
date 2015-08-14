@@ -1,0 +1,65 @@
+﻿@model System.Collections.Generic.IEnumerable<System.Linq.IGrouping<string, TaskMonitor.WebApp.Models.TaskViewModel>>
+<script>
+    $(document).ready(function () {
+        $('#tasks-table').each(function () {
+            $(this).DataTable();
+        });
+    });
+</script>
+<div class="navbar navbar-inverse task-list">@*navbar-fixed-bottom*@
+    <ul class="nav navbar-nav tasks-operations">
+        <li>@Html.ActionLink("Today", "Today", "Home")</li>
+        <li>@Html.ActionLink("Last Month", "LastMonth", "Home")</li>
+        <li>@Html.ActionLink("Past Month", "PastMonth", "Home")</li>
+    </ul>
+</div>
+
+@*<h3>Important Statistics</h3>
+    <ul>
+        <li><p><b>Task on which maximum time was spent :</b> @ViewBag.TaskOnWhichMaximumTimeWasSpent</p></li>
+        <li><p><b>Time spent :</b> @ViewBag.MaxTimeOnATaskInMinutes</p></li>
+        <li><p><b>Task on which minimum time was spent :</b> @ViewBag.TaskOnWhichMinimumTimeWasSpent</p></li>
+        <li><p><b>Time spent :</b> @ViewBag.MinTimeOnATaskInMinutes</p></li>
+    </ul>*@
+@foreach (var dictionary in Model)
+{
+    <h2>@ViewBag.Message @dictionary.Key</h2>
+    <table id="tasks-table" class="table table-striped tasks-table">
+        <thead>
+            <tr>
+                <th class="datetime">@Html.DisplayName("Start Time")</th>
+                <th class="datetime">@Html.DisplayName("End Time")</th>
+                <th class="description">@Html.DisplayName("Description")</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @if (dictionary.Any())
+            {
+                foreach (var task in dictionary)
+                {
+                    <tr>
+                        <td class="datetime">@task.StartDateTime.ToShortTimeString()</td>
+                        <td class="datetime">
+                            @if (task.EndDateTime != null)
+                            {
+                                @task.EndDateTime.Value.ToShortTimeString()
+                            }
+                            else
+                            {
+                                @Html.DisplayText("No end time!")
+                            }
+                        </td>
+                        <td class="description">@task.Description</td>
+                    </tr>
+                }
+
+            }
+            else
+            {
+                Html.DisplayText("No tasks in the given duration.");
+            }
+
+        </tbody>
+    </table>
+}

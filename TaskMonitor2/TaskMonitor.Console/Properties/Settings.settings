@@ -1,0 +1,57 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TaskMonitor.Console.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Label" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Please enter the tasks performed after last update:</Value>
+    </Setting>
+    <Setting Name="FolderFormat" Type="System.String" Scope="User">
+      <Value Profile="(Default)">yyyy-MM</Value>
+    </Setting>
+    <Setting Name="FileNameFormat" Type="System.String" Scope="User">
+      <Value Profile="(Default)">yyyy-MM-dd</Value>
+    </Setting>
+    <Setting Name="MessageBoxTitle" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Task Monitor</Value>
+    </Setting>
+    <Setting Name="DateFormat" Type="System.String" Scope="User">
+      <Value Profile="(Default)">dd-MM-yy</Value>
+    </Setting>
+    <Setting Name="DayFormat" Type="System.String" Scope="User">
+      <Value Profile="(Default)">dddd</Value>
+    </Setting>
+    <Setting Name="TimeFormat" Type="System.String" Scope="User">
+      <Value Profile="(Default)">h:mm:ss tt</Value>
+    </Setting>
+    <Setting Name="LastTaskFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Task.bin</Value>
+    </Setting>
+    <Setting Name="MessageForeground" Type="System.ConsoleColor" Scope="User">
+      <Value Profile="(Default)">DarkGreen</Value>
+    </Setting>
+    <Setting Name="TaskForegroundColor" Type="System.ConsoleColor" Scope="User">
+      <Value Profile="(Default)">Green</Value>
+    </Setting>
+    <Setting Name="PressAnyKeyMessage" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Press any key to exit!</Value>
+    </Setting>
+    <Setting Name="NewTaskMessage" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Press enter to persist old task, or enter new task description and press enter:</Value>
+    </Setting>
+    <Setting Name="SaveMessage" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Task saved successfully!</Value>
+    </Setting>
+    <Setting Name="SavingMessage" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Saving</Value>
+    </Setting>
+    <Setting Name="SaveDelay" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">500</Value>
+    </Setting>
+    <Setting Name="PostSaveDelay" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1500</Value>
+    </Setting>
+    <Setting Name="TimerRefreshInterval" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1000</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

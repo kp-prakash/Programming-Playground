@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceReference>
+	<ProxyGenerationParameters
+		ServiceReferenceUri="http://localhost:8072/MyService"
+		Name="Myservice"
+		NotifyPropertyChange="False"
+		UseObservableCollection="False">
+	</ProxyGenerationParameters>
+	<EndPoints>
+		<EndPoint
+			Address="net.tcp://localhost:8071/MyService"
+			BindingConfiguration="NetTcp"
+			Contract="Client.Myservice.IService1"
+			>
+		</EndPoint>
+		<EndPoint
+			Address="http://localhost:8072/MyService"
+			BindingConfiguration="Http_ReturnStorageService"
+			Contract="Client.Myservice.IService1"
+			>
+		</EndPoint>
+	</EndPoints>
+</ServiceReference>
