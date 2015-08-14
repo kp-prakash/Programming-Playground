@@ -1,0 +1,213 @@
+<fieldset>
+    <div class="row-fluid">
+        <div class="span2">
+            <label for="selSubCenter">
+                Sub-center:</label><br />
+            <select id="selSubCenter" class="span*" data-bind="
+            						  options:viewMetaData.subCenters.subCenterCodes,
+            						  optionsCaption: 'Select...',
+                                      optionsText: 'name',
+                                      value:delivery.subCenter">
+                <option>Select</option>
+            </select>
+        </div>
+        <div class="span2">
+            <label for="txtDeliveryNumber">
+                Delivery Number:</label><br />
+            <input type="text" id="txtDeliveryNumber" placeholder="Enter delivery number" class="span*"
+                data-bind="value: delivery.deliveryNumber" />
+        </div>
+        <div class="span2">
+            <label for="selLoadType">
+                Load Type:</label><br />
+            <select id="selLoadType" class="span*" data-bind="
+            						  options:viewMetaData.loadType.loadTypes,
+            						  optionsCaption: 'Select...',
+                                      optionsText: 'name',
+                                      value:delivery.loadType">
+                <option>Select</option>
+            </select>
+        </div>
+        <div class="span2">
+            <label for="lstWarehouseArea">
+                Warehouse Area:</label><br />
+            <select id="lstWarehouseArea" class="span*" data-bind="            
+                                    options: viewMetaData.wareHouseArea.wareHouseCodes,
+                                    optionsCaption: 'Select...',
+                                    optionsText: 'name',
+                                    value: delivery.warehouseArea">
+                <option>Select</option>
+            </select>
+        </div>
+        <div class="span2">
+            <label for="txtTrailerNumber">
+                Trailer Number:</label><br />
+            <input type="text" id="txtTrailerNumber" placeholder="Enter trailer number" class="span*"
+                data-bind="value: delivery.trailerNumber" />
+        </div>
+    </div>
+    <br />
+    <div class="row-fluid">
+        <div class="span2">
+            <label for="selTrailerStatus">
+                Trailer Status:</label><br />
+            <select id="selTrailerStatus" class="span*" data-bind="            
+                                    options: viewMetaData.trailerStatus.trailerStatus,
+                                    optionsCaption: 'Select...',
+                                    optionsText: 'name',
+                                    value: delivery.trailerStatus">
+                <option>Select</option>
+            </select>
+        </div>
+        <div class="span2">
+            <label for="selTrailerType">
+                Trailer Type:</label><br />
+            <select id="selTrailerType" class="span*" data-bind="            
+                                    options: viewMetaData.trailerType.trailerTypes,
+                                    optionsCaption: 'Select...',
+                                    optionsText: 'name',
+                                    value: delivery.trailerType">
+                <option>Select</option>
+            </select>
+        </div>
+        <div class="span2">
+            <label for="txtTrailerControlRecordID">
+                Trailer Control Record ID:</label><br />
+            <input type="text" id="txtTrailerControlRecordID" placeholder="Enter trailer control record id"
+                class="span*" data-bind="value: delivery.trailerControlRecordId" />
+        </div>
+        <div class="span2">
+            <label for="txtYardZone">
+                Yard Zone:</label><br />
+            <input type="text" id="txtYardZone" placeholder="Enter Yard Zone" class="span*" data-bind="value: delivery.yardZone" />
+        </div>
+        <div class="span2">
+            <label for="txtReceivingDoor">
+                Receiving Door:</label><br />
+            <input type="text" id="txtReceivingDoor" placeholder="Enter Receiving Door" class="span*"
+                data-bind="value: delivery.receivingDoor" />
+        </div>
+    </div>
+    <br />
+    <div class="row-fluid">
+        <div class="span2">
+            <label for="txtInboundSealNumber">
+                Inbound Seal Number:</label><br />
+            <input type="text" id="txtInboundSealNumber" placeholder="Enter Inbound Seal Number"
+                class="span*" data-bind="value: delivery.inboundSealNumber" />
+        </div>
+        <div class="span2">
+            <label for="txtCarrierCode">
+                Carrier Code:</label><br />
+            <input type="text" id="txtCarrierCode" placeholder="Enter Carrier Code" class="span*"
+                data-bind="value: delivery.carrierCode" />
+        </div>
+        <div class="span2">
+            <label for="telCarrierPhone">
+                Carrier Phone:</label><br />
+            <input type="tel" id="telCarrierPhone" placeholder="Enter business phone" class="span*"
+                data-bind="value: delivery.carrierPhone" />
+        </div>
+        <div class="span2">
+            <label for="txtRequestedBy">
+                Requested By:</label><br />
+            <input type="text" id="txtRequestedBy" placeholder="Who requested this?" class="span*"
+                data-bind="value: delivery.requestedBy" />
+        </div>
+        <div class="span2">
+            <label for="selDock">
+                Dock:</label><br />
+            <select id="selDock" class="span*" data-bind="            
+                                    options: viewMetaData.dock.dock,
+                                    optionsCaption: 'Select...',
+                                    optionsText: 'name',
+                                    value: delivery.dock">
+                <option>Select</option>
+            </select>
+        </div>
+    </div>
+    <br />
+    <div class="row-fluid">
+        <div class="span2">
+            <label for="numPallets">
+                Number of Pallets:</label><br />
+            <input type="number" min="0" id="numPallets" placeholder="How many pallets?" class="span*"
+                data-bind="value: delivery.numberOfPallets" />
+        </div>
+        <div class="span2">
+            <label for="numPOS">
+                Number of PO-s:</label><br />
+            <input type="number" min="0" id="numPOS" placeholder="How many PO-s?" class="span*"
+                data-bind="value: delivery.numberOfPOs" />
+        </div>
+        <div class="span2">
+            <label for="numOpenPOLines">
+                Number of Open PO Lines:</label><br />
+            <input type="number" min="0" id="numOpenPOLines" placeholder="How many Open PO Lines?"
+                class="span*" data-bind="value: delivery.numberOfOpenPOLines" />
+        </div>
+        <div class="span2">
+            <input type="checkbox" id="chkNonConveyable" data-bind="checked: delivery.nonConveyable" />
+            <span class="cbCaption">Non-conveyable</span>
+        </div>
+        <div class="span2">
+            <input type="checkbox" id="chkConsolidator" data-bind="checked: delivery.consolidator" />
+            <span class="cbCaption">Consolidator</span>
+        </div>
+    </div>
+    <br />
+    <div class="row-fluid">
+        <div class="span2">
+            <label for="numFBQ">
+                FBQ:</label><br />
+            <input type="number" min="0" id="numFBQ" placeholder="How many FBQ's?" class="span*"
+                data-bind="value: delivery.fbq" />
+        </div>
+        <div class="span2">
+            <label for="numWeight">
+                Weight:</label><br />
+            <input type="number" min="0" id="numWeight" placeholder="Enter the weight" class="span*"
+                data-bind="value: delivery.weight" />
+        </div>
+        <div class="span2">
+            <label for="numCube">
+                Cube:</label><br />
+            <input type="number" min="0" id="numCube" placeholder="Enter the cube value" class="span*"
+                data-bind="value: delivery.cube" />
+        </div>
+        <div class="span2">
+            <label for="numASNPacks">
+                ASN Packs:</label><br />
+            <input type="number" min="0" id="numASNPacks" placeholder="Enter the ASN Packs" class="span*"
+                data-bind="value: delivery.asnPacks" />
+        </div>
+        <div class="span2">
+            <label for="txtLstUpdatedBy">
+                Last Updated By:</label><br />
+            <input type="text" id="txtLstUpdatedBy" placeholder="Who updated last?" class="span*"
+                data-bind="value: delivery.lastUpdatedBy" />
+        </div>
+    </div>
+    <br />
+    <div class="row-fluid">
+        <div class="span2">
+            <label for="txtMDSEType">
+                MDSE Type:</label><br />
+            <input type="text" id="txtMDSEType" placeholder="Enter MDSE Type" class="span*" data-bind="value: delivery.mdseType" />
+        </div>
+        <div class="span2">
+            <label for="dtLastUpdated">
+                Last Updated Date\Time</label><br />
+            <input type="date" id="dtLastUpdated" class="span*" data-bind="value: delivery.lastUpdatedDateTime" />
+        </div>
+    </div>
+</fieldset>
+<br />
+<div class="row-fluid">
+    <input type="button" class="glsButton span2" id="btnUpdate" value="Update">
+    <input type="button" class="glsButton span2" id="btnAddPO" value="Add PO">
+    <input type="button" class="glsButton span2" id="btnModifyFBQ" value="Modify FBQ">
+    <input type="button" class="glsButton span2" id="btnPrintReceiver" value="Print Receiver">
+    <input type="button" class="glsButton span2" id="btnVoidReceiver" value="Void Receiver">
+    <input type="button" class="glsButton span2" id="btnClose" value="Close">
+</div>

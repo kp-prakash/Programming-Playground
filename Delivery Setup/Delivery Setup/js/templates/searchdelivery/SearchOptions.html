@@ -1,0 +1,137 @@
+<fieldset>
+    <legend>Search Criteria</legend>
+    <div class="row-fluid">
+        <div class="span2">
+            <label for="selSubCenter">
+                Sub-center:</label>
+            <select id="selSubCenter" class="span*" data-bind="
+                            options: searchCriteria.searchMetaData.subCenters,
+                            optionsCaption: 'Select...',
+                            optionsText: 'name',
+                            value: searchCriteria.subCenter">
+            </select>
+        </div>
+        <div class="span2">
+            <label for="lstDeliveryStatus">
+                Delivery Status:</label>
+            <select id="lstDeliveryStatus" multiple class="span*" data-bind="
+                            options: searchCriteria.searchMetaData.deliveryStatus,
+                            optionsText: 'name',
+                            value: searchCriteria.deliveryStatus">
+            </select>
+        </div>
+        <div class="span2">
+            <label for="lstTrailerStatus">
+                Trailer Status:</label>
+            <select id="lstTrailerStatus" multiple class="span*" data-bind="
+                            options: searchCriteria.searchMetaData.trailerStatus,
+                            optionsText: 'name',
+                            value: searchCriteria.trailerStatus">
+            </select>
+        </div>
+        <div class="span2">
+            <label for="lstMDSEType">
+                MDSE Type:</label>
+            <select id="lstMDSEType" multiple class="span*" data-bind="
+                            options: searchCriteria.searchMetaData.mdseTypes,
+                            optionsText: 'name',
+                            value: searchCriteria.mdseType">
+            </select>
+        </div>
+        <div class="span3">
+            <label for="lstHandlingType">
+                Handling Type:</label>
+            <select id="lstHandlingType" multiple class="span*" data-bind="
+                            options: searchCriteria.searchMetaData.handlingTypes,
+                            optionsText: 'name',
+                            value: searchCriteria.handlingType">
+            </select>
+        </div>
+    </div>
+    <br />
+    <div class="row-fluid">
+        <div class="span2">
+            <label for="txtDeliveryNumber">
+                Delivery Number:</label>
+            <input type="text" id="txtDeliveryNumber" placeholder="Enter delivery number" class="span*"
+                data-bind="value: searchCriteria.deliveryNumber" />
+        </div>
+        <div class="span2">
+            <label for="txtTrailerNumber">
+                Tailer Number:</label>
+            <input type="text" id="txtTrailerNumber" placeholder="Enter trailer number" class="span*"
+                data-bind="value: searchCriteria.trailerNumber" />
+        </div>
+        <div class="span2">
+            <label for="txtBPONumber">
+                BPO Number:</label>
+            <input type="text" id="txtBPONumber" placeholder="Enter BPO number" class="span*"
+                data-bind="value: searchCriteria.bpoNumber" />
+        </div>
+        <div class="span2">
+            <label for="txtPONumber">
+                PO Number:</label>
+            <input type="text" id="txtPONumber" placeholder="Enter PO number" class="span*" data-bind="value: searchCriteria.poNumber" />
+        </div>
+        <div class="span3">
+            <label for="lstTypesOfLabels">
+                Type Of Labels:</label>
+            <select id="lstTypesOfLabels" multiple class="span*" data-bind="
+                            options: searchCriteria.searchMetaData.typeOfLabels,
+                            optionsText: 'name',
+                            value: searchCriteria.typesOfLabels">
+            </select>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span2">
+            <label for="txtTrailerControlRecordID">
+                Trailer Control Record ID:</label>
+            <input type="text" id="txtTrailerControlRecordID" placeholder="Enter trailer control record id"
+                class="span*" data-bind="value: searchCriteria.trailerControlRecordId" />
+        </div>
+        <div class="span3">
+            <input type="checkbox" id="chkItemDimensionsNotValidated" data-bind="checked: searchCriteria.itemDimensionsNotValidated" />
+            <span class="cbCaption">Item Dimensions Not Validated</span>
+        </div>
+    </div>
+</fieldset>
+<br />
+<div class="row-fluid">
+    <fieldset id="fsScheduledDate" class="span5">
+        <legend>Scheduled Date</legend>
+        <div class="row-fluid">
+            <div class="span6">
+                <input type="checkbox" id="chkSDFrom" data-bind="checked: searchCriteria.scheduledDate.fromSelected">
+                <span class="cbCaption">From</span>
+                <input type="date" id="dtSDFrom" class="span* dateControlWithMargin" data-bind="value: searchCriteria.scheduledDate.from, enable: searchCriteria.scheduledDate.fromSelected">
+            </div>
+            <div class="span6">
+                <input type="checkbox" id="chkSDTo" data-bind="checked: searchCriteria.scheduledDate.toSelected">
+                <span class="cbCaption">To</span>
+                <input type="date" id="dtSDTo" class="span* dateControlWithMargin" data-bind="value: searchCriteria.scheduledDate.to, enable: searchCriteria.scheduledDate.toSelected">
+            </div>
+        </div>
+    </fieldset>
+    <fieldset id="fsArrivedDate" class="span5">
+        <legend>Arrived Date</legend>
+        <div class="row-fluid">
+            <div class="span6">
+                <input type="checkbox" id="chkADFrom" data-bind="checked: searchCriteria.arrivedDate.fromSelected">
+                <span class="cbCaption">From</span>
+                <input type="date" id="dtADFrom" class="span* dateControlWithMargin" data-bind="value: searchCriteria.arrivedDate.from, enable: searchCriteria.arrivedDate.fromSelected">
+            </div>
+            <div class="span6">
+                <input type="checkbox" id="chkADTo" data-bind="checked: searchCriteria.arrivedDate.toSelected">
+                <span class="cbCaption">To</span>
+                <input type="date" id="dtADTo" class="span* dateControlWithMargin" data-bind="value: searchCriteria.arrivedDate.to, enable: searchCriteria.arrivedDate.toSelected">
+            </div>
+        </div>
+    </fieldset>
+</div>
+<br />
+<div class="row-fluid">
+    <input type="button" class="glsButton span2" id="btnRetrieve" value="Retrieve">
+    <input type="button" class="glsButton span2" id="btnClear" value="Clear">
+    <input type="button" class="glsButton span2" id="btnClose" value="Close">
+</div>

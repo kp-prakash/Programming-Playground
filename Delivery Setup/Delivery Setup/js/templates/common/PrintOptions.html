@@ -1,0 +1,29 @@
+<fieldset>
+    <legend>Print Options</legend>
+    <div class="row-fluid">
+        <div class="span2">
+            <input type="checkbox" id="chkEntireDelivery" data-bind="checked: printOptions.entireDelivery.isSelected, enable: printOptions.entireDelivery.isEnabled">
+            <span class="cbCaption">Entire Delivery</span>
+        </div>
+        <div class="span2">
+            <input type="checkbox" id="chkURS" data-bind="checked: printOptions.unloaderReferenceSheet.isSelected, enable: printOptions.unloaderReferenceSheet.isEnabled" />
+            <span class="cbCaption">Unloader Reference Sheet</span>
+        </div>
+        <div class="span2">
+            <input type="checkbox" id="chkReceiver" data-bind="checked: printOptions.receiver.isSelected, enable: printOptions.receiver.isEnabled" />
+            <span class="cbCaption">Receiver</span>
+        </div>
+        <div class="span2">
+            <input type="checkbox" id="chkAllPOLines" data-bind="checked: printOptions.allPOLines.isSelected, enable: printOptions.allPOLines.isEnabled" />
+            <span class="cbCaption">All PO Lines</span>
+        </div>
+        <div class="span2">
+            <input type="checkbox" id="chkASNPOLines" data-bind="checked: printOptions.asnPOLines.isSelected, enable: printOptions.asnPOLines.isEnabled" />
+            <span class="cbCaption">ASN PO Lines</span>
+        </div>
+        <div class="span2">
+            <input type="checkbox" id="chkReceivingManifest" data-bind="checked: printOptions.receivingManifest.isSelected, enable: printOptions.receivingManifest.isEnabled" />
+            <span class="cbCaption">Receiving Manifest</span>
+        </div>
+    </div>
+</fieldset>

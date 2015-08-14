@@ -1,0 +1,346 @@
+﻿html, body
+{
+    margin: 0;
+    padding: 0;
+}
+
+.glsButton
+{
+    -moz-box-shadow: inset 0px 1px 0px 0px #9dc2c1;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #9dc2c1;
+    box-shadow: inset 0px 1px 0px 0px #9dc2c1;
+    background: #627AAC;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #29447E;
+    display: inline-block;
+    color: #FFFFFF;
+    font-family: Tahoma;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 5px 24px;
+    text-decoration: none;
+    text-shadow: 1px 1px 24px #ffffff;
+    cursor: pointer;
+    margin: 5px;
+}
+.glsButton:active
+{
+    position: relative;
+    top: 1px;
+}
+
+input, select
+{
+    font: 11px Tahoma , Helvetica, Arial, sans-serif;
+}
+
+body
+{
+    font: 11px Tahoma , Helvetica, Arial, sans-serif;
+    line-height: 1.4em;
+    color: #4d4d4d;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+/*
+	Hack to remove background from Mobile Safari.
+	Can't use it globally since it destroys checkboxes in Firefox and Opera
+*/
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{
+}
+
+label
+{
+    display: initial;
+    font-weight: bold;
+    font-family: Tahoma;
+    font-size: 11px;
+    margin: 0px;
+}
+
+td
+{
+    vertical-align: top;
+    padding: 3px;
+}
+
+input[type="checkbox"]
+{
+    margin-left: 5px;
+    background: #EEEEEE;
+}
+
+input[type=text], input[type=url], input[type=tel], input[type=number], input[type=email], input[type=date], input[type=checkbox], select
+{
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    font-family: Tahoma;
+    font-size: 11px;
+}
+
+input[type=text], input[type=url], input[type=tel], input[type=number], input[type=email], input[type=date], input[type=checkbox], select
+{
+    border: 1px solid #258DC8;
+}
+
+input[type=text], input[type=url], input[type=tel], input[type=number], input[type=email], input[type=date], select
+{
+    padding: 5px;
+    background: #EEEEEE;
+}
+
+.middleAlignCell
+{
+    vertical-align: middle;
+}
+
+fieldset, body
+{
+    background-image: linear-gradient(left top, rgb(196,229,245) 65%, rgb(127,211,232) 0%);
+    background-image: -o-linear-gradient(left top, rgb(196,229,245) 65%, rgb(127,211,232) 0%);
+    background-image: -moz-linear-gradient(left top, rgb(196,229,245) 65%, rgb(127,211,232) 0%);
+    background-image: -webkit-linear-gradient(left top, rgb(196,229,245) 65%, rgb(127,211,232) 0%);
+    background-image: -ms-linear-gradient(left top, rgb(196,229,245) 65%, rgb(127,211,232) 0%);
+    background-image: -webkit-gradient(linear,left top,right bottom,color-stop(0.65, rgb(196,229,245)),color-stop(0, rgb(127,211,232)) );
+}
+
+fieldset legend
+{
+    font-family: Tahoma;
+    font-size: 13px;
+    width: auto;
+    line-height: 20px;
+    margin-bottom: 0px;
+    border-bottom: 0px;
+    padding: 4px 4px;
+}
+
+fieldset
+{
+    font-weight: bold;
+    border: 1px solid #29447E;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    width: auto;
+}
+
+table.dataTable thead tr th
+{
+    background: #3f4c6b; /* Old browsers */
+    background: -moz-linear-gradient(top,  #3f4c6b 0%, #73a8c4 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3f4c6b), color-stop(100%,#73a8c4)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #3f4c6b 0%,#73a8c4 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #3f4c6b 0%,#73a8c4 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #3f4c6b 0%,#73a8c4 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #3f4c6b 0%,#73a8c4 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f4c6b', endColorstr='#73a8c4',GradientType=0 ); /* IE6-9 */
+    color: #FFFFFF;
+    border: 1px solid #AAAAAA;
+}
+
+table.dataTable
+{
+    border: 3px solid #BBBBBB;
+    background: #EEEEEE;
+    border-style: groove;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font-family: Tahoma,arial,sans-serif;
+    font-size: 11px;
+    color: #333333;
+    border-collapse: collapse;
+    display: inline-block;
+    margin-bottom: 20px;
+    height: 233px;
+    overflow: auto;
+}
+
+#flip-scroll table
+{
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+table.dataTable td
+{
+    font-weight: normal;
+    border: 1px solid #AAAAAA;
+}
+
+table.dataTable tr
+{
+    border-style: solid;
+    border-color: #AAAAAA;
+    border-width: 1px;
+}
+
+table.dataTable thead th
+{
+    border: 1px solid #258DC8;
+    font-weight: bold;
+    padding: 4px 4px;
+}
+
+table.dataTable tbody tr:hover
+{
+    background: #eeeeee; /* Old browsers */
+    background: -moz-linear-gradient(top,  #eeeeee 0%, #bfbfbf 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#bfbfbf)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #eeeeee 0%,#bfbfbf 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #eeeeee 0%,#bfbfbf 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #eeeeee 0%,#bfbfbf 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #eeeeee 0%,#bfbfbf 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#bfbfbf',GradientType=0 ); /* IE6-9 */
+}
+
+a
+{
+    text-align: center;
+}
+
+h2
+{
+    line-height: 0px;
+    font-size: 16px;
+    font-family: Tahoma, Helvetica, Arial, sans-serif;
+    padding-top: 10px;
+}
+
+hr
+{
+    border: 1px solid #29447E;
+}
+
+span.cbCaption
+{
+    vertical-align: middle;
+    padding-left: 5px;
+}
+
+.dateControlWithMargin
+{
+    margin-top: 5px;
+}
+
+@media only screen and (max-width: 800px)
+{
+    #flip-scroll .cf:after
+    {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+    }
+    #flip-scroll * html .cf
+    {
+        zoom: 1;
+    }
+    #flip-scroll *:first-child + html .cf
+    {
+        zoom: 1;
+    }
+
+    #flip-scroll table
+    {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    #flip-scroll th, #flip-scroll td
+    {
+        margin: 0;
+        vertical-align: top;
+    }
+    #flip-scroll th
+    {
+        text-align: left;
+    }
+
+    #flip-scroll table
+    {
+        width: 100%;
+        display: block;
+        position: relative;
+    }
+    #flip-scroll thead
+    {
+        display: block;
+        float: left;
+    }
+    #flip-scroll tbody
+    {
+        display: block;
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    #flip-scroll thead tr
+    {
+        display: block;
+    }
+    #flip-scroll th
+    {
+        display: block;
+        text-align: right;
+    }
+    #flip-scroll tbody tr
+    {
+        display: inline-block;
+        vertical-align: top;
+    }
+    #flip-scroll td
+    {
+        display: block;
+        min-height: 1.25em;
+        text-align: left;
+    }
+
+
+    /* sort out borders */
+
+    #flip-scroll th
+    {
+        border-bottom: 0;
+        border-left: 0;
+    }
+    #flip-scroll td
+    {
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 0;
+    }
+    #flip-scroll tbody tr
+    {
+        border-left: 1px solid #babcbf;
+    }
+    #flip-scroll th:last-child, #flip-scroll td:last-child
+    {
+        border-bottom: 1px solid #babcbf;
+    }
+
+    body
+    {
+        padding: 10px;
+    }
+
+    fieldset
+    {
+        padding: 10px;
+    }
+}

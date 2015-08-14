@@ -1,0 +1,53 @@
+<fieldset>
+    <legend>Date\Time</legend>
+    <div class="row-fluid">
+        <div class="span2">
+            <label for="dtScheduled">
+                Scheduled:</label><br />
+            <input type="date" id="dtScheduled" class="span*" data-bind="value: delivery.deliveryDates.scheduledDate" />
+        </div>
+        <div class="span2">
+            <label for="dtRelease">
+                Release:</label><br />
+            <input type="date" id="dtRelease" class="span*" data-bind="value: delivery.deliveryDates.releaseDate" />
+        </div>
+        <div class="span2">
+            <label for="dtNotify">
+                Notify:</label><br />
+            <input type="date" id="dtNotify" class="span*" data-bind="value: delivery.deliveryDates.notifyDate" />
+        </div>
+        <div class="span2">
+            <label for="dtRequest">
+                Request:</label><br />
+            <input type="date" id="dtRequest" class="span*" data-bind="value: delivery.deliveryDates.requestDate" />
+        </div>
+    </div>
+    <br />
+    <div class="row-fluid">
+        <div class="span2">
+            <label for="dtArrived">
+                Arrived:</label><br />
+            <input type="date" id="dtArrived" class="span*" data-bind="value: delivery.deliveryDates.arrivedDate" />
+        </div>
+        <div class="span2">
+            <label for="dtYardCheck">
+                Yard Check:</label><br />
+            <input type="date" id="dtYardCheck" class="span*" data-bind="value: delivery.deliveryDates.yardCheckDate" />
+        </div>
+        <div class="span2">
+            <label for="dtEmpty">
+                Empty:</label><br />
+            <input type="date" id="dtEmpty" class="span*" data-bind="value: delivery.deliveryDates.emptyDate" />
+        </div>
+        <div class="span2">
+            <label for="dtExit">
+                Exit:</label><br />
+            <input type="date" id="dtExit" class="span*" data-bind="value: delivery.deliveryDates.exitDate" />
+        </div>
+    </div>
+</fieldset>
+<br />
+<div class="row-fluid">
+    <input type="button" class="glsButton span2" id="btnSave" value="Save">
+    <input type="button" class="glsButton span2" id="btnCancel" value="Cancel">
+</div>

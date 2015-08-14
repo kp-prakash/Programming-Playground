@@ -1,0 +1,30 @@
+<fieldset>
+    <legend>Date\Time</legend>
+    <div class="row-fluid">
+        <input type="checkbox" id="chkDefaultDate" />
+        <span class="cbCaption">Default to Today's date</span>
+    </div>
+    <br />
+    <div class="row-fluid">
+        <div class="span3">
+            <label for="dtScheduled">
+                Scheduled:</label><br />
+            <input type="date" id="dtScheduled" class="span*" data-bind="value: delivery.deliveryDates.scheduledDate" />
+        </div>
+        <div class="span3">
+            <label for="dtRequest">
+                Request:</label><br />
+            <input type="date" id="dtRequest" class="span*" data-bind="value: delivery.deliveryDates.requestDate" />
+        </div>
+        <div class="span3">
+            <label for="dtNotify">
+                Notify:</label><br />
+            <input type="date" id="dtNotify" class="span*" data-bind="value: delivery.deliveryDates.notifyDate" />
+        </div>
+        <div class="span3">
+            <label for="dtArrived">
+                Arrived:</label><br />
+            <input type="date" id="dtArrived" class="span*" data-bind="value: delivery.deliveryDates.arrivedDate" />
+        </div>
+    </div>
+</fieldset>

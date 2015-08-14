@@ -1,0 +1,69 @@
+<div class="row-fluid">
+    <input type="button" class="glsButton span2" id="btnCreateDelivery" value="Create Delivery">
+    <input type="button" class="glsButton span2" id="btnCancelDelivery" value="Cancel Delivery">
+    <input type="button" class="glsButton span2" id="btnPrintReceiver" value="Print Receiver">
+</div>
+<h2>
+    Delivery Details</h2>
+<div class="row-fluid">
+    <label>
+        Number of Records: <span data-bind="text: deliveries().length"></span>
+    </label>
+</div>
+<table class="table-bordered table-striped table-condensed cf dataTable" id="flip-scroll">
+    <thead>
+        <tr>
+            <th>
+                Sub Center
+            </th>
+            <th>
+                Delivery Number
+            </th>
+            <th>
+                Created By
+            </th>
+            <th>
+                MDSE Type
+            </th>
+            <th>
+                Trailer Number
+            </th>
+            <th>
+                Carrier Code
+            </th>
+            <th>
+                Scheduled Date
+            </th>
+            <th>
+                FBQ
+            </th>
+            <th>
+                Delivery Status
+            </th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: deliveries">
+        <tr>
+            <td data-bind="text: subCenter">
+            </td>
+            <td>
+                <a data-bind="attr: { href: link}, text: deliveryNumber"></a>
+            </td>
+            <td data-bind="text: createdBy">
+            </td>
+            <td data-bind="text: mdseType">
+            </td>
+            <td data-bind="text: trailerNumber">
+            </td>
+            <td data-bind="text: carrierCode">
+            </td>
+            <td data-bind="text: deliveryDates.scheduledDate">
+            </td>
+            <td data-bind="text: fbq">
+            </td>
+            <td data-bind="text: deliveryStatus">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br />

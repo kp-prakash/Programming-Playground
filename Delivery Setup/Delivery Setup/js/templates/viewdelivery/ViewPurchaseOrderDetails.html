@@ -1,0 +1,72 @@
+<h2>
+    Purchase Order Details</h2>
+<div class="row-fluid">
+    <input type="checkbox" id="chkSelectAll" />
+    <span class="cbCaption">Select All</span>
+</div>
+<br />
+<div class="row-fluid">
+    <table class="table-bordered table-striped table-condensed cf dataTable" id="flip-scroll">
+        <thead>
+            <tr>
+                <th>
+                    PO Number
+                </th>
+                <th>
+                    PO Type
+                </th>
+                <th>
+                    BU Number
+                </th>
+                <th>
+                    PO Event
+                </th>
+                <th>
+                    Department Number
+                </th>
+                <th>
+                    Country Code
+                </th>
+                <th>
+                    Receiver Number
+                </th>
+                <th>
+                    Receiver Status
+                </th>
+                <th>
+                    BOL Number
+                </th>
+                <th>
+                    FBQ
+                </th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: delivery.purchaseOrders">
+            <tr>
+                <td data-bind="text: poNumber">
+                    TEST
+                </td>
+                <td data-bind="text: poType">
+                    TEST
+                </td>
+                <td data-bind="text: buNumber">
+                </td>
+                <td data-bind="text: poEvent">
+                </td>
+                <td data-bind="text: departmentNumber">
+                </td>
+                <td data-bind="text: countryCode">
+                </td>
+                <td data-bind="text: receiverNumber">
+                </td>
+                <td data-bind="text: receiverStatus">
+                </td>
+                <td data-bind="text: bolNumber">
+                </td>
+                <td data-bind="text: fbq">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br />

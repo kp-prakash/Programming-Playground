@@ -1,0 +1,58 @@
+<div class="row-fluid">
+    <input type="button" class="glsButton span2" id="btnAddPO" value="Add PO">
+    <input type="button" class="glsButton span2" id="btnRemovePO" value="Remove PO">
+</div>
+<h2>
+    Purchase Order Details</h2>
+<div class="row-fluid">
+    <label>
+        Number of Records: <span data-bind="text: delivery.purchaseOrders().length"></span>
+    </label>
+</div>
+<table class="table-bordered table-striped table-condensed cf dataTable" id="flip-scroll">
+    <thead>
+        <tr>
+            <th>
+                BU Number
+            </th>
+            <th>
+                PO Number
+            </th>
+            <th>
+                FBQ
+            </th>
+            <th>
+                BOL Number
+            </th>
+            <th>
+                ASN Packs
+            </th>
+            <th>
+                Free Astray
+            </th>
+            <th>
+                PO Type
+            </th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: delivery.purchaseOrders">
+        <tr>
+            <td data-bind="text: buNumber">
+            </td>
+            <td data-bind="text: poNumber">
+            </td>
+            <td data-bind="text: fbq">
+            </td>
+            <td data-bind="text: bolNumber">
+            </td>
+            <td data-bind="text: asnPacks">
+            </td>
+            <td>
+                <input type="checkbox" data-bind="checked: freeAstray" />
+            </td>
+            <td data-bind="text: poType">
+            </td>
+        </tr>
+    </tbody>
+</table>
+</fieldset>

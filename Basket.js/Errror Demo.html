@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basket.js Sample Application</title>
+</head>
+<body>
+    <header id="header-region">
+        <h1>Basket.js Sample Application</h1>
+    </header>
+    <section id="main-region">
+        This is a simple demo for using basket.js
+    </section>
+</body>
+<script type="text/javascript" src="rsvp.js"></script>
+<script type="text/javascript" src="basket.js"></script>
+<script>
+    var initBasket = function (){
+        basket
+        .require(
+            { url: 'jquery-1.11.0.js' },
+            { url: 'underscore.js' })
+        .then(
+            function () {
+                basket
+                .require({ url: 'backbone.js' })
+                .then (function () {
+                    basket
+                    .require({ url: 'backbone.marionette.js' })
+                    .then(function () {
+                        alert("Loading of scripts complete!");
+                    }, function (error){
+                        alert('Error loading Marionette.js');
+                    });
+                }, function (error){
+                    alert('Error loading Backbone.js');
+                });
+            }, function (error) {
+                alert('Error loading jquery.js and underscore.js');
+            });
+    };
+
+    initBasket();
+    initBasket();
+</script>
+</html>

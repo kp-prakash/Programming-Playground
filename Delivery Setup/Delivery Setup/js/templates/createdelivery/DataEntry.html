@@ -1,0 +1,109 @@
+<fieldset>
+    <div class="row-fluid">
+        <div class="span3">
+            <label for="selSubCenter">
+                Sub-center:</label><br />
+            <!--<select id="selSubCenter" class="span*" data-bind="            
+                                    options: createMetaData.subCenters.subCenterCodes,
+                                    optionsCaption: 'Select...',
+                                    optionsText: 'name',
+                                    value: delivery.subCenter">
+                     <option>Select</option>
+            </select>-->
+            <input type="text" id="txtSubCenter" placeholder="Enter Subcenter" class="span*"
+                data-bind="value: delivery.subCenter" />
+        </div>
+        <div class="span3">
+            <label for="txtCarrierCode">
+                Carrier Code:</label><br />
+            <input type="text" id="txtCarrierCode" placeholder="Enter Carrier Code" class="span*"
+                data-bind="value: delivery.carrierCode" />
+        </div>
+        <div class="span3">
+            <label for="txtTrailerNumber">
+                Tailer Number:</label><br />
+            <input type="text" id="txtTrailerNumber" placeholder="Enter Trailer Code" class="span*"
+                data-bind="value: delivery.trailerNumber" />
+        </div>
+        <div class="span3">
+            <input type="checkbox" id="chkAutoCreateDelivery" data-bind="checked: delivery.autoCreateDelivery" />
+            <span class="cbCaption">Auto Create Delivery</span>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span3">
+            <label for="selLoadType">
+                Load Type:</label><br />
+            <select id="selLoadType" class="span*" data-bind="            
+                                    options: createMetaData.loadType.loadTypes,
+                                    optionsCaption: 'Select...',
+                                    optionsText: 'name',
+                                    value: delivery.loadType">
+                <option>Select</option>
+            </select>
+        </div>
+        <div class="span3">
+            <label for="txtRequestedBy">
+                Requested By:</label><br />
+            <input type="text" id="txtRequestedBy" placeholder="Who requested this?" class="span*"
+                data-bind="value: delivery.requestedBy" />
+        </div>
+        <div class="span3">
+            <label for="telCarrierPhone">
+                Carrier Phone:</label><br />
+            <input type="tel" id="telCarrierPhone" placeholder="Enter business phone" class="span*"
+                data-bind="value: delivery.carrierPhone" />
+        </div>
+        <div class="span3">
+            <label for="numPallets">
+                Number of Pallets:</label><br />
+            <input type="number" min="0" id="numPallets" class="span*"
+                data-bind="value: delivery.numberOfPallets" />
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span3">
+            <label for="selWarehouseArea">
+                Warehouse Area:</label><br />
+            <!--<select id="selWarehouseArea" class="span*" data-bind="            
+                                    options: createMetaData.wareHouseArea.wareHouseCodes,
+                                    optionsCaption: 'Select...',
+                                    optionsText: 'name',
+                                    value: delivery.warehouseArea">
+                <option>Select</option>
+            </select>-->
+            <input type="text" id="txtWarehouse" placeholder="Enter Warehouse Area" class="span*"
+                data-bind="value: delivery.warehouseArea" />
+        </div>
+        <div class="span3">
+            <label for="selTrailerType">
+                Trailer Type:</label><br />
+            <select id="selTrailerType" class="span*" data-bind="            
+                                    options: createMetaData.trailerType.trailerTypes,
+                                    optionsCaption: 'Select...',
+                                    optionsText: 'name',
+                                    value: delivery.trailerType">
+                <option>Select</option>
+            </select>
+        </div>
+        <div class="span3">
+            <label for="numInboundSeat">
+                Inbound Seat Number:</label><br />
+            <input type="number" min="0" id="numInboundSeat" placeholder="Enter seat number"
+                class="span*" data-bind="value: delivery.inboundSealNumber" />
+        </div>
+        <div class="span3">
+            <input type="checkbox" id="chkNonConveyable" data-bind="checked: delivery.nonConveyable" />
+            <span class="cbCaption">Non-conveyable</span>
+            <br />
+            <input type="checkbox" id="chkConsolidator" data-bind="checked: delivery.consolidator" />
+            <span class="cbCaption">Consolidator</span>
+        </div>
+    </div>
+</fieldset>
+<br />
+<div class="row-fluid">
+    <input type="button" class="glsButton span2" id="btnSave" value="Save">
+    <input type="button" class="glsButton span2" id="btnClose" value="Close">
+    <input type="button" class="glsButton span2" id="btnClear" value="Clear">
+</div>
