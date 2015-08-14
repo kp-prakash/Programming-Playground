@@ -1,0 +1,9 @@
+USE CUSTOMERS
+GO
+
+CREATE TABLE Customers
+(
+    CustomerID NVARCHAR(10) PRIMARY KEY,
+    CustomerName NVARCHAR(50),
+    City NVARCHAR(50)
+)
