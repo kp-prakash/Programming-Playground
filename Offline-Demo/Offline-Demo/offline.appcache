@@ -1,0 +1,11 @@
+﻿CACHE MANIFEST
+
+#Version 0.1.1
+
+CACHE:
+index.html
+lib/jquery-2.0.2.js
+scripts/offline.js
+
+NETWORK:
+*

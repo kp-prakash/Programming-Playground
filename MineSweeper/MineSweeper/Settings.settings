@@ -1,0 +1,39 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MineSweeper" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MinimumRows" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="MaximumRows" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="MinimumColumns" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="MaximumColumns" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="SampleLayout" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">XXM,XMX,XXX</Value>
+    </Setting>
+    <Setting Name="Closed" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">X</Value>
+    </Setting>
+    <Setting Name="DefaultIndicator" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Flagged" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">F</Value>
+    </Setting>
+    <Setting Name="InvalidInput" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">-1</Value>
+    </Setting>
+    <Setting Name="Mine" Type="System.Char" Scope="Application">
+      <Value Profile="(Default)">M</Value>
+    </Setting>
+    <Setting Name="MineIndicator" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">-1</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

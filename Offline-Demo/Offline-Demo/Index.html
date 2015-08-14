@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html manifest="offline.appcache" type="text/cache-manifest">
+    <head>
+        <meta charset="utf-8">
+        <title>Offline Demo</title>
+    </head>
+    <body>
+        Offline Demo With Auto Update
+        <!--<input type="button" id="update" value="Update"></input> -->
+        <section id="status">
+            
+        </section>
+        Online ? -> <span id="onlineStatus"></span>
+    </body>
+    <script type="text/javascript" src="lib/jquery-2.0.2.js"></script>
+    <script type="text/javascript" src="scripts/offline.js"></script>
+    <script type="text/javascript">
+    /*$('#update').click(function(e) {
+        //Manual update
+        location.reload();
+    });*/
+
+    function isOnline() {
+        return navigator.onLine;
+    };
+
+    function reportOnlineStatus() {
+        $('#onlineStatus').html((isOnline()) ? 'Yes' : 'No');
+    };
+
+    window.addEventListener('load', function() {
+        window.addEventListener("online", function (e) {
+            reportOnlineStatus();
+        }, true);
+
+        window.addEventListener("offline", function (e) {
+            reportOnlineStatus();
+        }, true);
+    });
+
+    reportOnlineStatus();
+    </script>
+
+</html>
