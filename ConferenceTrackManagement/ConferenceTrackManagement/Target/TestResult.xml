@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Users\364317\Documents\GitHub\CTM\ConferenceTrackManagement\Target\Tests.exe" total="26" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2014-04-15" time="12:41:14">
+  <environment nunit-version="2.5.10.11092" clr-version="4.0.30319.18444" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Users\364317\Documents\GitHub\CTM\ConferenceTrackManagement\Target" machine-name="LT025675" user="364317" user-domain="CTS" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\Users\364317\Documents\GitHub\CTM\ConferenceTrackManagement\Target\Tests.exe" executed="True" result="Success" success="True" time="0.688" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="Tests" executed="True" result="Success" success="True" time="0.683" asserts="0">
+        <results>
+          <test-suite type="TestFixture" name="TestConference" executed="True" result="Success" success="True" time="0.601" asserts="0">
+            <results>
+              <test-case name="Tests.TestConference.TestConferenceConstructor" executed="True" result="Success" success="True" time="0.284" asserts="1" />
+              <test-case name="Tests.TestConference.TestScheduleTalks" executed="True" result="Success" success="True" time="0.049" asserts="1" />
+              <test-case name="Tests.TestConference.TestScheduleTalksFailure" executed="True" result="Success" success="True" time="0.221" asserts="1" />
+              <test-case name="Tests.TestConference.TestScheduleTalksWithBalanceTalks" executed="True" result="Success" success="True" time="0.021" asserts="1" />
+              <test-case name="Tests.TestConference.TestScheduleTalksWithTalksToTestBufferAllocation" executed="True" result="Success" success="True" time="0.006" asserts="1" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="TestFactory" executed="True" result="Success" success="True" time="0.010" asserts="0">
+            <results>
+              <test-case name="Tests.TestFactory.TestGetNewConference" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+              <test-case name="Tests.TestFactory.TestGetNewConferenceWithDate" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+              <test-case name="Tests.TestFactory.TestGetNewLunch" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+              <test-case name="Tests.TestFactory.TestGetNewNetworkingEvent" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+              <test-case name="Tests.TestFactory.TestGetNewSession" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+              <test-case name="Tests.TestFactory.TestGetNewTalk" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+              <test-case name="Tests.TestFactory.TestGetNewTrack" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="TestInputParser" executed="True" result="Success" success="True" time="0.002" asserts="0">
+            <results>
+              <test-case name="Tests.TestInputParser.TestGetTalks" executed="True" result="Success" success="True" time="0.001" asserts="2" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="TestSession" executed="True" result="Success" success="True" time="0.035" asserts="0">
+            <results>
+              <test-case name="Tests.TestSession.TestAddTalks" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+              <test-case name="Tests.TestSession.TestScheduleTalksWithExtraDuration" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+              <test-case name="Tests.TestSession.TestScheduleTalksWithLesserDuration" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+              <test-case name="Tests.TestSession.TestScheduleTalksWithMatchingDuration" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+              <test-case name="Tests.TestSession.TestScheduleTalksWithNoSubset" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+              <test-case name="Tests.TestSession.TestToString" executed="True" result="Success" success="True" time="0.027" asserts="1" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="TestTalk" executed="True" result="Success" success="True" time="0.013" asserts="0">
+            <results>
+              <test-case name="Tests.TestTalk.TestTalkTitle" executed="True" result="Success" success="True" time="0.010" asserts="1" />
+              <test-case name="Tests.TestTalk.TestTalkToString" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="TestTalkScheduler" executed="True" result="Success" success="True" time="0.008" asserts="0">
+            <results>
+              <test-case name="Tests.TestTalkScheduler.TestScheduleTalksWithInvalidData" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+              <test-case name="Tests.TestTalkScheduler.TestScheduleTalksWithValidData" executed="True" result="Success" success="True" time="0.006" asserts="1" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="TestTrack" executed="True" result="Success" success="True" time="0.005" asserts="0">
+            <results>
+              <test-case name="Tests.TestTrack.TestScheduleTrackWithInvalidTalkDuration" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+              <test-case name="Tests.TestTrack.TestScheduleTrackWithValidTalkDuration" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+              <test-case name="Tests.TestTrack.TestTrackToString" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
