@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPPatterns.Chap3.Layered.Model", "ASPPatterns.Chap3.Layered.Model\ASPPatterns.Chap3.Layered.Model.csproj", "{8EE8F071-7BD4-4827-B46D-6DE99F3C231E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPPatterns.Chap3.Layered.Service", "ASPPatterns.Chap3.Layered.Service\ASPPatterns.Chap3.Layered.Service.csproj", "{E89629F9-B993-4C4B-B21F-EC0079C29C86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPPatterns.Chap3.Layered.Presentation", "ASPPatterns.Chap3.Layered.Presentation\ASPPatterns.Chap3.Layered.Presentation.csproj", "{3A0F3FE9-484E-400E-B67F-01224F0CE768}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPPatterns.Chap3.Layered.WebUI", "ASPPatterns.Chap3.Layered.WebUI\ASPPatterns.Chap3.Layered.WebUI.csproj", "{2F8BFF32-1B8F-4608-B39A-DD9F09CDA277}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPPatterns.Chap3.Layered.Repository", "ASPPatterns.Chap3.Layered.Repository\ASPPatterns.Chap3.Layered.Repository.csproj", "{BDA70E4F-2338-4604-BA91-357D3E4D8D11}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Data Access Layer", "1.Data Access Layer", "{33F770D2-695D-41DE-9013-3D5D2C11F6DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Business Logic Layer", "2.Business Logic Layer", "{DA3D58DF-1857-492F-936B-CC6CED0598A4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Service Layer", "3.Service Layer", "{F80DF62F-2E58-4400-8C76-F07D34CBAAFF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.Presentation Layer", "4.Presentation Layer", "{2DB44436-0D12-47AD-8DA1-7C6A952EAF5B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.User Experience Layer", "5.User Experience Layer", "{86564931-FF3E-4B64-8274-1F5DD6F0275A}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8EE8F071-7BD4-4827-B46D-6DE99F3C231E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EE8F071-7BD4-4827-B46D-6DE99F3C231E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EE8F071-7BD4-4827-B46D-6DE99F3C231E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EE8F071-7BD4-4827-B46D-6DE99F3C231E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E89629F9-B993-4C4B-B21F-EC0079C29C86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E89629F9-B993-4C4B-B21F-EC0079C29C86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E89629F9-B993-4C4B-B21F-EC0079C29C86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E89629F9-B993-4C4B-B21F-EC0079C29C86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A0F3FE9-484E-400E-B67F-01224F0CE768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A0F3FE9-484E-400E-B67F-01224F0CE768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A0F3FE9-484E-400E-B67F-01224F0CE768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A0F3FE9-484E-400E-B67F-01224F0CE768}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F8BFF32-1B8F-4608-B39A-DD9F09CDA277}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F8BFF32-1B8F-4608-B39A-DD9F09CDA277}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F8BFF32-1B8F-4608-B39A-DD9F09CDA277}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F8BFF32-1B8F-4608-B39A-DD9F09CDA277}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDA70E4F-2338-4604-BA91-357D3E4D8D11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDA70E4F-2338-4604-BA91-357D3E4D8D11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDA70E4F-2338-4604-BA91-357D3E4D8D11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDA70E4F-2338-4604-BA91-357D3E4D8D11}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BDA70E4F-2338-4604-BA91-357D3E4D8D11} = {33F770D2-695D-41DE-9013-3D5D2C11F6DC}
+		{8EE8F071-7BD4-4827-B46D-6DE99F3C231E} = {DA3D58DF-1857-492F-936B-CC6CED0598A4}
+		{E89629F9-B993-4C4B-B21F-EC0079C29C86} = {F80DF62F-2E58-4400-8C76-F07D34CBAAFF}
+		{3A0F3FE9-484E-400E-B67F-01224F0CE768} = {2DB44436-0D12-47AD-8DA1-7C6A952EAF5B}
+		{2F8BFF32-1B8F-4608-B39A-DD9F09CDA277} = {86564931-FF3E-4B64-8274-1F5DD6F0275A}
+	EndGlobalSection
+EndGlobal

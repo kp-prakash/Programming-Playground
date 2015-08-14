@@ -1,0 +1,11 @@
+﻿<!--Controllers-->
+<a href="#view2">View2</a><br />
+<div data-ng-controller="SimpleController">
+    Implementing filtering using data from controller:
+    <br />
+    <input type="text" data-ng-model="nameFilter" />
+    <ul>
+        <li data-ng-repeat="customer in customers | filter:nameFilter | orderBy:'name'">Name
+            - {{customer.name | uppercase}} ; City - {{customer.city | lowercase}}</li>
+    </ul>
+</div>

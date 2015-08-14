@@ -1,0 +1,64 @@
+<!doctype html>
+<!--ng-app-->
+<html data-ng-app="demoApp">
+<head>
+    <title>{{title}}</title>
+</head>
+<body>
+    <!--ng-model-->
+    <div class="container">
+        Page Title:
+        <input type="text" data-ng-model="title" />
+    </div>
+    <!--Filters-->
+    <div class="container" data-ng-init="customers=[{name:'Harris',city:'LA'},{name:'Ron',city:'Tustin'},{name:'Aria',city:'SFO'}]">
+        <input type="text" data-ng-model="nameFilter" />
+        <ul>
+            <li data-ng-repeat="customer in customers | filter:nameFilter | orderBy:'name'">Name
+                - {{customer.name | uppercase}} ; City - {{customer.city | lowercase}}</li>
+        </ul>
+    </div>
+    <div data-ng-view="">
+    </div>
+    <!--Scripts-->
+    <script src="Scripts/angular.min.js"></script>
+    <script>
+        'use strict';
+        var demoApp = angular.module('demoApp', []);
+
+        /*Config section for the application.*/
+
+        demoApp.config(function ($routeProvider) {
+            $routeProvider.when('/', { controller: 'SimpleController', templateUrl: 'Partials/view1.html' })
+                          .when('/view1', { controller: 'SimpleController', templateUrl: 'Partials/view1.html' })
+                          .when('/view2', { controller: 'SimpleController', templateUrl: 'Partials/view2.html' })
+                          .otherwise({ redirectTo: '/' });
+        });
+
+        demoApp.controller('SimpleController', function ($scope) {
+            $scope.customers = [
+                { name: 'Harris', city: 'LA' },
+                { name: 'Ron', city: 'Tustin' },
+                { name: 'Aria', city: 'SFO' }
+                ];
+        });
+
+
+        /*Instead of above code, we can create an object for holding all the controllers
+        and add the newly created controllers to that object and pass it on to angular to 
+        create controllers.*/
+
+        //        var controllers = {};
+
+        //        controllers.SimpleController = function ($scope) {
+        //            $scope.customers = [
+        //                { name: 'Harris', city: 'LA' },
+        //                { name: 'Ron', city: 'Tustin' },
+        //                { name: 'Aria', city: 'SFO' }
+        //                ];
+        //        };
+        //        //Add more controllers here!
+        //        demoApp.controller(controllers);
+    </script>
+</body>
+</html>
