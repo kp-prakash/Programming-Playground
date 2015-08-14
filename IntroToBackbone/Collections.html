@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Backbone-Bootstrap</title>
+</head>
+<body>
+    <script src="lib\jquery-1.10.2.js"></script>
+    <script src="lib\underscore-1.5.2.js"></script>
+    <script src="lib\backbone-1.1.0.js"></script>
+    <script src="js\utils.js"></script>
+    <script src="js\collection.js"></script>
+    <script>
+
+        var contacts = new Contacts();
+        function writeAllContacts(){
+            if(contacts.length === 0){
+                write('#EMPTY#');
+            }
+
+            _.each(contacts.models, function(contact) {
+                write(JSON.stringify(contact));
+            });
+        };
+
+        var contact1 = new Contact({
+            id:'1'
+        });
+
+        var contact2 = new Contact({
+            id:'2',
+            name: 'Xing',
+            city: 'Tokyo'
+        });
+
+        writeHeading('Before add:');
+        writeAllContacts();
+
+        /*add*/
+        contacts.add(contact1);
+        contacts.add(contact2);
+        writeHeading('After add:');
+        writeAllContacts();
+        
+        /*get(id)*/
+        writeHeading('Getting contact with id = 1:');
+        var contact =  contacts.get('1');
+        write(JSON.stringify(contact));
+
+        /*at(index)*/
+        writeHeading('Getting contact at index 1:');
+        var contact =  contacts.at(1);
+        write(JSON.stringify(contact));
+
+        /*push(model)*/
+        writeHeading('Pushing a new model:');
+        var newContact = new Contact({
+            id:'3',
+            name: 'John',
+            city: 'LA'
+        });
+        contacts.push(newContact);
+        writeAllContacts();
+
+        /*pop()*/
+        writeHeading('Pop a model:');
+        var model = contacts.pop();
+        write(JSON.stringify(model));
+
+        /*remove()*/
+        writeHeading('Remove a model from the collection:');
+        contacts.remove('1');
+        writeAllContacts();
+
+        /*set()*/
+        /*The set method performs a "smart" update of the collection with the passed list of models.
+        If a model in the list isn't yet in the collection it will be added; if the model is already
+        in the collection its attributes will be merged; and if the collection contains any models 
+        that aren't present in the list, they'll be removed. All of the appropriate "add", "remove",
+        and "change" events are fired as this happens. Returns the touched models in the collection.
+        If you'd like to customize the behavior, you can disable it with options: 
+        {add: false}, {remove: false}, or {merge: false}.*/
+        writeHeading('Set - "Smart" update of the collection:');
+        var updatedContacts = new Contacts();
+        
+        updatedContacts.add(new Contact({
+            id:'1',
+            name: 'Johny'
+        }));
+
+        updatedContacts.add(new Contact({
+            id:'4',
+            name: 'Raj',
+            city: 'Bangalore'
+        }));
+
+        updatedContacts.add(new Contact({
+            id:'5',
+            name: 'John',
+            city: 'LA'
+        }));
+        
+        contacts.set(updatedContacts.models);
+        writeAllContacts();
+
+        /*reset()*/
+        writeHeading('reset():');
+        contacts.reset();
+        writeAllContacts();
+    </script>
+</body>
+</html>

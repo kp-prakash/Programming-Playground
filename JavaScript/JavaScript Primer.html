@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<!--Description:    This primer helps learning JavaScript from scratch.
+Author:         Srihari Sridharan
+Reference:      Apress Pro Jquery By Adam Freeman-->
+<html>
+<head>
+    <title>Javascript Primer</title>
+    <!--Basic statements-->
+    <script type="text/javascript">
+        console.log("Basic statements.");
+        console.log("This is a statement.");
+        console.log("This is also a statement.");
+    </script>
+    <!--Function definition-->
+    <script type="text/javascript">
+        console.log("Function definition.");
+        function myFunction() {
+            console.log("This is a statement in a function.");
+        };
+        //Calling a function.
+        myFunction();
+    </script>
+    <!--Function with parameters-->
+    <script type="text/javascript">
+        console.log("Function with parameters.");
+        function greetWithWeatherInfo(name, weather) {
+            console.log("Hello " + name + ".");
+            console.log("Today's weather is " + weather + ".");
+        };
+        //Calling a function with parameters.
+        greetWithWeatherInfo("Srihari", "Cold");
+    </script>
+    <!--Function that returns a value-->
+    <script type="text/javascript">
+        console.log("Function that returns a value.");
+        function greetUser(name) {
+            return "Hello " + name + ".";
+        };
+
+        //Calling a function that returns a value.
+        console.log(greetUser("Srihari"));
+    </script>
+    <!--Global variable-->
+    <script type="text/javascript">
+        console.log("Variable scope - local Vs global.");
+        var myFavorite = "Apple";
+        //Function having a local variable.
+        function greetUsingLocals(name) {
+            //Local variable.
+            var weather = "windy";
+            console.log("Hello " + name + ". " + "Today is " + weather + ".");
+        };
+        greetUsingLocals("Srihari");
+    </script>
+    <!--Function using global variable declared in another <script> tag-->
+    <script type="text/javascript">
+        function printFavorite() {
+            console.log("My favorite is " + myFavorite + ".");
+        };
+        printFavorite();
+    </script>
+    <!--Working with primitive types - Strings -->
+    <script type="text/javascript">
+        console.log("Working with primitive types.");
+        //Strings
+        console.log("Strings.");
+        //String can be declared using single / double quotes.
+        var stringUsage = "This is a string.";
+        var stringUsage1 = 'This is also a string.';
+        console.log(stringUsage);
+        console.log(stringUsage1);
+    </script>
+    <!--Working with primitive types - Boolean -->
+    <script type="text/javascript">
+        console.log("Booleans.");
+        var isSet = true;
+        var isReset = false;
+        //Control flow based on booleans.
+        function testBoolean() {
+            if (isSet)
+                console.log("Hello.");
+            else
+                console.log("Hi.");
+        };
+        testBoolean();
+    </script>
+    <!--Working with primitive types - Numbers -->
+    <script type="text/javascript">
+        //Numbers (Integer, Floating Point and Hexa Decimal)
+        console.log("Numbers (Integer, Floating Point and Hexa Decimal).");
+        var daysInAWeek = 7;
+        var pi = 22 / 7;
+        var hexValue = 0xFFFF;
+        //Print numbers.
+        function printNumbers() {
+            console.log(daysInAWeek);
+            console.log(pi);
+            console.log(hexValue.toString());
+        };
+        printNumbers();
+    </script>
+    <!--Creating objects-->
+    <script type="text/javascript">
+        console.log("Creating objects.");
+        var myObject = new Object();
+        myObject.name = "Srihari";
+        myObject.weather = "hot";
+        function printObjectData(object) {
+            console.log("Printing Object Data:");
+            console.log("Hello " + object.name + ".");
+            console.log("Today's weather is " + object.weather + ".");
+        }
+        printObjectData(myObject);
+    </script>
+    <!--Using object literals-->
+    <script type="text/javascript">
+        console.log("Creating objects using object literals.");
+        var myData = {
+            name: "Srihari",
+            weather: "humid"
+        };
+        printObjectData(myData);
+    </script>
+    <!--Using functions as methods-->
+    <script type="text/javascript">
+        console.log("Using functions as methods.");
+        var myNewData = {
+            name: "Srihari",
+            weather: "cold",
+            //Here the function is used to create a method printMessages().
+            //This method could be invoked on the object, as shown below.
+            printMessages: function () {
+                console.log("Hello " + this.name + ".");
+                console.log("Today's weather is " + this.weather + ".");
+            }
+        };
+        //Call the object's method.
+        myNewData.printMessages();
+    </script>
+    <!--Properties - accessing and setting properties-->
+    <script type="text/javascript">
+        console.log("Properties - accessing and setting properties.");
+        var myInfo = {
+            name: "Srihari",
+            weather: "storm alert"
+        };
+        myInfo.name = "Srihari Sridharan";
+        //Properties can be accessed using notation like ["propertyName"]
+        myInfo["weather"] = "cyclone alert";
+        printObjectData(myInfo);
+    </script>
+    <!--Enumerating an object's properties-->
+    <script type="text/javascript">
+        //Enumerating an object's properties
+        console.log("Enumerating an object's properties");
+        function enumerateProperties(myNewData) {
+            for (var prop in myNewData) {
+                console.log("Name: " + prop + " Value: " + myNewData[prop]);
+            }
+        };
+        enumerateProperties(myNewData);
+    </script>
+    <!--Adding and deleting properties and methods-->
+    <script type="text/javascript">
+        console.log("Adding and deleting properties and methods");
+        var myDemoObject = {
+            name: "Srihari",
+            weather: "windy"
+        };
+        //After object creation, property can be added as shown below.
+        myDemoObject.dayOfWeek = "Wednesday";
+        console.log(myDemoObject.name);
+        console.log(myDemoObject.weather);
+        console.log(myDemoObject.dayOfWeek);
+        //We can delete a property as shown below.
+        delete myDemoObject.dayOfWeek;
+        //console.log(myDemoObject.dayOfWeek); // --> Output will be 'undefined'
+        //Adding a method.
+        myDemoObject.sayHello = function () {
+            console.log("Hello " + this.name + ".");
+        }
+        //Call the newly added method.
+        myDemoObject.sayHello();
+        //Delete the newly added method.
+        delete myDemoObject.sayHello;
+        //myDemoObject.sayHello(); // --> Line: 165 Error: Object doesn't support this property or method
+    </script>
+    <!--Determining whether an object has a property-->
+    <script type="text/javascript">
+        console.log("Determining whether an object has a property.");
+        var myTestObject = new Object();
+        myTestObject.name = "Jim";
+        myTestObject.dateOfBirth = "1st January";
+        function checkProperties() {
+            var isNamePresent = "name" in myTestObject;
+            var isAgePresent = "age" in myTestObject;
+            if (isNamePresent) {
+                console.log("name: " + myTestObject.name);
+            }
+            else {
+                console.log("The property 'name' is not present!")
+            }
+            if (isAgePresent) {
+                console.log("age: " + myTestObject.age);
+            }
+            else {
+                console.log("The property 'age' is not present!")
+            }
+        }
+
+        //Invoke the function to check properties.
+        checkProperties();
+    </script>
+    <!--Javascript operators-->
+    <script type="text/javascript">
+        console.log("Javascript operators");
+        console.log("++, --		Pre- or post-increment and decrement");
+        console.log("+, -, *, /, %		Addition, subtraction, multiplication, division, remainder");
+        console.log("<, <=, >, >=	Less than, less than or equal to, more than, more than or equal to");
+        console.log("==, !=		Equality and inequality tests");
+        console.log("===, !==		Identity and nonidentity tests");
+        console.log("&&, ||		Logical AND and OR");
+        console.log("=			Assignment");
+        console.log("+			String concatenation");
+        console.log("?:			Three operand conditional statement");
+    </script>
+    <!--Control constructs - if, else and else if and switch-case-->
+    <script type="text/javascript">
+        console.log("if, else and else if.");
+        var name = "Srihari";
+        if (name == "Srihari") {
+            console.log("Name is Srihari");
+        } else if (name == "Sridharan") {
+            console.log("Name is Sridharan");
+        } else {
+            console.log("Name is neither Srihari or Sridharan");
+        }
+        //switch
+        switch (name) {
+            case "Srihari":
+                console.log("Name is Srihari");
+                break;
+            case "Sridharan":
+                console.log("Name is Sridharan");
+                break;
+            default:
+                console.log("Name is neither Srihari or Sridharan");
+                break;
+        }
+    </script>
+    <!--The equality vs the identity operator-->
+    <script type="text/javascript">
+        console.log("The equality vs the identity operator");
+        //The equality vs the identity operator
+        //Equality operator will attempt to coerce both the
+        //operands to same type in order to assess equality.
+        var operand1 = 5;
+        var operand2 = "5";
+        //Check for equality using the == operator.
+        function checkForEquality(operand1, operand2) {
+            if (operand1 == operand2) {
+                console.log("Operands are equal.");
+            }
+            else {
+                console.log("Operands are not equal.");
+            }
+        }
+        checkForEquality(operand1, operand2);
+        //Check for identity using the === operator - requires the types and values to be the same.
+        function checkForIdentity(operand1, operand2) {
+            if (operand1 === operand2) {
+                console.log("Operands are identical.");
+            }
+            else {
+                console.log("Operands are not identical.");
+            }
+        }
+        checkForIdentity(operand1, operand2);
+    </script>
+    <!--Objects - Equality and Identity-->
+    <script type="text/javascript">
+        console.log("Objects - Equality and Identity.");
+        //JavaScript primitives are compared by value.
+        //JavaScript objects are compared by reference.
+        var myObject1 = {
+            name: "Srihari",
+            weather: "windy"
+        };
+        var myObject2 = {
+            name: "Srihari",
+            weather: "windy"
+        };
+        var myObject3 = myObject2;
+        var test1 = myObject1 == myObject2; //Equality
+        var test2 = myObject1 === myObject2; //Identity
+        var test3 = myObject2 == myObject3; //Equality
+        var test4 = myObject2 === myObject3; //Identity
+        enumerateProperties(myObject1);
+        enumerateProperties(myObject2);
+        enumerateProperties(myObject3);
+        console.log("Test 1: " + test1);
+        console.log("Test 2: " + test2);
+        console.log("Test 3: " + test3);
+        console.log("Test 4: " + test4);
+    </script>
+    <!--Primitives - Equality and Identity-->
+    <script type="text/javascript">
+        console.log("Primitives - Equality and Identity.");
+        //Performing equality and identity tests on primitives.
+        var myData1 = 5;
+        var myData2 = "5";
+        var myData3 = myData2;
+        var test1 = myData1 == myData2; //Equality
+        var test2 = myData1 === myData2; //Identity
+        var test3 = myData2 == myData3; //Equality
+        var test4 = myData2 === myData3; //Identity
+        console.log(myData1);
+        console.log(myData2);
+        console.log(myData3);
+        console.log("Test 1: " + test1);
+        console.log("Test 2: " + test2);
+        console.log("Test 3: " + test3);
+        console.log("Test 4: " + test4);
+    </script>
+    <!--Explicitly Converting Types-->
+    <script type="text/javascript">
+        console.log("Explicitly Converting Types");
+        //String concatenation operator + has precedence compared to the addition operator +
+        var a = 5 + 5; //This results in addition.
+        var b = 5 + "5"; //This results in concatenation.
+        console.log("Result 1: " + a);
+        console.log("Result 2: " + b);
+        //Converting to numbers to strings
+        //Use (number).toString() or String(number)
+        var sum = (5).toString() + String(5);
+        console.log("Sum: " + sum);
+        //Various string methods.
+        var decimal = 15;
+        var binary = decimal.toString(2);
+        var octal = decimal.toString(8);
+        var hex = decimal.toString(16);
+        console.log("Decimal: " + decimal);
+        console.log("Binary: " + binary);
+        console.log("Octal: " + octal);
+        console.log("Hexa Decimal :" + hex);
+        //Fixed, exponential and precision.
+        var fixed = (3.14567834).toFixed(3);
+        console.log("3.14567834.toFixed(3) = " + fixed);
+        var exponential = (987654321).toExponential(5);
+        console.log("(987654321).toExponential(5) = " + exponential);
+        var precision = (987654321).toPrecision(5);
+        console.log("(987654321).toPrecision(5) = " + precision);
+        //Converting string to number.
+        var stringRepresentation = "5";
+        var result = Number(stringRepresentation) + Number(stringRepresentation);
+        console.log("String to number using Number(str): " + result);
+        //parseInt(str) and parseFloat(str) can also be used for the purpose.
+        //If the string starts with a number and has alphabets, it returns the number part alone.
+        //e.g. parseInt("10") = 10.
+        //e.g. parseInt("10A") = 10.
+        //e.g. parseInt("A10") = NaN.
+        //e.g. parseInt("11.23") = 11.23.
+        //e.g. parseInt("11.23A") = 11.23.
+        //e.g. parseInt("A11.23") = NaN.
+        var number1 = parseInt("11STR11"); //Returns 11
+        console.log("String to number using parseInt(str): " + number1);
+        var number2 = parseFloat("11.23STR");
+        console.log("String to number using parseFloat(str): " + number2);
+    </script>
+    <!--Working wih Arrays-->
+    <script type="text/javascript">
+        console.log("Working wih Arrays");
+        //No need to declare any limit. JavaScript arrays will resize themselves to hold any numberof items.
+        //Arrays can hold any type of data.
+        var myArray = new Array();
+        myArray[0] = "Test";
+        myArray[1] = 5;
+        myArray[2] = 3.14;
+        myArray[3] = true;
+        //Enumerating the contents of an Array.
+        function printArray(myArray) {
+            console.log("Printing Array:");
+            for (var i = 0; i < myArray.length; i++) {
+                console.log("Element at index [" + i + "] is :" + myArray[i]);
+            }
+        };
+        printArray(myArray);
+    </script>
+    <!--Using the Array Literal Style-->
+    <script type="text/javascript">
+        console.log("Using the Array Literal Style");
+        var literalStyleArray = ["TEST", 5, 3.14, true];
+        printArray(literalStyleArray);
+    </script>
+    <!--Reading and modifying the contents of an Array-->
+    <script type="text/javascript">
+        console.log("Reading and modifying the contents of an Array");
+        //Here we have assigned a number in the position of a string.
+        //This is perfectly fine.
+        literalStyleArray[0] = 1;
+        printArray(literalStyleArray);
+    </script>
+    <!--Using the built in Array Methods-->
+    <script type="text/javascript">
+        console.log("Using the built in Array Methods");
+        //concat(otherArray) concatenates the array with another array.
+        console.log("Calling array.concat(anotherArray)");
+        myArray = myArray.concat(literalStyleArray);
+        printArray(myArray);
+        //join(separator) joins the elements in the array using the separator.
+        var testArray = ["S", "O", "S"];
+        console.log("Calling join(.)");
+        console.log(testArray.join(".")); //Output is S.O.S
+        //pop() treats the array like a stack and removes and returns the last element.
+        console.log("Calling pop()");
+        console.log("Last element was: " + literalStyleArray.pop());
+        printArray(literalStyleArray);
+        //push() treats the array like a stack and pushes the element into the array.
+        console.log("Calling push(true)");
+        literalStyleArray.push(true);
+        printArray(literalStyleArray);
+        //reverse() reverses the array.
+        console.log("Calling reverse()");
+        printArray(literalStyleArray.reverse());
+        //shift() like pop but operates on the first element in the array.
+        console.log("Calling shift()");
+        var shiftedItem = literalStyleArray.shift();
+        printArray(literalStyleArray);
+        //slice(start,end) Returns a sub array.
+        console.log("Calling slice(start,end)");
+        var slicedArray = literalStyleArray.slice(0, 1);
+        printArray(slicedArray);
+        //sort() sorts the items in the array.
+        console.log("Calling sort()");
+        var unsortedArray = [5, 4, 3, 2, 1];
+        unsortedArray.sort();
+        console.log(unsortedArray);
+        //unshift(item) like push but inserts item at the start of the array.
+        console.log("Calling unshift()");
+        literalStyleArray.unshift(shiftedItem);
+        printArray(literalStyleArray);
+    </script>
+    <!--Handling Errors-->
+    <script type="text/javascript">
+        console.log("Handling Errors");
+        try {
+            var myEmptyArray;
+            printArray(myEmptyArray);
+        }
+        catch (e) {
+            console.log("Error Message: " + e.Message + " Number: " + e.ErrorNumber);
+        }
+        finally {
+            console.log("Finally statement is always executed!");
+        }
+    </script>
+    <!--Comparing undefined and null values-->
+    <script type="text/javascript">
+        console.log("Comparing undefined and null values");
+        /*undefined is returned when we access a variable that never has had a value or
+        an object's property that does not exist.*/
+        var myObj = {
+            name: "Srihari",
+            age: 30
+        };
+        console.log("Undefined property dataOfBirth: " + myObj.dateOfBirth);
+        /*null is used when you want to indicate that you have assigned a value and it is
+        not a valid object, string, number or boolean.*/
+        //Set age to null.
+        console.log("Setting age to null");
+        myObj.age = null;
+        console.log("age: " + myObj.age);
+        //This distinction is important when it comes to comparing undefined and null values
+        //because null is an object and undefined is a type in its own right.
+    </script>
+    <!--Check to see whether a variable or property is null or undefined.-->
+    <script type="text/javascript">
+        console.log("Check to see whether a variable or property is null or undefined");
+        var myTempData = {
+            name: "Srihari",
+            city: "Chennai"
+        };
+        //For simple check to determine null or undefined use if clause and ! (negation) operator.
+        if (!myTempData.name) {
+            console.log("name is null or undefined.");
+        }
+        else {
+            console.log("name is not null or undefined.");
+        }
+        if (!myTempData.age) {
+            console.log("age is null or undefined.");
+        }
+        else {
+            console.log("age is not null or undefined.");
+        }
+        //== Equality operator treats null and undefined as same.
+        //Use the identity operator === to differentiate between null and undefined.
+        var a = undefined;
+        var b = null;
+        var result1 = a == b;
+        var result2 = a === b;
+        console.log("Equality between null and undefined: " + result1);
+        console.log("Identity between null and undefined: " + result2);
+    </script>
+    <!--Footer style-->
+    <style type="text/css">
+        #footer
+        {
+            position: absolute;
+            bottom: 0;
+            height: 40px;
+            margin-top: 40px;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body style="font-family: Segoe UI;">
+    <h1>JavaScript Primer</h1>
+    <p style="font-size: small">
+        This is an introductory material, to learn JavaScript in an easy way. This is aimed
+        at JavaScript beginners, though experienced developers can use this to refresh various
+        concepts. In order to get complete use out of this tutorial, please do the following:
+    </p>
+    <ul style="font-size: small">
+        <li>Open this html file using suitable editor.</li>
+        <li>Simultaneously open this html file using a browser of your choice.</li>
+        <li>Enable developer tools in the browser and navigate to the script tab (in IE) to
+            view the script console.</li>
+        <li>This tutorial logs the messages to the script console.</li>
+        <li>Start reviewing the comments and code in a top-down fashion.</li>
+        <li>Execute the code and observe the behavior.</li>
+    </ul>
+    <!--Footer with creative commons license.-->
+    <div id="footer">
+        <p style="float: right">
+            <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">
+                <img alt="Creative Commons License" style="border-width: 0; height: 20" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>&nbsp;
+            &copy; Srihari Sridharan 2013.
+            <br />
+            This work is licensed under a
+            <br />
+            <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons
+                Attribution 3.0 Unported License</a>.
+        </p>
+    </div>
+</body>
+</html>
