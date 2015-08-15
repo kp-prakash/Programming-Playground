@@ -1,0 +1,116 @@
+﻿@using PagedList
+@using Contoso.Models
+@model IPagedList<Student>
+@{
+    ViewBag.Title = "Students";
+}
+<h2>Students</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (@Html.BeginForm())
+{
+    <p>
+    @*Initialize the textbox with CurrentFilter from the ViewBag
+    so that the user can page without the search text disappearing.*@
+        Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+<table>
+    <tr>
+        <th></th>
+        <th>First Name</th>
+        <th>
+        @*The column header links use the query string to pass the current search string 
+        to the controller so that the user can sort within filter results:*@
+            @Html.ActionLink("Last Name", "Index",
+                            new
+                            {
+                                sortOrder = ViewBag.NameSortParm,
+                                currentFilter = ViewBag.CurrentFilter
+                            })
+        </th>
+        <th>
+            @Html.ActionLink("Enrollment Date", "Index",
+                            new
+                            {
+                                sortOrder = ViewBag.DateSortParm,
+                                currentFilter = ViewBag.CurrentFilter
+                            })
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PersonID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PersonID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PersonID })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstMiddleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnrollmentDate)
+            </td>
+        </tr>
+    }
+</table>
+@*Page Navigation*@
+<div>
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    of @Model.PageCount
+    @if (Model.HasPreviousPage)
+    { 
+        @Html.ActionLink("<<", "Index",
+                                        new
+                                        {
+                                            page = 1,
+                                            sortOrder = ViewBag.CurrentSort,
+                                            currentFilter = ViewBag.CurrentFilter
+                                        }) 
+        @Html.Raw(" "); 
+        @Html.ActionLink("< Prev", "Index",
+                                        new
+                                        {
+                                            page = Model.PageNumber - 1,
+                                            sortOrder = ViewBag.CurrentSort,
+                                            currentFilter = ViewBag.CurrentFilter
+                                        }) 
+        @Html.Raw(" ");
+    }
+    else
+    { 
+        @:<<
+        @Html.Raw(" "); 
+        @:< Prev
+    }
+    @if (Model.HasNextPage)
+    { 
+        @Html.ActionLink("Next >", "Index",
+                                        new
+                                        {
+                                            page = Model.PageNumber + 1,
+                                            sortOrder = ViewBag.CurrentSort,
+                                            currentFilter = ViewBag.CurrentFilter
+                                        }) 
+        @Html.Raw(" "); 
+        @Html.ActionLink(">>", "Index",
+                                        new
+                                        {
+                                            page = Model.PageCount,
+                                            sortOrder = ViewBag.CurrentSort,
+                                            currentFilter = ViewBag.CurrentFilter
+                                        }) 
+    }
+    else
+    { 
+        @:Next >
+        @Html.Raw(" ") 
+        @:>>
+    }
+</div>
