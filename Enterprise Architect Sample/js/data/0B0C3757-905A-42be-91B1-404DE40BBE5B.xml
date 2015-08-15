@@ -1,0 +1,6 @@
+tocTab[tocTab.length] = new Array("4.2.1:1", "", "User Interface", "EARoot/EA4/EA2/EA1/EA618.htm", "176.png", "427", "0", "", "Package diagram");
+tocTab[tocTab.length] = new Array("4.2.1:2", "", "", "EARoot/EA4/EA2/EA1/EA620.htm", "99.png", "2568", "0", "", "UMLDiagram");
+tocTab[tocTab.length] = new Array("4.2.1.1", "1", "Take Orders", "EARoot/EA4/EA2/EA1/EA629.htm", "4.png", "", "", "{000FF78C-99EE-44ad-BB16-20AE086F5758}", "Package");
+tocTab[tocTab.length] = new Array("4.2.1.2", "1", "User Management", "EARoot/EA4/EA2/EA1/EA630.htm", "4.png", "", "", "{21D6B54A-8301-497a-A5DC-5502ECD69508}", "Package");
+tocTab[tocTab.length] = new Array("4.2.1.3", "1", "Inventory Selection", "EARoot/EA4/EA2/EA1/EA631.htm", "4.png", "", "", "{A2730F20-4BA1-49cf-8AE1-07C3D1C2312F}", "Package");
+tocTab[tocTab.length] = new Array("4.2.1.4", "1", "Traceability", "EARoot/EA4/EA2/EA1/EA632.htm", "4.png", "", "", "{81CF4462-8384-42d9-8BC1-C2DAB774104A}", "Package");

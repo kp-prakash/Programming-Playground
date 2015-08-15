@@ -1,0 +1,7 @@
+tocTab[tocTab.length] = new Array("4.2.1.2.1:2", "", "Login Screen", "EARoot/EA4/EA2/EA1/EA2/EA1/EA675.htm", "175.png", "169", "0", "", "Logical diagram");
+tocTab[tocTab.length] = new Array("4.2.1.2.1:3", "", "«web page» Login", "EARoot/EA4/EA2/EA1/EA2/EA1/EA677.htm", "11.png", "689", "0", "", "Screen");
+tocTab[tocTab.length] = new Array("4.2.1.2.1:1", "", "Implementation", "EARoot/EA4/EA2/EA1/EA2/EA1/EA673.htm", "189.png", "170", "689", "", "Analysis diagram");
+tocTab[tocTab.length] = new Array("4.2.1.2.1:4", "", "«button» Cancel", "EARoot/EA4/EA2/EA1/EA2/EA1/EA679.htm", "16.png", "690", "689", "", "GUIElement");
+tocTab[tocTab.length] = new Array("4.2.1.2.1:5", "", "«text» Password", "EARoot/EA4/EA2/EA1/EA2/EA1/EA680.htm", "16.png", "691", "689", "", "GUIElement");
+tocTab[tocTab.length] = new Array("4.2.1.2.1:6", "", "«button» Submit", "EARoot/EA4/EA2/EA1/EA2/EA1/EA681.htm", "16.png", "688", "689", "", "GUIElement");
+tocTab[tocTab.length] = new Array("4.2.1.2.1:7", "", "«textbox» User Name", "EARoot/EA4/EA2/EA1/EA2/EA1/EA682.htm", "16.png", "692", "689", "", "GUIElement");

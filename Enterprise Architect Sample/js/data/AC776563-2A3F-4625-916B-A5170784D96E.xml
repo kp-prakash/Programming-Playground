@@ -1,0 +1,8 @@
+tocTab[tocTab.length] = new Array("4.3.6:1", "", "XSD", "EARoot/EA4/EA3/EA6/EA930.htm", "175.png", "151", "0", "", "Logical diagram");
+tocTab[tocTab.length] = new Array("4.3.6:2", "", "«XSDcomplexType» Account", "EARoot/EA4/EA3/EA6/EA932.htm", "5.png", "539", "0", "", "Class");
+tocTab[tocTab.length] = new Array("4.3.6:3", "", "«XSDcomplexType» LineItem", "EARoot/EA4/EA3/EA6/EA933.htm", "5.png", "540", "0", "", "Class");
+tocTab[tocTab.length] = new Array("4.3.6:4", "", "«XSDcomplexType» Order", "EARoot/EA4/EA3/EA6/EA934.htm", "5.png", "541", "0", "", "Class");
+tocTab[tocTab.length] = new Array("4.3.6:5", "", "«enumeration» OrderStatus", "EARoot/EA4/EA3/EA6/EA935.htm", "5.png", "542", "0", "", "Class");
+tocTab[tocTab.length] = new Array("4.3.6:6", "", "«XSDcomplexType» ShoppingBasket", "EARoot/EA4/EA3/EA6/EA936.htm", "5.png", "543", "0", "", "Class");
+tocTab[tocTab.length] = new Array("4.3.6:7", "", "«XSDcomplexType» StockItem", "EARoot/EA4/EA3/EA6/EA937.htm", "5.png", "544", "0", "", "Class");
+tocTab[tocTab.length] = new Array("4.3.6:8", "", "«XSDcomplexType» Transaction", "EARoot/EA4/EA3/EA6/EA938.htm", "5.png", "545", "0", "", "Class");

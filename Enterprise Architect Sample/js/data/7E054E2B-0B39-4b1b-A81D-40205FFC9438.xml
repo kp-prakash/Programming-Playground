@@ -1,0 +1,4 @@
+tocTab[tocTab.length] = new Array("4.4:1", "", "Component Model", "EARoot/EA4/EA4/EA939.htm", "178.png", "54", "0", "", "Component diagram");
+tocTab[tocTab.length] = new Array("4.4.1", "1", "LAN Components", "EARoot/EA4/EA4/EA941.htm", "4.png", "", "", "{DA26048C-CE35-4a5c-A351-2E5CAAFD7D52}", "Package");
+tocTab[tocTab.length] = new Array("4.4.2", "1", "Web Server Components", "EARoot/EA4/EA4/EA942.htm", "4.png", "", "", "{EEC11C29-B4F7-465c-8873-946FD207AD98}", "Package");
+tocTab[tocTab.length] = new Array("4.4.3", "1", "Common Components", "EARoot/EA4/EA4/EA943.htm", "4.png", "", "", "{C8FF3BBF-E214-446b-AAD0-86C3049A54F7}", "Package");

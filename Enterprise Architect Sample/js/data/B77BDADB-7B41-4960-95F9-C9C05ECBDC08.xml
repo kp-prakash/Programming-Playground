@@ -1,0 +1,15 @@
+tocTab[tocTab.length] = new Array("7.4:1", "", "Object", "EARoot/EA7/EA4/EA1465.htm", "177.png", "389", "0", "", "Object diagram");
+tocTab[tocTab.length] = new Array("7.4:2", "", ": StockItem", "EARoot/EA7/EA4/EA1467.htm", "25.png", "2300", "0", "", "Object");
+tocTab[tocTab.length] = new Array("7.4:3", "", ": StockItem", "EARoot/EA7/EA4/EA1468.htm", "25.png", "2299", "0", "", "Object");
+tocTab[tocTab.length] = new Array("7.4:4", "", ": StockItem", "EARoot/EA7/EA4/EA1469.htm", "25.png", "2296", "0", "", "Object");
+tocTab[tocTab.length] = new Array("7.4:5", "", ": StockItem", "EARoot/EA7/EA4/EA1470.htm", "25.png", "2293", "0", "", "Object");
+tocTab[tocTab.length] = new Array("7.4:6", "", ": LineItem", "EARoot/EA7/EA4/EA1471.htm", "25.png", "2292", "0", "", "Object");
+tocTab[tocTab.length] = new Array("7.4:7", "", "Francis Redfield: Account", "EARoot/EA7/EA4/EA1472.htm", "25.png", "2301", "0", "", "Object");
+tocTab[tocTab.length] = new Array("7.4:8", "", "Item01: LineItem", "EARoot/EA7/EA4/EA1473.htm", "25.png", "2303", "0", "", "Object");
+tocTab[tocTab.length] = new Array("7.4:9", "", "Item01: LineItem", "EARoot/EA7/EA4/EA1474.htm", "25.png", "2294", "0", "", "Object");
+tocTab[tocTab.length] = new Array("7.4:10", "", "Item02: LineItem", "EARoot/EA7/EA4/EA1475.htm", "25.png", "2295", "0", "", "Object");
+tocTab[tocTab.length] = new Array("7.4:11", "", "Item03: LineItem", "EARoot/EA7/EA4/EA1476.htm", "25.png", "2298", "0", "", "Object");
+tocTab[tocTab.length] = new Array("7.4:12", "", "Joseph Osborne: Account", "EARoot/EA7/EA4/EA1477.htm", "25.png", "2290", "0", "", "Object");
+tocTab[tocTab.length] = new Array("7.4:13", "", "Ord-2005-02-11-JO-01: Order", "EARoot/EA7/EA4/EA1479.htm", "25.png", "2297", "0", "", "Object");
+tocTab[tocTab.length] = new Array("7.4:14", "", "Ord-2005-03-12-FR-01: Order", "EARoot/EA7/EA4/EA1480.htm", "25.png", "2302", "0", "", "Object");
+tocTab[tocTab.length] = new Array("7.4:15", "", "Ord-2005-10-31-JO-01: Order", "EARoot/EA7/EA4/EA1481.htm", "25.png", "2291", "0", "", "Object");

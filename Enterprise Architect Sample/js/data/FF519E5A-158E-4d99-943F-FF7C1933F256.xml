@@ -1,0 +1,5 @@
+tocTab[tocTab.length] = new Array("4.3.4.7:1", "", "Transaction", "EARoot/EA4/EA3/EA4/EA7/EA912.htm", "175.png", "149", "0", "", "Logical diagram");
+tocTab[tocTab.length] = new Array("4.3.4.7:2", "", "«EJBRemoteInterface» Transaction", "EARoot/EA4/EA3/EA4/EA7/EA915.htm", "8.png", "534", "0", "", "Interface");
+tocTab[tocTab.length] = new Array("4.3.4.7:3", "", "«EJBImplementation» TransactionBean", "EARoot/EA4/EA3/EA4/EA7/EA916.htm", "5.png", "536", "0", "", "Class");
+tocTab[tocTab.length] = new Array("4.3.4.7:4", "", "«EJBSessionHomeInterface» TransactionHome", "EARoot/EA4/EA3/EA4/EA7/EA917.htm", "8.png", "535", "0", "", "Interface");
+tocTab[tocTab.length] = new Array("4.3.4.7.1", "1", "META-INF", "EARoot/EA4/EA3/EA4/EA7/EA914.htm", "4.png", "", "", "{5F810CDF-DBD5-4c47-B1A1-AE733BCA81BB}", "Package");

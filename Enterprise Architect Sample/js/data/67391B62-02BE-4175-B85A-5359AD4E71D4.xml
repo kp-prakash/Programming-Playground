@@ -1,0 +1,7 @@
+tocTab[tocTab.length] = new Array("4.5.2.2:1", "", "ADSL Router", "EARoot/EA4/EA5/EA2/EA2/EA1086.htm", "9.png", "1725", "0", "", "Node");
+tocTab[tocTab.length] = new Array("4.5.2.2:2", "", "Ethernet Adaptor", "EARoot/EA4/EA5/EA2/EA2/EA1087.htm", "9.png", "1721", "0", "", "Node");
+tocTab[tocTab.length] = new Array("4.5.2.2:3", "", "Ethernet Hub", "EARoot/EA4/EA5/EA2/EA2/EA1088.htm", "9.png", "1724", "0", "", "Node");
+tocTab[tocTab.length] = new Array("4.5.2.2:4", "", "Ethernet Switched Hub", "EARoot/EA4/EA5/EA2/EA2/EA1089.htm", "9.png", "1722", "0", "", "Node");
+tocTab[tocTab.length] = new Array("4.5.2.2:5", "", "Intel 19510 Frame Relay Router", "EARoot/EA4/EA5/EA2/EA2/EA1090.htm", "9.png", "1907", "0", "", "Node");
+tocTab[tocTab.length] = new Array("4.5.2.2:6", "", "Packet Filtering Router", "EARoot/EA4/EA5/EA2/EA2/EA1091.htm", "9.png", "1723", "0", "", "Node");
+tocTab[tocTab.length] = new Array("4.5.2.2:7", "", "WatchGuard III Firewall", "EARoot/EA4/EA5/EA2/EA2/EA1092.htm", "9.png", "1905", "0", "", "Node");

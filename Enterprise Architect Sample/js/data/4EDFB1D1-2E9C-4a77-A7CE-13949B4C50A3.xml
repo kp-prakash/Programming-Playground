@@ -1,0 +1,2 @@
+tocTab[tocTab.length] = new Array("4.5.1.1.1", "1", "Office Client 1", "EARoot/EA4/EA5/EA1/EA1/EA1019.htm", "4.png", "", "", "{515510B8-09BF-48a4-B252-6744D7E86C8E}", "Package");
+tocTab[tocTab.length] = new Array("4.5.1.1.2", "1", "Office Client 2", "EARoot/EA4/EA5/EA1/EA1/EA1020.htm", "4.png", "", "", "{FE05B8D8-8537-4167-A1E2-69A7D5D8F9B6}", "Package");

@@ -1,0 +1,8 @@
+tocTab[tocTab.length] = new Array("3.1.2:1", "", "Manage Inventory", "EARoot/EA3/EA1/EA2/EA213.htm", "188.png", "90", "0", "", "Custom diagram");
+tocTab[tocTab.length] = new Array("3.1.2:2", "", "«Functional» REQ019 - Manage Inventory", "EARoot/EA3/EA1/EA2/EA215.htm", "19.png", "132", "0", "", "Requirement");
+tocTab[tocTab.length] = new Array("3.1.2:3", "", "«Functional» REQ020 -Receive Books", "EARoot/EA3/EA1/EA2/EA216.htm", "19.png", "131", "0", "", "Requirement");
+tocTab[tocTab.length] = new Array("3.1.2:4", "", "«Functional» REQ021 - List Stock Levels", "EARoot/EA3/EA1/EA2/EA217.htm", "19.png", "130", "0", "", "Requirement");
+tocTab[tocTab.length] = new Array("3.1.2:5", "", "«Functional» REQ022 -Order Books", "EARoot/EA3/EA1/EA2/EA218.htm", "19.png", "133", "0", "", "Requirement");
+tocTab[tocTab.length] = new Array("3.1.2:6", "", "REQ023 -Store and Manage Books", "EARoot/EA3/EA1/EA2/EA219.htm", "19.png", "134", "0", "", "Requirement");
+tocTab[tocTab.length] = new Array("3.1.2:7", "", "«Functional» REQ027 - Add Books", "EARoot/EA3/EA1/EA2/EA220.htm", "19.png", "138", "0", "", "Requirement");
+tocTab[tocTab.length] = new Array("3.1.2:8", "", "REQ032 - Update Inventory", "EARoot/EA3/EA1/EA2/EA221.htm", "19.png", "144", "0", "", "Requirement");

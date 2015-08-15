@@ -1,0 +1,7 @@
+tocTab[tocTab.length] = new Array("4.3:1", "", "Implementation Model (PSM)", "EARoot/EA4/EA3/EA724.htm", "175.png", "160", "0", "", "Logical diagram");
+tocTab[tocTab.length] = new Array("4.3.1", "1", "C# Model", "EARoot/EA4/EA3/EA727.htm", "4.png", "", "", "{D7D4FEE4-0500-4178-9FAA-5965DD60789C}", "Package");
+tocTab[tocTab.length] = new Array("4.3.2", "1", "DDL", "EARoot/EA4/EA3/EA728.htm", "4.png", "", "", "{5657307B-CA65-4249-99AA-D5E613C00F73}", "Package");
+tocTab[tocTab.length] = new Array("4.3.3", "1", "EJB Entity", "EARoot/EA4/EA3/EA729.htm", "4.png", "", "", "{C81B1191-3D29-4f34-8926-725FFF949F17}", "Package");
+tocTab[tocTab.length] = new Array("4.3.4", "1", "EJB Session", "EARoot/EA4/EA3/EA730.htm", "4.png", "", "", "{9AA8CAD9-8D4C-43d8-B1D9-58451B5A26C7}", "Package");
+tocTab[tocTab.length] = new Array("4.3.5", "1", "Java Model", "EARoot/EA4/EA3/EA731.htm", "4.png", "", "", "{3BC8028B-5A35-466d-B87E-A54D680ACD69}", "Package");
+tocTab[tocTab.length] = new Array("4.3.6", "1", "«XSDschema» XSD", "EARoot/EA4/EA3/EA735.htm", "4.png", "", "", "{AC776563-2A3F-4625-916B-A5170784D96E}", "Package");

@@ -1,0 +1,9 @@
+tocTab[tocTab.length] = new Array("4.2.1.1.2:1", "", "PLace Order", "EARoot/EA4/EA2/EA1/EA1/EA2/EA645.htm", "175.png", "264", "0", "", "Logical diagram");
+tocTab[tocTab.length] = new Array("4.2.1.1.2:2", "", "«control» Order Screen", "EARoot/EA4/EA2/EA1/EA1/EA2/EA647.htm", "11.png", "1370", "0", "", "Screen");
+tocTab[tocTab.length] = new Array("4.2.1.1.2:3", "", "«button» Back", "EARoot/EA4/EA2/EA1/EA1/EA2/EA648.htm", "16.png", "1371", "1370", "", "GUIElement");
+tocTab[tocTab.length] = new Array("4.2.1.1.2:4", "", "«button» Cancel", "EARoot/EA4/EA2/EA1/EA1/EA2/EA649.htm", "16.png", "1369", "1370", "", "GUIElement");
+tocTab[tocTab.length] = new Array("4.2.1.1.2:5", "", "«checkbox» Order Details", "EARoot/EA4/EA2/EA1/EA1/EA2/EA650.htm", "16.png", "1373", "1370", "", "GUIElement");
+tocTab[tocTab.length] = new Array("4.2.1.1.2:6", "", "«text» OrderTotal", "EARoot/EA4/EA2/EA1/EA1/EA2/EA651.htm", "16.png", "1374", "1370", "", "GUIElement");
+tocTab[tocTab.length] = new Array("4.2.1.1.2:7", "", "«list» Ship Details", "EARoot/EA4/EA2/EA1/EA1/EA2/EA652.htm", "16.png", "1372", "1370", "", "GUIElement");
+tocTab[tocTab.length] = new Array("4.2.1.1.2:8", "", "«button» Submit", "EARoot/EA4/EA2/EA1/EA1/EA2/EA653.htm", "16.png", "1367", "1370", "", "GUIElement");
+tocTab[tocTab.length] = new Array("4.2.1.1.2:9", "", "«button» View Basket", "EARoot/EA4/EA2/EA1/EA1/EA2/EA654.htm", "16.png", "1368", "1370", "", "GUIElement");

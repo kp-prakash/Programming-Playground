@@ -1,0 +1,3 @@
+tocTab[tocTab.length] = new Array("5.2.1.2:1", "", "Issues", "EARoot/EA5/EA2/EA1/EA2/EA1182.htm", "188.png", "83", "0", "", "Custom diagram");
+tocTab[tocTab.length] = new Array("5.2.1.2:2", "", "«Functional» Remove if quantity is modified and returns Zero", "EARoot/EA5/EA2/EA1/EA2/EA1184.htm", "52.png", "2360", "0", "", "Issue");
+tocTab[tocTab.length] = new Array("5.2.1.2:3", "", "«Functional» View basket total cost - not correct", "EARoot/EA5/EA2/EA1/EA2/EA1187.htm", "52.png", "2358", "0", "", "Issue");

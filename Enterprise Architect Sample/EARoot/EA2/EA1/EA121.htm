@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Process Model</title>
+<link href="../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script>
+function initPage(src) {
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
+}
+</script>
+</head>
+<body onload="initPage(this);" class="Content">
+<div class="PageBody">
+	
+<img src="EA122.png" usemap="#EA122" border="0" />
+
+<MAP NAME="EA122">
+<area shape="rect" coords="71,10,525,79" href="EA127.htm">
+<area shape="rect" coords="10,314,100,355" href="EA133.htm">
+<area shape="rect" coords="161,536,291,582" href="EA131.htm">
+<area shape="rect" coords="512,422,623,472" href="EA125.htm">
+<area shape="rect" coords="512,340,628,394" href="EA130.htm">
+<area shape="rect" coords="10,209,89,246" href="EA136.htm">
+<area shape="rect" coords="287,314,441,356" href="EA137.htm">
+<area shape="rect" coords="484,92,641,149" href="EA134.htm">
+<area shape="rect" coords="550,204,640,262" href="EA128.htm">
+<area shape="rect" coords="40,92,72,156" href="EA135.htm">
+<area shape="rect" coords="160,314,263,356" href="EA132.htm">
+<area shape="rect" coords="11,427,93,465" href="EA124.htm">
+<area shape="rect" coords="121,203,469,264" href="EA129.htm">
+<area shape="rect" coords="147,95,288,142" href="EA138.htm">
+<area shape="rect" coords="293,94,419,142" href="EA123.htm">
+<area shape="rect" coords="157,413,422,481" href="EA126.htm">
+</MAP>
+
+	<div class="ObjectTitle">Process Model : analysis diagram</div>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">9/30/2000 12:00:00 AM</td>
+		</tr>
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Modified:</td>
+			<td width="85%" class="ObjectDetailsValue">10/6/2005 12:00:00 AM</td>
+		</tr>
+		<tr style="padding-top: 10px;">
+			<td width="15%" class="ObjectDetailsTopic"><img src="../../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
+			<td width="85%" class="ObjectDetailsValue"></td>			
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td width="85%" class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td width="85%" class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic"><img src="../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
+			<td width="85%" class="ObjectDetailsValue"></td>			
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">ID:</td>
+			<td width="85%" class="ObjectDetailsValue">{3F117E3B-10D5-4cde-935D-0D3FCF408918}</td>
+		</tr>
+	</table>
+	<div class="ObjectDetailsNotes">The&nbsp;<WBR>business&nbsp;<WBR>process&nbsp;<WBR>model&nbsp;<WBR>is&nbsp;<WBR>made&nbsp;<WBR>up&nbsp;<WBR>of&nbsp;<WBR>objects&nbsp;<WBR>and&nbsp;<WBR>activities&nbsp;<WBR>-&nbsp;<WBR>the&nbsp;<WBR>objects&nbsp;<WBR>are&nbsp;<WBR>the&nbsp;<WBR>inputs&nbsp;<WBR>and&nbsp;<WBR>outputs&nbsp;<WBR>to&nbsp;<WBR>the&nbsp;<WBR>activities&nbsp;<WBR>or&nbsp;<WBR>&#39;processes&#39;.&nbsp;<WBR>In&nbsp;<WBR>this&nbsp;<WBR>example&nbsp;<WBR>we&nbsp;<WBR>have&nbsp;<WBR>defined&nbsp;<WBR>two&nbsp;<WBR>processes:&nbsp;<WBR>&#39;Sell&nbsp;<WBR>Books&nbsp;<WBR>On-Line&nbsp;<WBR>&nbsp;<WBR>and&nbsp;<WBR>&#39;Manage&nbsp;<WBR>Customer&nbsp;<WBR>Orders&#39;.&nbsp;<WBR>These&nbsp;<WBR>processes&nbsp;<WBR>have&nbsp;<WBR>numerous&nbsp;<WBR>inputs,&nbsp;<WBR>triggers&nbsp;<WBR>and&nbsp;<WBR>outputs.&nbsp;<WBR>The&nbsp;<WBR>inputs&nbsp;<WBR>and&nbsp;<WBR>outputs&nbsp;<WBR>have&nbsp;<WBR>some&nbsp;<WBR>equivalence&nbsp;<WBR>to&nbsp;<WBR>an&nbsp;<WBR>early&nbsp;<WBR>&#39;Domain&nbsp;<WBR>Model&#39;;&nbsp;<WBR>they&nbsp;<WBR>capture&nbsp;<WBR>the&nbsp;<WBR>business&nbsp;<WBR>entities&nbsp;<WBR>and&nbsp;<WBR>relationships&nbsp;<WBR>between&nbsp;<WBR>them.&nbsp;<WBR>The&nbsp;<WBR>processes&nbsp;<WBR>will&nbsp;<WBR>typically&nbsp;<WBR>be&nbsp;<WBR>decomposed&nbsp;<WBR>into&nbsp;<WBR>one&nbsp;<WBR>or&nbsp;<WBR>more&nbsp;<WBR>use&nbsp;<WBR>cases.</div>
+
+</div>
+ 
+</body>
+</html>

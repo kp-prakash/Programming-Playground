@@ -1,0 +1,6 @@
+tocTab[tocTab.length] = new Array("4.5.1.1.1:1", "", "Office Client 1", "EARoot/EA4/EA5/EA1/EA1/EA1/EA1021.htm", "179.png", "335", "0", "", "Deployment diagram");
+tocTab[tocTab.length] = new Array("4.5.1.1.1:2", "", ": Windows XP Professional", "EARoot/EA4/EA5/EA1/EA1/EA1/EA1023.htm", "10.png", "1895", "0", "", "Component");
+tocTab[tocTab.length] = new Array("4.5.1.1.1:3", "", "Application: BookStoreOrder Application", "EARoot/EA4/EA5/EA1/EA1/EA1/EA1024.htm", "10.png", "2715", "0", "", "Component");
+tocTab[tocTab.length] = new Array("4.5.1.1.1:4", "", "Application Component - TBA", "EARoot/EA4/EA5/EA1/EA1/EA1/EA1025.htm", "10.png", "1897", "0", "", "Component");
+tocTab[tocTab.length] = new Array("4.5.1.1.1:5", "", "«pc client» Office Client PC 1: Desktop PC", "EARoot/EA4/EA5/EA1/EA1/EA1/EA1026.htm", "9.png", "1894", "0", "", "Node");
+tocTab[tocTab.length] = new Array("4.5.1.1.1:6", "", "Web Browser: Internet Explorer 6.0", "EARoot/EA4/EA5/EA1/EA1/EA1/EA1027.htm", "10.png", "1896", "0", "", "Component");

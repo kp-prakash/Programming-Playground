@@ -1,0 +1,8 @@
+tocTab[tocTab.length] = new Array("4.3.2:1", "", "DDL", "EARoot/EA4/EA3/EA2/EA754.htm", "175.png", "125", "0", "", "Logical diagram");
+tocTab[tocTab.length] = new Array("4.3.2:2", "", "«table» Account", "EARoot/EA4/EA3/EA2/EA757.htm", "28.png", "450", "0", "", "Class");
+tocTab[tocTab.length] = new Array("4.3.2:3", "", "«table» LineItem", "EARoot/EA4/EA3/EA2/EA758.htm", "28.png", "451", "0", "", "Class");
+tocTab[tocTab.length] = new Array("4.3.2:4", "", "«table» Order", "EARoot/EA4/EA3/EA2/EA759.htm", "28.png", "452", "0", "", "Class");
+tocTab[tocTab.length] = new Array("4.3.2:5", "", "«table» OrderStatus", "EARoot/EA4/EA3/EA2/EA760.htm", "28.png", "2644", "0", "", "Class");
+tocTab[tocTab.length] = new Array("4.3.2:6", "", "«table» ShoppingBasket", "EARoot/EA4/EA3/EA2/EA761.htm", "28.png", "454", "0", "", "Class");
+tocTab[tocTab.length] = new Array("4.3.2:7", "", "«table» StockItem", "EARoot/EA4/EA3/EA2/EA762.htm", "28.png", "455", "0", "", "Class");
+tocTab[tocTab.length] = new Array("4.3.2:8", "", "«table» Transaction", "EARoot/EA4/EA3/EA2/EA766.htm", "28.png", "456", "0", "", "Class");

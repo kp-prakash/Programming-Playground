@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>View Basket</title>
+<link href="../../../../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script>
+function initPage(src) {
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
+}
+</script>
+</head>
+<body onload="initPage(this);" class="Content">
+<div class="pageHeader"></div>
+<div class="PageBody">
+	<span class="ObjectTitle">View Basket  : public   screen</span>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">9/30/2000 12:00:00 AM</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">12/20/2005 12:15:07 PM</td>
+		</tr>
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue">Frank McIver</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue">Proposed</td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue">Easy</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{DC9DB952-19BF-4d5b-8A83-C83B9AE3C6A8}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"><a href="EA638.htm">View Cart</a>, <a href="../../../../../EA5/EA1/EA1/EA1/EA2/EA1145.htm">Take Orders</a>, <a href="../../EA4/EA710.htm">Traceability</a></td>
+		</tr>
+	</table>
+	<div class="ObjectDetailsNotes">This&nbsp;<WBR>screen&nbsp;<WBR>allows&nbsp;<WBR>the&nbsp;<WBR>users&nbsp;<WBR>to&nbsp;<WBR>view&nbsp;<WBR>the&nbsp;<WBR>current&nbsp;<WBR>contents&nbsp;<WBR>of&nbsp;<WBR>their&nbsp;<WBR>shopping&nbsp;<WBR>basket.</div>
+
+	<div class="TableGroup" id="TableGroup">
+		<ul class="ItemTitle">
+			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
+			<li onClick="parent.toggleItem('TestCases');" id="TestCasesTitle">Test Cases</li>
+			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
+		</ul>
+		<div class="ItemBody" id="AssociationsToTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="20%" class="TableHeading">Element</td>
+					<td width="25%" class="TableHeading">Source Role</td>
+					<td width="25%" class="TableHeading">Target Role</td>
+					<td width="30%" class="TableHeading">Details</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow" valign="top">
+						<a href="../../../../../EA5/EA1/EA1/EA1/EA2/EA1148.htm">«testcase» Veiw Basket Test</a><br />
+						UseCase &nbsp;
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+
+			</table>
+		</div>
+		<div class="ItemBody" id="TestCasesTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="25%" class="TableHeading">Test</td>
+					<td width="7%" class="TableHeading">Type</td>
+					<td width="7%" class="TableHeading">Status</td>
+					<td width="25%" class="TableHeading">Results</td>
+					<td width="36%" class="TableHeading">Details</td>
+				</tr>
+				<tr>
+					<td width="25%" class="TableRow"><span class="Tab">View Cart Details</span></td>
+					<td width="7%" class="TableRow">Unit</td>
+					<td width="7%" class="TableRow">&nbsp;</td>
+					<td width="25%" class="TableRow">
+						<strong>Run Date:</strong> 10/18/2005 12:00:00 AM<br />
+						<strong>Run By:</strong> &nbsp;<br />
+						<strong>Checked:</strong> &nbsp;
+					</td>
+					<td width="36%" class="TableRow">
+						<div style="width: 100%; overflow: auto;">
+							The&nbsp;<WBR>screen&nbsp;<WBR>showing&nbsp;<WBR>a&nbsp;<WBR>view&nbsp;<WBR>of&nbsp;<WBR>the&nbsp;<WBR>shopping&nbsp;<WBR>cart&nbsp;<WBR>has&nbsp;<WBR>the&nbsp;<WBR>Author&nbsp;<WBR>Title&nbsp;<WBR>and&nbsp;<WBR>Publisher&nbsp;<WBR>displayed.&nbsp;<WBR>&nbsp;<WBR>The&nbsp;<WBR>quantity&nbsp;<WBR>is&nbsp;<WBR>displayed.<br />
+							<strong>Input:</strong> &nbsp; <br />
+							<strong>Acceptance:</strong> &nbsp; <br />
+							<strong>Results:</strong>  &nbsp;
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="25%" class="TableRow"><span class="Tab">Cart Total is correct.</span></td>
+					<td width="7%" class="TableRow">Unit</td>
+					<td width="7%" class="TableRow">&nbsp;</td>
+					<td width="25%" class="TableRow">
+						<strong>Run Date:</strong> 10/18/2005 12:00:00 AM<br />
+						<strong>Run By:</strong> &nbsp;<br />
+						<strong>Checked:</strong> &nbsp;
+					</td>
+					<td width="36%" class="TableRow">
+						<div style="width: 100%; overflow: auto;">
+							Check&nbsp;<WBR>that&nbsp;<WBR>the&nbsp;<WBR>Cart&nbsp;<WBR>Total&nbsp;<WBR>is&nbsp;<WBR>displayed&nbsp;<WBR>correctly.<br />
+							<strong>Input:</strong> Set&nbsp;<WBR>up&nbsp;<WBR>an&nbsp;<WBR>order&nbsp;<WBR>with&nbsp;<WBR>a&nbsp;<WBR>range&nbsp;<WBR>of&nbsp;<WBR>items&nbsp;<WBR>selected&nbsp;<WBR>for&nbsp;<WBR>purchase.&nbsp;<WBR>Open&nbsp;<WBR>the&nbsp;<WBR>View&nbsp;<WBR>Cart&nbsp;<WBR>window.&nbsp;<WBR>&nbsp;<WBR>Check&nbsp;<WBR>that&nbsp;<WBR>the&nbsp;<WBR>Cart&nbsp;<WBR>Total&nbsp;<WBR>is&nbsp;<WBR>calculated&nbsp;<WBR>correctly&nbsp;<WBR>to&nbsp;<WBR>match&nbsp;<WBR>the&nbsp;<WBR>sum&nbsp;<WBR>of&nbsp;<WBR>the&nbsp;<WBR>(Cost&nbsp;<WBR>by&nbsp;<WBR>Qunatity)&nbsp;<WBR>for&nbsp;<WBR>all&nbsp;<WBR>the&nbsp;<WBR>items. <br />
+							<strong>Acceptance:</strong> The&nbsp;<WBR>Total&nbsp;<WBR>matches&nbsp;<WBR>the&nbsp;<WBR>sum&nbsp;<WBR>of&nbsp;<WBR>(&nbsp;<WBR>Cost&nbsp;<WBR>*Quantities)&nbsp;<WBR>of&nbsp;<WBR>all&nbsp;<WBR>the&nbsp;<WBR>items&nbsp;<WBR>selected. <br />
+							<strong>Results:</strong>  &nbsp;
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="25%" class="TableRow"><span class="Tab">Cart Items Quantities are correct.</span></td>
+					<td width="7%" class="TableRow">Unit</td>
+					<td width="7%" class="TableRow">&nbsp;</td>
+					<td width="25%" class="TableRow">
+						<strong>Run Date:</strong> 10/18/2005 12:00:00 AM<br />
+						<strong>Run By:</strong> &nbsp;<br />
+						<strong>Checked:</strong> &nbsp;
+					</td>
+					<td width="36%" class="TableRow">
+						<div style="width: 100%; overflow: auto;">
+							Check&nbsp;<WBR>that&nbsp;<WBR>the&nbsp;<WBR>Cart&nbsp;<WBR>Items&nbsp;<WBR>Quantities&nbsp;<WBR>are&nbsp;<WBR>displayed&nbsp;<WBR>correctly<br />
+							<strong>Input:</strong> Set&nbsp;<WBR>up&nbsp;<WBR>an&nbsp;<WBR>order&nbsp;<WBR>with&nbsp;<WBR>a&nbsp;<WBR>range&nbsp;<WBR>items&nbsp;<WBR>selected&nbsp;<WBR>for&nbsp;<WBR>purchase.&nbsp;<WBR>Open&nbsp;<WBR>the&nbsp;<WBR>View&nbsp;<WBR>Cart&nbsp;<WBR>window.&nbsp;<WBR> <br />
+							<strong>Acceptance:</strong> The&nbsp;<WBR>Quantities&nbsp;<WBR>of&nbsp;<WBR>each&nbsp;<WBR>of&nbsp;<WBR>the&nbsp;<WBR>items&nbsp;<WBR>matches&nbsp;<WBR>the&nbsp;<WBR>quantity&nbsp;<WBR>of&nbsp;<WBR>set&nbsp;<WBR>of&nbsp;<WBR>items&nbsp;<WBR>selected. <br />
+							<strong>Results:</strong>  &nbsp;
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="25%" class="TableRow"><span class="Tab">Cart Items displayed are correct.</span></td>
+					<td width="7%" class="TableRow">Unit</td>
+					<td width="7%" class="TableRow">&nbsp;</td>
+					<td width="25%" class="TableRow">
+						<strong>Run Date:</strong> 10/18/2005 12:00:00 AM<br />
+						<strong>Run By:</strong> &nbsp;<br />
+						<strong>Checked:</strong> &nbsp;
+					</td>
+					<td width="36%" class="TableRow">
+						<div style="width: 100%; overflow: auto;">
+							Check&nbsp;<WBR>that&nbsp;<WBR>the&nbsp;<WBR>Cart&nbsp;<WBR>Items&nbsp;<WBR>displayed&nbsp;<WBR>are&nbsp;<WBR>correct.<br />
+							<strong>Input:</strong> Set&nbsp;<WBR>up&nbsp;<WBR>an&nbsp;<WBR>order&nbsp;<WBR>with&nbsp;<WBR>a&nbsp;<WBR>range&nbsp;<WBR>items&nbsp;<WBR>selected&nbsp;<WBR>for&nbsp;<WBR>purchase.&nbsp;<WBR>Open&nbsp;<WBR>the&nbsp;<WBR>View&nbsp;<WBR>Cart&nbsp;<WBR>window. <br />
+							<strong>Acceptance:</strong> The&nbsp;<WBR>list&nbsp;<WBR>of&nbsp;<WBR>items&nbsp;<WBR>matches&nbsp;<WBR>the&nbsp;<WBR>set&nbsp;<WBR>of&nbsp;<WBR>items&nbsp;<WBR>selected. <br />
+							<strong>Results:</strong>  &nbsp;
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="25%" class="TableRow"><span class="Tab">Alter Quantity</span></td>
+					<td width="7%" class="TableRow">Unit</td>
+					<td width="7%" class="TableRow">&nbsp;</td>
+					<td width="25%" class="TableRow">
+						<strong>Run Date:</strong> 10/18/2005 12:00:00 AM<br />
+						<strong>Run By:</strong> &nbsp;<br />
+						<strong>Checked:</strong> &nbsp;
+					</td>
+					<td width="36%" class="TableRow">
+						<div style="width: 100%; overflow: auto;">
+							The&nbsp;<WBR>shopping&nbsp;<WBR>cart&nbsp;<WBR>view&nbsp;<WBR>allows&nbsp;<WBR>the&nbsp;<WBR>user&nbsp;<WBR>to&nbsp;<WBR>make&nbsp;<WBR>changes&nbsp;<WBR>to&nbsp;<WBR>the&nbsp;<WBR>quantity&nbsp;<WBR>of&nbsp;<WBR>any&nbsp;<WBR>of&nbsp;<WBR>the&nbsp;<WBR>entries&nbsp;<WBR>listed.<br />
+							<strong>Input:</strong> &nbsp; <br />
+							<strong>Acceptance:</strong> &nbsp; <br />
+							<strong>Results:</strong>  &nbsp;
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+		<div class="ItemBody" id="LinksTable">
+			<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="30%" class="TableHeading">Object</td>
+					<td width="15%" class="TableHeading">Type</td>
+					<td width="15%" class="TableHeading">Connection</td>
+					<td width="40%" class="TableHeading">Notes</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../../../../../EA5/EA1/EA1/EA1/EA2/EA1149.htm">«Functional» View Basket Alter quantity missing.</a></td>
+					<td width="15%" class="TableRow" valign="top">Issue</td>
+					<td width="15%" class="TableRow" valign="top">Dependency</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="../../../../../EA3/EA3/EA4/EA446.htm">View Shopping Basket</a></td>
+					<td width="15%" class="TableRow" valign="top">UseCase</td>
+					<td width="15%" class="TableRow" valign="top">Realisation</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+
+			</table>
+		</div>
+	</div>
+<div class="pageFooter"></div>
+ 
+</body>
+</html>

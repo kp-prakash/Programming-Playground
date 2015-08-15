@@ -1,0 +1,5 @@
+tocTab[tocTab.length] = new Array("4.5.1.2.1:1", "", "Internal Database Server", "EARoot/EA4/EA5/EA1/EA2/EA1/EA1038.htm", "179.png", "340", "0", "", "Deployment diagram");
+tocTab[tocTab.length] = new Array("4.5.1.2.1:2", "", "Client Data: SQL Server 2003", "EARoot/EA4/EA5/EA1/EA2/EA1/EA1040.htm", "10.png", "2056", "0", "", "Component");
+tocTab[tocTab.length] = new Array("4.5.1.2.1:3", "", "Internal Data Config: SQL Server Configuration", "EARoot/EA4/EA5/EA1/EA2/EA1/EA1041.htm", "25.png", "2055", "0", "", "Object");
+tocTab[tocTab.length] = new Array("4.5.1.2.1:4", "", "Orders: Orders Database", "EARoot/EA4/EA5/EA1/EA2/EA1/EA1042.htm", "10.png", "2717", "0", "", "Component");
+tocTab[tocTab.length] = new Array("4.5.1.2.1:5", "", "OS: Windows 2003 Server", "EARoot/EA4/EA5/EA1/EA2/EA1/EA1043.htm", "10.png", "1918", "0", "", "Component");

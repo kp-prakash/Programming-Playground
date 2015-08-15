@@ -1,0 +1,9 @@
+tocTab[tocTab.length] = new Array("4.3.3:1", "", "EJB Entity", "EARoot/EA4/EA3/EA3/EA767.htm", "176.png", "127", "0", "", "Package diagram");
+tocTab[tocTab.length] = new Array("4.3.3.1", "1", "«EJBEntityBean» Account", "EARoot/EA4/EA3/EA3/EA769.htm", "4.png", "", "", "{C2664927-D86D-4882-89EC-460AABFCB922}", "Package");
+tocTab[tocTab.length] = new Array("4.3.3.2", "1", "«EJBEntityBean» LineItem", "EARoot/EA4/EA3/EA3/EA770.htm", "4.png", "", "", "{28FA5BED-493D-496a-BE08-43CA7F14532F}", "Package");
+tocTab[tocTab.length] = new Array("4.3.3.3", "1", "«EJBEntityBean» Order", "EARoot/EA4/EA3/EA3/EA771.htm", "4.png", "", "", "{CB11EC21-069D-40cb-914E-63422607CC4D}", "Package");
+tocTab[tocTab.length] = new Array("4.3.3.4", "1", "«EJBEntityBean» OrderStatus", "EARoot/EA4/EA3/EA3/EA772.htm", "4.png", "", "", "{8C9CFDF9-ED19-40c6-A1E5-58C2765AA2FB}", "Package");
+tocTab[tocTab.length] = new Array("4.3.3.5", "1", "«EJBEntityBean» ShoppingBasket", "EARoot/EA4/EA3/EA3/EA773.htm", "4.png", "", "", "{A3DB9137-5054-4fdf-936E-C326F48B0513}", "Package");
+tocTab[tocTab.length] = new Array("4.3.3.6", "1", "«EJBEntityBean» StockItem", "EARoot/EA4/EA3/EA3/EA774.htm", "4.png", "", "", "{EECE432E-304C-4af0-AA52-3BDCE0B21383}", "Package");
+tocTab[tocTab.length] = new Array("4.3.3.7", "1", "«EJBEntityBean» Transaction", "EARoot/EA4/EA3/EA3/EA775.htm", "4.png", "", "", "{E59C16C0-5521-4808-B778-047A7CF4AC94}", "Package");
+tocTab[tocTab.length] = new Array("4.3.3.8", "1", "Data Model", "EARoot/EA4/EA3/EA3/EA776.htm", "4.png", "", "", "{A1D2C6F2-2089-484f-A58D-BD073AE71EB6}", "Package");

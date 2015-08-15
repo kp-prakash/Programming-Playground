@@ -1,0 +1,3 @@
+tocTab[tocTab.length] = new Array("4.2:1", "", "Design Model", "EARoot/EA4/EA2/EA612.htm", "175.png", "49", "0", "", "Logical diagram");
+tocTab[tocTab.length] = new Array("4.2.1", "1", "User Interface", "EARoot/EA4/EA2/EA616.htm", "4.png", "", "", "{0B0C3757-905A-42be-91B1-404DE40BBE5B}", "Package");
+tocTab[tocTab.length] = new Array("4.2.2", "1", "Abstract Class Model (PIM)", "EARoot/EA4/EA2/EA617.htm", "4.png", "", "", "{64DCA9C2-A78F-4f3f-94D3-5046866F1647}", "Package");

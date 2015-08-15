@@ -1,0 +1,5 @@
+tocTab[tocTab.length] = new Array("7.3.2:1", "", "Fragment", "EARoot/EA7/EA3/EA2/EA1459.htm", "185.png", "378", "0", "", "Sequence diagram");
+tocTab[tocTab.length] = new Array("7.3.2:2", "", "DataControl", "EARoot/EA7/EA3/EA2/EA1461.htm", "57.png", "2198", "0", "", "Sequence");
+tocTab[tocTab.length] = new Array("7.3.2:3", "", "DataSource", "EARoot/EA7/EA3/EA2/EA1462.htm", "57.png", "2197", "0", "", "Sequence");
+tocTab[tocTab.length] = new Array("7.3.2:4", "", "n", "EARoot/EA7/EA3/EA2/EA1463.htm", "101.png", "2195", "0", "", "InteractionFragment");
+tocTab[tocTab.length] = new Array("7.3.2:5", "", "UserInterface", "EARoot/EA7/EA3/EA2/EA1464.htm", "57.png", "2196", "0", "", "Sequence");

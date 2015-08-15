@@ -1,0 +1,8 @@
+tocTab[tocTab.length] = new Array("4.5.1.2.4:1", "", "Web Server", "EARoot/EA4/EA5/EA1/EA2/EA4/EA1054.htm", "179.png", "332", "0", "", "Deployment diagram");
+tocTab[tocTab.length] = new Array("4.5.1.2.4:2", "", "«web page» : ASP Pages", "EARoot/EA4/EA5/EA1/EA2/EA4/EA1056.htm", "10.png", "2724", "0", "", "Component");
+tocTab[tocTab.length] = new Array("4.5.1.2.4:3", "", ": XSL Stylesheets", "EARoot/EA4/EA5/EA1/EA2/EA4/EA1057.htm", "10.png", "2723", "0", "", "Component");
+tocTab[tocTab.length] = new Array("4.5.1.2.4:4", "", "«Web Server» : IIS 5.0", "EARoot/EA4/EA5/EA1/EA2/EA4/EA1058.htm", "10.png", "2722", "0", "", "Component");
+tocTab[tocTab.length] = new Array("4.5.1.2.4:5", "", ".Net Server: .NET Server", "EARoot/EA4/EA5/EA1/EA2/EA4/EA1059.htm", "10.png", "1893", "0", "", "Component");
+tocTab[tocTab.length] = new Array("4.5.1.2.4:6", "", "Apache", "EARoot/EA4/EA5/EA1/EA2/EA4/EA1060.htm", "10.png", "1891", "0", "", "Component");
+tocTab[tocTab.length] = new Array("4.5.1.2.4:7", "", "Apache Configuration", "EARoot/EA4/EA5/EA1/EA2/EA4/EA1061.htm", "10.png", "1892", "0", "", "Component");
+tocTab[tocTab.length] = new Array("4.5.1.2.4:8", "", "Windows: Windows 2003 Server", "EARoot/EA4/EA5/EA1/EA2/EA4/EA1062.htm", "10.png", "1890", "0", "", "Component");

@@ -1,0 +1,16 @@
+tocTab[tocTab.length] = new Array("3.3.4:3", "", "Sell Books", "EARoot/EA3/EA3/EA4/EA440.htm", "180.png", "88", "0", "", "Use Case diagram");
+tocTab[tocTab.length] = new Array("3.3.4:4", "", "Add To Shopping Basket", "EARoot/EA3/EA3/EA4/EA442.htm", "7.png", "173", "0", "", "UseCase");
+tocTab[tocTab.length] = new Array("3.3.4:5", "", "Go To Checkout", "EARoot/EA3/EA3/EA4/EA443.htm", "7.png", "178", "0", "", "UseCase");
+tocTab[tocTab.length] = new Array("3.3.4:6", "", "Remove From Shopping Basket", "EARoot/EA3/EA3/EA4/EA444.htm", "7.png", "174", "0", "", "UseCase");
+tocTab[tocTab.length] = new Array("3.3.4:7", "", "Search for Books", "EARoot/EA3/EA3/EA4/EA445.htm", "7.png", "172", "0", "", "UseCase");
+tocTab[tocTab.length] = new Array("3.3.4:8", "", "View Shopping Basket", "EARoot/EA3/EA3/EA4/EA446.htm", "7.png", "171", "0", "", "UseCase");
+tocTab[tocTab.length] = new Array("3.3.4:1", "", "Add To Shopping Cart", "EARoot/EA3/EA3/EA4/EA436.htm", "185.png", "431", "173", "", "Sequence diagram");
+tocTab[tocTab.length] = new Array("3.3.4:2", "", "Add To Shopping Cart", "EARoot/EA3/EA3/EA4/EA438.htm", "184.png", "415", "173", "", "Collaboration diagram");
+tocTab[tocTab.length] = new Array("3.3.4:9", "", "«entity» : ShoppingBasket", "EARoot/EA3/EA3/EA4/EA447.htm", "25.png", "2613", "173", "", "Object");
+tocTab[tocTab.length] = new Array("3.3.4:10", "", "«actor» : Client", "EARoot/EA3/EA3/EA4/EA448.htm", "25.png", "2610", "173", "", "Object");
+tocTab[tocTab.length] = new Array("3.3.4:11", "", "«entity» : ShoppingBasket", "EARoot/EA3/EA3/EA4/EA449.htm", "25.png", "2585", "173", "", "Object");
+tocTab[tocTab.length] = new Array("3.3.4:12", "", "«control» AddToBasket", "EARoot/EA3/EA3/EA4/EA450.htm", "25.png", "2470", "173", "", "Object");
+tocTab[tocTab.length] = new Array("3.3.4:13", "", "«boundary» ItemsPage", "EARoot/EA3/EA3/EA4/EA451.htm", "25.png", "2469", "173", "", "Object");
+tocTab[tocTab.length] = new Array("3.3.4:14", "", "«entity» Object1", "EARoot/EA3/EA3/EA4/EA452.htm", "25.png", "2474", "173", "", "Object");
+tocTab[tocTab.length] = new Array("3.3.4:15", "", "«control» RemoveFromBasket", "EARoot/EA3/EA3/EA4/EA453.htm", "25.png", "2472", "173", "", "Object");
+tocTab[tocTab.length] = new Array("3.3.4:16", "", "«control» View Basket", "EARoot/EA3/EA3/EA4/EA454.htm", "25.png", "2471", "173", "", "Object");

@@ -1,0 +1,12 @@
+tocTab[tocTab.length] = new Array("4.4.2:2", "", "Server Components", "EARoot/EA4/EA4/EA2/EA951.htm", "178.png", "445", "0", "", "Component diagram");
+tocTab[tocTab.length] = new Array("4.4.2:3", "", "«web page» ASP Pages", "EARoot/EA4/EA4/EA2/EA953.htm", "10.png", "2712", "0", "", "Component");
+tocTab[tocTab.length] = new Array("4.4.2:4", "", "BookStore Database", "EARoot/EA4/EA4/EA2/EA954.htm", "10.png", "2708", "0", "", "Component");
+tocTab[tocTab.length] = new Array("4.4.2:5", "", "COM+ Component Environment", "EARoot/EA4/EA4/EA2/EA955.htm", "10.png", "2705", "0", "", "Component");
+tocTab[tocTab.length] = new Array("4.4.2:6", "", "Firewall", "EARoot/EA4/EA4/EA2/EA956.htm", "10.png", "2704", "0", "", "Component");
+tocTab[tocTab.length] = new Array("4.4.2:7", "", "«Web Server» IIS 5.0", "EARoot/EA4/EA4/EA2/EA957.htm", "10.png", "2702", "0", "", "Component");
+tocTab[tocTab.length] = new Array("4.4.2:8", "", "LAN: SQL Server Configuration", "EARoot/EA4/EA4/EA2/EA958.htm", "25.png", "2720", "0", "", "Object");
+tocTab[tocTab.length] = new Array("4.4.2:9", "", "Web", "EARoot/EA4/EA4/EA2/EA959.htm", "25.png", "2719", "0", "", "Object");
+tocTab[tocTab.length] = new Array("4.4.2:10", "", "Web SQL Server", "EARoot/EA4/EA4/EA2/EA960.htm", "10.png", "2710", "0", "", "Component");
+tocTab[tocTab.length] = new Array("4.4.2:11", "", "XSL Stylesheets", "EARoot/EA4/EA4/EA2/EA961.htm", "10.png", "2703", "0", "", "Component");
+tocTab[tocTab.length] = new Array("4.4.2:12", "", "Business Logic", "EARoot/EA4/EA4/EA2/EA962.htm", "10.png", "2709", "2705", "", "Component");
+tocTab[tocTab.length] = new Array("4.4.2:1", "", "Implementation", "EARoot/EA4/EA4/EA2/EA949.htm", "189.png", "446", "2709", "", "Analysis diagram");

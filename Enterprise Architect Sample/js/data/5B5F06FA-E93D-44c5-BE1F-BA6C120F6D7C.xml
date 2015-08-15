@@ -1,0 +1,2 @@
+tocTab[tocTab.length] = new Array("3.3.6.1", "1", "Standard Activity", "EARoot/EA3/EA3/EA6/EA504.htm", "4.png", "", "", "{81FD5E60-C228-490b-BACF-9E08331D2C05}", "Package");
+tocTab[tocTab.length] = new Array("3.3.6.2", "1", "InteruptibleActivityRegion", "EARoot/EA3/EA3/EA6/EA505.htm", "4.png", "", "", "{F2CF1D4F-4CB7-4e5e-8122-5D6137947D9A}", "Package");

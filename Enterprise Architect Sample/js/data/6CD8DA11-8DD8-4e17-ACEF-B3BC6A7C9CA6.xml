@@ -1,0 +1,5 @@
+tocTab[tocTab.length] = new Array("7.1.1:1", "", "brokered", "EARoot/EA7/EA1/EA1/EA1360.htm", "182.png", "381", "0", "", "CompositeStructure diagram");
+tocTab[tocTab.length] = new Array("7.1.1:2", "", "BrokeredSale", "EARoot/EA7/EA1/EA1/EA1362.htm", "60.png", "2218", "0", "", "Collaboration");
+tocTab[tocTab.length] = new Array("7.1.1:3", "", "Broker", "EARoot/EA7/EA1/EA1/EA1368.htm", "25.png", "2217", "2218", "", "Object");
+tocTab[tocTab.length] = new Array("7.1.1:4", "", "Consumer", "EARoot/EA7/EA1/EA1/EA1369.htm", "25.png", "2221", "2218", "", "Object");
+tocTab[tocTab.length] = new Array("7.1.1:5", "", "Publisher", "EARoot/EA7/EA1/EA1/EA1370.htm", "25.png", "2220", "2218", "", "Object");

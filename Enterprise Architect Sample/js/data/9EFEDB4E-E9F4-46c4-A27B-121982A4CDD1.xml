@@ -1,0 +1,5 @@
+tocTab[tocTab.length] = new Array("2.3.2:1", "", "Positioning", "EARoot/EA2/EA3/EA2/EA163.htm", "188.png", "268", "0", "", "Custom diagram");
+tocTab[tocTab.length] = new Array("2.3.2:2", "", "«Functional» Higher volume - faster client accessibility.", "EARoot/EA2/EA3/EA2/EA165.htm", "19.png", "1398", "0", "", "Requirement");
+tocTab[tocTab.length] = new Array("2.3.2:3", "", "«Functional» Passing on of roles leading to inefficiency and extra costs.", "EARoot/EA2/EA3/EA2/EA167.htm", "19.png", "1397", "0", "", "Requirement");
+tocTab[tocTab.length] = new Array("2.3.2:4", "", "«Functional» Reduce wasted time sending messages to customers", "EARoot/EA2/EA3/EA2/EA168.htm", "19.png", "1399", "0", "", "Requirement");
+tocTab[tocTab.length] = new Array("2.3.2:5", "", "«Functional» View of customer messages directly related to transactions", "EARoot/EA2/EA3/EA2/EA169.htm", "19.png", "1396", "0", "", "Requirement");

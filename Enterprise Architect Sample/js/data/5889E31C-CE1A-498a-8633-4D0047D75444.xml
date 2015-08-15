@@ -1,0 +1,3 @@
+tocTab[tocTab.length] = new Array("6.1", "1", "Metrics and Estimation", "EARoot/EA6/EA1194.htm", "4.png", "", "", "{B2BFE5D3-5C20-4160-A4E5-46C2E2B6E9D7}", "Package");
+tocTab[tocTab.length] = new Array("6.2", "1", "Risk", "EARoot/EA6/EA1195.htm", "4.png", "", "", "{3714B9DD-414D-440a-A35D-BDEA69C900CC}", "Package");
+tocTab[tocTab.length] = new Array("6.3", "1", "Resources", "EARoot/EA6/EA1196.htm", "4.png", "", "", "{32A412A4-2F58-4661-9312-9BA457DE0ABE}", "Package");

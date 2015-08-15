@@ -1,0 +1,4 @@
+tocTab[tocTab.length] = new Array("3.2.3:1", "", "Performance Main", "EARoot/EA3/EA2/EA3/EA252.htm", "188.png", "398", "0", "", "Custom diagram");
+tocTab[tocTab.length] = new Array("3.2.3:2", "", "«Functional» REQ105 -  Data access Speed", "EARoot/EA3/EA2/EA3/EA254.htm", "19.png", "2340", "0", "", "Requirement");
+tocTab[tocTab.length] = new Array("3.2.3:3", "", "«Functional» REQ106 - Retrieval of historic information.", "EARoot/EA3/EA2/EA3/EA255.htm", "19.png", "2341", "0", "", "Requirement");
+tocTab[tocTab.length] = new Array("3.2.3:4", "", "«Functional» REQ107 - Access to the secure site must be no longer than 2 sec delay.", "EARoot/EA3/EA2/EA3/EA256.htm", "19.png", "2342", "0", "", "Requirement");

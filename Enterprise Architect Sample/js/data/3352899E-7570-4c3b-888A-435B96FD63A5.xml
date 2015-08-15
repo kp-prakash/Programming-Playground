@@ -1,0 +1,17 @@
+tocTab[tocTab.length] = new Array("7:1", "", "Activity Diagrams", "EARoot/EA7/EA1241.htm", "181.png", "348", "0", "", "Activity diagram");
+tocTab[tocTab.length] = new Array("7:2", "", "Class diagrams", "EARoot/EA7/EA1243.htm", "175.png", "432", "0", "", "Logical diagram");
+tocTab[tocTab.length] = new Array("7:3", "", "Communication diagrams", "EARoot/EA7/EA1245.htm", "184.png", "407", "0", "", "Collaboration diagram");
+tocTab[tocTab.length] = new Array("7:4", "", "Component Diagrams", "EARoot/EA7/EA1247.htm", "178.png", "448", "0", "", "Component diagram");
+tocTab[tocTab.length] = new Array("7:5", "", "Custom Diagrams", "EARoot/EA7/EA1249.htm", "188.png", "433", "0", "", "Custom diagram");
+tocTab[tocTab.length] = new Array("7:6", "", "Diagram Settings", "EARoot/EA7/EA1251.htm", "176.png", "366", "0", "", "Package diagram");
+tocTab[tocTab.length] = new Array("7:7", "", "Interaction diagrams", "EARoot/EA7/EA1253.htm", "187.png", "414", "0", "", "InteractionOverview diagram");
+tocTab[tocTab.length] = new Array("7:8", "", "Package Diagrams", "EARoot/EA7/EA1255.htm", "176.png", "404", "0", "", "Package diagram");
+tocTab[tocTab.length] = new Array("7:9", "", "Sequence Diagrams", "EARoot/EA7/EA1257.htm", "185.png", "408", "0", "", "Sequence diagram");
+tocTab[tocTab.length] = new Array("7:10", "", "State Diagrams", "EARoot/EA7/EA1259.htm", "176.png", "417", "0", "", "Package diagram");
+tocTab[tocTab.length] = new Array("7:11", "", "Timing", "EARoot/EA7/EA1261.htm", "186.png", "370", "0", "", "Timing diagram");
+tocTab[tocTab.length] = new Array("7:12", "", "Use Case diagrams", "EARoot/EA7/EA1263.htm", "180.png", "405", "0", "", "Use Case diagram");
+tocTab[tocTab.length] = new Array("7.1", "1", "Composite Structure", "EARoot/EA7/EA1274.htm", "4.png", "", "", "{60939828-28B6-4c97-B737-FA770AF1FD7E}", "Package");
+tocTab[tocTab.length] = new Array("7.2", "1", "Documentation", "EARoot/EA7/EA1275.htm", "4.png", "", "", "{96695A63-5B3F-4ec8-8D88-8886021E1E85}", "Package");
+tocTab[tocTab.length] = new Array("7.3", "1", "Interactions", "EARoot/EA7/EA1284.htm", "4.png", "", "", "{4C70616D-FEB5-48f0-977E-AF5F92E52E36}", "Package");
+tocTab[tocTab.length] = new Array("7.4", "1", "Object", "EARoot/EA7/EA1306.htm", "4.png", "", "", "{B77BDADB-7B41-4960-95F9-C9C05ECBDC08}", "Package");
+tocTab[tocTab.length] = new Array("7.5", "1", "Timing", "EARoot/EA7/EA1350.htm", "4.png", "", "", "{EA4D9FE7-EF76-425b-B868-87AC83CC9B6D}", "Package");

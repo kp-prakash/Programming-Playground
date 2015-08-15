@@ -1,0 +1,6 @@
+tocTab[tocTab.length] = new Array("4.3.3.5:1", "", "ShoppingBasket", "EARoot/EA4/EA3/EA3/EA5/EA817.htm", "175.png", "436", "0", "", "Logical diagram");
+tocTab[tocTab.length] = new Array("4.3.3.5:2", "", "«EJBRemoteInterface» ShoppingBasket", "EARoot/EA4/EA3/EA3/EA5/EA820.htm", "8.png", "2654", "0", "", "Interface");
+tocTab[tocTab.length] = new Array("4.3.3.5:3", "", "«EJBImplementation» ShoppingBasketBean", "EARoot/EA4/EA3/EA3/EA5/EA821.htm", "5.png", "2656", "0", "", "Class");
+tocTab[tocTab.length] = new Array("4.3.3.5:4", "", "«EJBEntityHomeInterface» ShoppingBasketHome", "EARoot/EA4/EA3/EA3/EA5/EA822.htm", "8.png", "2655", "0", "", "Interface");
+tocTab[tocTab.length] = new Array("4.3.3.5:5", "", "ShoppingBasketPK", "EARoot/EA4/EA3/EA3/EA5/EA823.htm", "5.png", "2657", "0", "", "Class");
+tocTab[tocTab.length] = new Array("4.3.3.5.1", "1", "META-INF", "EARoot/EA4/EA3/EA3/EA5/EA819.htm", "4.png", "", "", "{A2995AFC-4CBC-4fbd-BD99-9B29505CA707}", "Package");

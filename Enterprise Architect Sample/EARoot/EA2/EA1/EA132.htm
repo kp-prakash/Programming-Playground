@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Shopping Basket</title>
+<link href="../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script>
+function initPage(src) {
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
+}
+</script>
+</head>
+<body onload="initPage(this);" class="Content">
+<div class="pageHeader"></div>
+<div class="PageBody">
+	<span class="ObjectTitle">Shopping Basket  : public   object</span>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">9/30/2000 12:00:00 AM</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic">Modified:</td>
+			<td class="ObjectDetailsValue">12/22/2005 11:02:33 AM</td>
+		</tr>
+		<tr style="height: 10px"><td colspan="2"></td></tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td class="ObjectDetailsValue">Paulene Dean</td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj02" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Phase:</td>
+			<td class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr id="proj03" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Status:</td>
+			<td class="ObjectDetailsValue">Approved</td>
+		</tr>
+		<tr id="proj04" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Complexity:</td>
+			<td class="ObjectDetailsValue">Easy</td>
+		</tr>
+		<tr>
+			<td class="ObjectDetailsTopic"><img src="../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
+			<td class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">UUID:</td>
+			<td class="ObjectDetailsValue">{EA934226-DA36-47dc-A9D7-0C8E15FDC827}</td>
+		</tr>
+		<tr id="adv01" style="display: none;">
+			<td class="ObjectDetailsTopic" style="padding-left: 18px;">Appears In:</td>
+			<td class="ObjectDetailsValue"><a href="EA121.htm">Process Model</a></td>
+		</tr>
+	</table>
+	<div class="ObjectDetailsNotes">An&nbsp;<WBR>electronic&nbsp;<WBR>shopping&nbsp;<WBR>basket&nbsp;<WBR>allows&nbsp;<WBR>the&nbsp;<WBR>customer&nbsp;<WBR>to&nbsp;<WBR>add&nbsp;<WBR>items&nbsp;<WBR>to&nbsp;<WBR>their&nbsp;<WBR>order&nbsp;<WBR>as&nbsp;<WBR>they&nbsp;<WBR>browse&nbsp;<WBR>the&nbsp;<WBR>current&nbsp;<WBR>catalogue.&nbsp;<WBR>When&nbsp;<WBR>the&nbsp;<WBR>customer&nbsp;<WBR>is&nbsp;<WBR>ready&nbsp;<WBR>to&nbsp;<WBR>place&nbsp;<WBR>their&nbsp;<WBR>order,&nbsp;<WBR>they&nbsp;<WBR>may&nbsp;<WBR>review&nbsp;<WBR>their&nbsp;<WBR>basket&nbsp;<WBR>-&nbsp;<WBR>remove&nbsp;<WBR>items&nbsp;<WBR>if&nbsp;<WBR>desired,&nbsp;<WBR>then&nbsp;<WBR>go&nbsp;<WBR>on&nbsp;<WBR>to&nbsp;<WBR>the&nbsp;<WBR>electronic&nbsp;<WBR>payment&nbsp;<WBR>process.</div>
+
+	<div class="TableGroup" id="TableGroup">
+		<ul class="ItemTitle">
+			<li onClick="parent.toggleItem('AssociationsTo');" id="AssociationsToTitle">Associations To</li>
+			<li onClick="parent.toggleItem('Requirements');" id="RequirementsTitle">Requirements</li>
+			<li onClick="parent.toggleItem('Links');" id="LinksTitle">Other Links</li>
+		</ul>
+		<div class="ItemBody" id="AssociationsToTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="20%" class="TableHeading">Element</td>
+					<td width="25%" class="TableHeading">Source Role</td>
+					<td width="25%" class="TableHeading">Target Role</td>
+					<td width="30%" class="TableHeading">Details</td>
+				</tr>
+				<tr>
+					<td width="20%" class="TableRow" valign="top">
+						<a href="EA133.htm">Shopping Basket Item</a><br />
+						Object &nbsp;
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;
+					</td>
+					<td width="20%" class="TableRow" valign="top">
+						<strong>Name:</strong> &nbsp;<br />
+						&nbsp;	
+					</td>
+					<td width="30%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+
+			</table>
+		</div>
+		<div class="ItemBody" id="RequirementsTable">
+			<table border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="24%" class="TableHeading">Requirement</td>
+					<td width="8%" class="TableHeading">Type</td>
+					<td width="8%" class="TableHeading">Status</td>
+					<td width="8%" class="TableHeading">Difficulty</td>
+					<td width="8%" class="TableHeading">Priority</td>
+					<td width="52%" class="TableHeading">Detail</td>
+				</tr>
+				<tr>
+					<td width="24%" class="TableRow">Buy Items</td>
+					<td width="8%" class="TableRow">Functional</td>
+					<td width="8%" class="TableRow">Approved</td>
+					<td width="8%" class="TableRow">Medium</td>
+					<td width="8%" class="TableRow">Medium</td>
+					<td width="52%" class="TableRow"><div class="ObjectDetailsNotes">The&nbsp;<WBR>ability&nbsp;<WBR>to&nbsp;<WBR>pass&nbsp;<WBR>the&nbsp;<WBR>collected&nbsp;<WBR>items&nbsp;<WBR>to&nbsp;<WBR>a&nbsp;<WBR>purchase&nbsp;<WBR>function<br /></div>
+</td>
+				</tr>
+				<tr>
+					<td width="24%" class="TableRow">Remove Items</td>
+					<td width="8%" class="TableRow">Functional</td>
+					<td width="8%" class="TableRow">Approved</td>
+					<td width="8%" class="TableRow">Medium</td>
+					<td width="8%" class="TableRow">Medium</td>
+					<td width="52%" class="TableRow"><div class="ObjectDetailsNotes">Ability&nbsp;<WBR>to&nbsp;<WBR>remove&nbsp;<WBR>unwanted&nbsp;<WBR>items&nbsp;<WBR>from&nbsp;<WBR>the&nbsp;<WBR>cart</div>
+</td>
+				</tr>
+				<tr>
+					<td width="24%" class="TableRow">Retrieve Basket</td>
+					<td width="8%" class="TableRow">Functional</td>
+					<td width="8%" class="TableRow">Approved</td>
+					<td width="8%" class="TableRow">Medium</td>
+					<td width="8%" class="TableRow">Medium</td>
+					<td width="52%" class="TableRow"><div class="ObjectDetailsNotes">Ability&nbsp;<WBR>to&nbsp;<WBR>load&nbsp;<WBR>a&nbsp;<WBR>cart&nbsp;<WBR>previously&nbsp;<WBR>saved</div>
+</td>
+				</tr>
+				<tr>
+					<td width="24%" class="TableRow">Save Basket</td>
+					<td width="8%" class="TableRow">Functional</td>
+					<td width="8%" class="TableRow">Approved</td>
+					<td width="8%" class="TableRow">Medium</td>
+					<td width="8%" class="TableRow">Medium</td>
+					<td width="52%" class="TableRow"><div class="ObjectDetailsNotes">The&nbsp;<WBR>ability&nbsp;<WBR>to&nbsp;<WBR>save&nbsp;<WBR>the&nbsp;<WBR>cart&nbsp;<WBR>for&nbsp;<WBR>future&nbsp;<WBR>use</div>
+</td>
+				</tr>
+				<tr>
+					<td width="24%" class="TableRow">Store user selection()</td>
+					<td width="8%" class="TableRow">Functional</td>
+					<td width="8%" class="TableRow">Approved</td>
+					<td width="8%" class="TableRow">Medium</td>
+					<td width="8%" class="TableRow">Medium</td>
+					<td width="52%" class="TableRow"><div class="ObjectDetailsNotes">The&nbsp;<WBR>shopping&nbsp;<WBR>cart&nbsp;<WBR>must&nbsp;<WBR>be&nbsp;<WBR>able&nbsp;<WBR>to&nbsp;<WBR>store&nbsp;<WBR>user&nbsp;<WBR>selections&nbsp;<WBR>during&nbsp;<WBR>the&nbsp;<WBR>current&nbsp;<WBR>shopping&nbsp;<WBR>&#39;session&#39;</div>
+</td>
+				</tr>
+
+			</table>
+		</div>
+		<div class="ItemBody" id="LinksTable">
+			<table align="center" border="0" cellspacing="0" cellpadding="0" class="Table">
+				<tr>
+					<td width="30%" class="TableHeading">Object</td>
+					<td width="15%" class="TableHeading">Type</td>
+					<td width="15%" class="TableHeading">Connection</td>
+					<td width="40%" class="TableHeading">Notes</td>
+				</tr>
+				<tr>
+					<td width="30%" class="TableRow" valign="top"><a href="EA129.htm">«process» Sell Books On-Line</a></td>
+					<td width="15%" class="TableRow" valign="top">Activity</td>
+					<td width="15%" class="TableRow" valign="top">Dependency</td>
+					<td width="40%" class="TableRow" valign="top">&nbsp;</td>
+				</tr>
+
+			</table>
+		</div>
+	</div>
+<div class="pageFooter"></div>
+ 
+</body>
+</html>

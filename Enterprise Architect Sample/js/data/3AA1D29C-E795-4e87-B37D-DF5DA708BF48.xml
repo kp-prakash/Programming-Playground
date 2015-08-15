@@ -1,0 +1,5 @@
+tocTab[tocTab.length] = new Array("3.2.4:1", "", "Reliability Main", "EARoot/EA3/EA2/EA4/EA257.htm", "175.png", "399", "0", "", "Logical diagram");
+tocTab[tocTab.length] = new Array("3.2.4:2", "", "«Performance» REQ112 - 2000 hours mean time between failure.", "EARoot/EA3/EA2/EA4/EA259.htm", "19.png", "2345", "0", "", "Requirement");
+tocTab[tocTab.length] = new Array("3.2.4:3", "", "«Functional» REQ113 - Must be recoverable quickly.", "EARoot/EA3/EA2/EA4/EA260.htm", "19.png", "2346", "0", "", "Requirement");
+tocTab[tocTab.length] = new Array("3.2.4:4", "", "«Performance» REQ114 - 99.999% accuracy.", "EARoot/EA3/EA2/EA4/EA261.htm", "19.png", "2343", "0", "", "Requirement");
+tocTab[tocTab.length] = new Array("3.2.4:5", "", "«Functional» REQ115- 99.999% precision.", "EARoot/EA3/EA2/EA4/EA262.htm", "19.png", "2344", "0", "", "Requirement");

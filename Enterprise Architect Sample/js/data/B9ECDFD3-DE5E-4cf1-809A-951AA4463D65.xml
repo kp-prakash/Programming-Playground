@@ -1,0 +1,2 @@
+tocTab[tocTab.length] = new Array("4.4.3.3:1", "", "Linux Firewall Software", "EARoot/EA4/EA4/EA3/EA3/EA977.htm", "10.png", "1877", "0", "", "Component");
+tocTab[tocTab.length] = new Array("4.4.3.3:2", "", "Windows Firewall Software", "EARoot/EA4/EA4/EA3/EA3/EA978.htm", "10.png", "1876", "0", "", "Component");

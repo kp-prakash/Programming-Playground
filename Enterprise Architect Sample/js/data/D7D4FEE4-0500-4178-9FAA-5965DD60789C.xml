@@ -1,0 +1,9 @@
+tocTab[tocTab.length] = new Array("4.3.1:1", "", "C# Model", "EARoot/EA4/EA3/EA1/EA736.htm", "175.png", "124", "0", "", "Logical diagram");
+tocTab[tocTab.length] = new Array("4.3.1:2", "", "C# Model - No Attributes", "EARoot/EA4/EA3/EA1/EA738.htm", "175.png", "365", "0", "", "Logical diagram");
+tocTab[tocTab.length] = new Array("4.3.1:3", "", "Account", "EARoot/EA4/EA3/EA1/EA742.htm", "5.png", "442", "0", "", "Class");
+tocTab[tocTab.length] = new Array("4.3.1:4", "", "LineItem", "EARoot/EA4/EA3/EA1/EA743.htm", "5.png", "443", "0", "", "Class");
+tocTab[tocTab.length] = new Array("4.3.1:5", "", "Order", "EARoot/EA4/EA3/EA1/EA745.htm", "5.png", "444", "0", "", "Class");
+tocTab[tocTab.length] = new Array("4.3.1:6", "", "«enumeration» OrderStatus", "EARoot/EA4/EA3/EA1/EA746.htm", "5.png", "445", "0", "", "Class");
+tocTab[tocTab.length] = new Array("4.3.1:7", "", "ShoppingBasket", "EARoot/EA4/EA3/EA1/EA747.htm", "5.png", "446", "0", "", "Class");
+tocTab[tocTab.length] = new Array("4.3.1:8", "", "StockItem", "EARoot/EA4/EA3/EA1/EA748.htm", "5.png", "447", "0", "", "Class");
+tocTab[tocTab.length] = new Array("4.3.1:9", "", "Transaction", "EARoot/EA4/EA3/EA1/EA752.htm", "5.png", "448", "0", "", "Class");

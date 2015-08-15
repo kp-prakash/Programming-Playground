@@ -1,0 +1,17 @@
+tocTab[tocTab.length] = new Array("3.3.6.1:1", "", "Customer Process", "EARoot/EA3/EA3/EA6/EA1/EA506.htm", "181.png", "165", "0", "", "Activity diagram");
+tocTab[tocTab.length] = new Array("3.3.6.1:2", "", "Close Order", "EARoot/EA3/EA3/EA6/EA1/EA508.htm", "68.png", "669", "0", "", "StateNode");
+tocTab[tocTab.length] = new Array("3.3.6.1:3", "", "Commit Order", "EARoot/EA3/EA3/EA6/EA1/EA509.htm", "104.png", "665", "0", "", "Action");
+tocTab[tocTab.length] = new Array("3.3.6.1:4", "", "Confirm Purchase", "EARoot/EA3/EA3/EA6/EA1/EA510.htm", "104.png", "667", "0", "", "Action");
+tocTab[tocTab.length] = new Array("3.3.6.1:5", "", "Credit Card Problems", "EARoot/EA3/EA3/EA6/EA1/EA511.htm", "104.png", "668", "0", "", "Action");
+tocTab[tocTab.length] = new Array("3.3.6.1:6", "", "Credit Check", "EARoot/EA3/EA3/EA6/EA1/EA512.htm", "56.png", "670", "0", "", "Decision");
+tocTab[tocTab.length] = new Array("3.3.6.1:7", "", "Customer Enters Web site", "EARoot/EA3/EA3/EA6/EA1/EA513.htm", "68.png", "657", "0", "", "StateNode");
+tocTab[tocTab.length] = new Array("3.3.6.1:8", "", "Items Delivered", "EARoot/EA3/EA3/EA6/EA1/EA514.htm", "104.png", "671", "0", "", "Action");
+tocTab[tocTab.length] = new Array("3.3.6.1:9", "", "Order Complete", "EARoot/EA3/EA3/EA6/EA1/EA515.htm", "68.png", "672", "0", "", "StateNode");
+tocTab[tocTab.length] = new Array("3.3.6.1:10", "", "Rejected", "EARoot/EA3/EA3/EA6/EA1/EA516.htm", "68.png", "660", "0", "", "StateNode");
+tocTab[tocTab.length] = new Array("3.3.6.1:11", "", "Supply Credit Card Details", "EARoot/EA3/EA3/EA6/EA1/EA517.htm", "104.png", "666", "0", "", "Action");
+tocTab[tocTab.length] = new Array("3.3.6.1:12", "", "User Logs In", "EARoot/EA3/EA3/EA6/EA1/EA518.htm", "104.png", "658", "0", "", "Action");
+tocTab[tocTab.length] = new Array("3.3.6.1:13", "", "User Validation", "EARoot/EA3/EA3/EA6/EA1/EA519.htm", "56.png", "659", "0", "", "Decision");
+tocTab[tocTab.length] = new Array("3.3.6.1:14", "", "View BookStore", "EARoot/EA3/EA3/EA6/EA1/EA520.htm", "104.png", "661", "0", "", "Action");
+tocTab[tocTab.length] = new Array("3.3.6.1:15", "", "Add to Shopping Basket", "EARoot/EA3/EA3/EA6/EA1/EA521.htm", "104.png", "663", "0", "", "Action");
+tocTab[tocTab.length] = new Array("3.3.6.1:16", "", "Select Book for Purchase", "EARoot/EA3/EA3/EA6/EA1/EA522.htm", "104.png", "662", "0", "", "Action");
+tocTab[tocTab.length] = new Array("3.3.6.1:17", "", "View Shopping Basket", "EARoot/EA3/EA3/EA6/EA1/EA523.htm", "104.png", "664", "0", "", "Action");

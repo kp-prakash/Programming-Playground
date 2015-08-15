@@ -1,0 +1,10 @@
+tocTab[tocTab.length] = new Array("4.2.1.2.2:1", "", "Register User", "EARoot/EA4/EA2/EA1/EA2/EA2/EA683.htm", "175.png", "171", "0", "", "Logical diagram");
+tocTab[tocTab.length] = new Array("4.2.1.2.2:2", "", "«text» Address", "EARoot/EA4/EA2/EA1/EA2/EA2/EA685.htm", "16.png", "694", "0", "", "GUIElement");
+tocTab[tocTab.length] = new Array("4.2.1.2.2:3", "", "«button» Cancel", "EARoot/EA4/EA2/EA1/EA2/EA2/EA686.htm", "16.png", "698", "0", "", "GUIElement");
+tocTab[tocTab.length] = new Array("4.2.1.2.2:4", "", "«text» eMail", "EARoot/EA4/EA2/EA1/EA2/EA2/EA687.htm", "16.png", "699", "0", "", "GUIElement");
+tocTab[tocTab.length] = new Array("4.2.1.2.2:5", "", "«text» Password", "EARoot/EA4/EA2/EA1/EA2/EA2/EA688.htm", "16.png", "700", "0", "", "GUIElement");
+tocTab[tocTab.length] = new Array("4.2.1.2.2:6", "", "«web page» Register as New User", "EARoot/EA4/EA2/EA1/EA2/EA2/EA689.htm", "11.png", "695", "0", "", "Screen");
+tocTab[tocTab.length] = new Array("4.2.1.2.2:7", "", "«button» Submit", "EARoot/EA4/EA2/EA1/EA2/EA2/EA690.htm", "16.png", "697", "0", "", "GUIElement");
+tocTab[tocTab.length] = new Array("4.2.1.2.2:8", "", "«dropdown» Title", "EARoot/EA4/EA2/EA1/EA2/EA2/EA691.htm", "16.png", "701", "0", "", "GUIElement");
+tocTab[tocTab.length] = new Array("4.2.1.2.2:9", "", "«text» User Name", "EARoot/EA4/EA2/EA1/EA2/EA2/EA692.htm", "16.png", "696", "0", "", "GUIElement");
+tocTab[tocTab.length] = new Array("4.2.1.2.2:10", "", "«text» City", "EARoot/EA4/EA2/EA1/EA2/EA2/EA693.htm", "16.png", "693", "695", "", "GUIElement");

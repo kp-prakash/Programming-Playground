@@ -1,0 +1,4 @@
+tocTab[tocTab.length] = new Array("4.5:1", "", "Deployment Model", "EARoot/EA4/EA5/EA986.htm", "179.png", "53", "0", "", "Deployment diagram");
+tocTab[tocTab.length] = new Array("4.5.1", "1", "Head Office Deployment", "EARoot/EA4/EA5/EA988.htm", "4.png", "", "", "{C3D81559-438D-4edf-A857-B015895E7AFF}", "Package");
+tocTab[tocTab.length] = new Array("4.5.2", "1", "Nodes", "EARoot/EA4/EA5/EA991.htm", "4.png", "", "", "{50710039-E936-4d9e-A6A6-6F54B161C709}", "Package");
+tocTab[tocTab.length] = new Array("4.5.3", "1", "Operating Systems", "EARoot/EA4/EA5/EA992.htm", "4.png", "", "", "{0626967F-4E5A-4297-A81D-ED800039712E}", "Package");

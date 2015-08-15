@@ -1,0 +1,11 @@
+tocTab[tocTab.length] = new Array("2.3.3:1", "", "Stakeholders", "EARoot/EA2/EA3/EA3/EA170.htm", "188.png", "266", "0", "", "Custom diagram");
+tocTab[tocTab.length] = new Array("2.3.3:2", "", "Stakeholders Images", "EARoot/EA2/EA3/EA3/EA172.htm", "180.png", "374", "0", "", "Use Case diagram");
+tocTab[tocTab.length] = new Array("2.3.3:3", "", "«internal worker» Application Developement Manager", "EARoot/EA2/EA3/EA3/EA174.htm", "6.png", "1388", "0", "", "Actor");
+tocTab[tocTab.length] = new Array("2.3.3:4", "", "«internal worker» Business Manager", "EARoot/EA2/EA3/EA3/EA175.htm", "6.png", "1383", "0", "", "Actor");
+tocTab[tocTab.length] = new Array("2.3.3:5", "", "BusinessModel", "EARoot/EA2/EA3/EA3/EA176.htm", "25.png", "2506", "0", "", "Object");
+tocTab[tocTab.length] = new Array("2.3.3:6", "", "«internal worker» Chief Executive Officer", "EARoot/EA2/EA3/EA3/EA177.htm", "6.png", "1381", "0", "", "Actor");
+tocTab[tocTab.length] = new Array("2.3.3:7", "", "«internal worker» Finance Manager", "EARoot/EA2/EA3/EA3/EA178.htm", "6.png", "1384", "0", "", "Actor");
+tocTab[tocTab.length] = new Array("2.3.3:8", "", "«internal worker» IT Manager", "EARoot/EA2/EA3/EA3/EA179.htm", "6.png", "1382", "0", "", "Actor");
+tocTab[tocTab.length] = new Array("2.3.3:9", "", "«internal worker» Operation Manager", "EARoot/EA2/EA3/EA3/EA180.htm", "6.png", "1387", "0", "", "Actor");
+tocTab[tocTab.length] = new Array("2.3.3:10", "", "Process Manager", "EARoot/EA2/EA3/EA3/EA181.htm", "6.png", "1386", "0", "", "Actor");
+tocTab[tocTab.length] = new Array("2.3.3:11", "", "Stock Control Manager", "EARoot/EA2/EA3/EA3/EA182.htm", "6.png", "1385", "0", "", "Actor");

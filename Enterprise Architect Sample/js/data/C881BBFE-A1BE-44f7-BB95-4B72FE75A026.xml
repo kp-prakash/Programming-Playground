@@ -1,0 +1,10 @@
+tocTab[tocTab.length] = new Array("4.2.1.3.1:1", "", "Browse", "EARoot/EA4/EA2/EA1/EA3/EA1/EA697.htm", "175.png", "173", "0", "", "Logical diagram");
+tocTab[tocTab.length] = new Array("4.2.1.3.1:2", "", "BrowseCatalogue", "EARoot/EA4/EA2/EA1/EA3/EA1/EA700.htm", "11.png", "710", "0", "", "Screen");
+tocTab[tocTab.length] = new Array("4.2.1.3.1:3", "", "«button» AddToBasket", "EARoot/EA4/EA2/EA1/EA3/EA1/EA702.htm", "16.png", "712", "710", "", "GUIElement");
+tocTab[tocTab.length] = new Array("4.2.1.3.1:4", "", "«text» AuthorFilter", "EARoot/EA4/EA2/EA1/EA3/EA1/EA703.htm", "16.png", "713", "710", "", "GUIElement");
+tocTab[tocTab.length] = new Array("4.2.1.3.1:5", "", "«list» BookList", "EARoot/EA4/EA2/EA1/EA3/EA1/EA704.htm", "16.png", "708", "710", "", "GUIElement");
+tocTab[tocTab.length] = new Array("4.2.1.3.1:6", "", "«button» Clear", "EARoot/EA4/EA2/EA1/EA3/EA1/EA705.htm", "16.png", "709", "710", "", "GUIElement");
+tocTab[tocTab.length] = new Array("4.2.1.3.1:7", "", "«combobox» PublisherFilter", "EARoot/EA4/EA2/EA1/EA3/EA1/EA706.htm", "16.png", "707", "710", "", "GUIElement");
+tocTab[tocTab.length] = new Array("4.2.1.3.1:8", "", "«button» Submit", "EARoot/EA4/EA2/EA1/EA3/EA1/EA707.htm", "16.png", "706", "710", "", "GUIElement");
+tocTab[tocTab.length] = new Array("4.2.1.3.1:9", "", "«text» TitleFilter", "EARoot/EA4/EA2/EA1/EA3/EA1/EA708.htm", "16.png", "714", "710", "", "GUIElement");
+tocTab[tocTab.length] = new Array("4.2.1.3.1:10", "", "«button» ViewBasket", "EARoot/EA4/EA2/EA1/EA3/EA1/EA709.htm", "16.png", "711", "710", "", "GUIElement");

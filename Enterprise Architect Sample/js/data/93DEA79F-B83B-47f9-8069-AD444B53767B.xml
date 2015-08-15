@@ -1,0 +1,9 @@
+tocTab[tocTab.length] = new Array("4.5.2.1.2:1", "", "Dell PowerEdge 1650", "EARoot/EA4/EA5/EA2/EA1/EA2/EA1077.htm", "9.png", "1712", "0", "", "Node");
+tocTab[tocTab.length] = new Array("4.5.2.1.2:2", "", "Dell PowerEdge 2650", "EARoot/EA4/EA5/EA2/EA1/EA2/EA1078.htm", "9.png", "1716", "0", "", "Node");
+tocTab[tocTab.length] = new Array("4.5.2.1.2:3", "", "Dell PowerEdge 350", "EARoot/EA4/EA5/EA2/EA1/EA2/EA1079.htm", "9.png", "1720", "0", "", "Node");
+tocTab[tocTab.length] = new Array("4.5.2.1.2:4", "", "Dell PowerEdge 6650", "EARoot/EA4/EA5/EA2/EA1/EA2/EA1080.htm", "9.png", "1717", "0", "", "Node");
+tocTab[tocTab.length] = new Array("4.5.2.1.2:5", "", "HP ProLiant DL320", "EARoot/EA4/EA5/EA2/EA1/EA2/EA1081.htm", "9.png", "1711", "0", "", "Node");
+tocTab[tocTab.length] = new Array("4.5.2.1.2:6", "", "HP ProLiant DL360", "EARoot/EA4/EA5/EA2/EA1/EA2/EA1082.htm", "9.png", "1714", "0", "", "Node");
+tocTab[tocTab.length] = new Array("4.5.2.1.2:7", "", "HP ProLiant DL380", "EARoot/EA4/EA5/EA2/EA1/EA2/EA1083.htm", "9.png", "1713", "0", "", "Node");
+tocTab[tocTab.length] = new Array("4.5.2.1.2:8", "", "IBM xSeries 345", "EARoot/EA4/EA5/EA2/EA1/EA2/EA1084.htm", "9.png", "1715", "0", "", "Node");
+tocTab[tocTab.length] = new Array("4.5.2.1.2:9", "", "IBM xSeries 360", "EARoot/EA4/EA5/EA2/EA1/EA2/EA1085.htm", "9.png", "1719", "0", "", "Node");

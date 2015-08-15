@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Invoice Payment</title>
+<link href="../../../../css/ea.css" rel="stylesheet" type="text/css" />
+<script>
+function initPage(src) {
+	if(parent==this&&(this.location+"").indexOf('EARoot')!=-1)
+		document.location=(this.location+"").substring(0,(this.location+"").indexOf('EARoot'))+"index"+(this.location+"").substring((this.location+"").lastIndexOf('.'))+"?goto="+((this.location+"").substring((this.location+"").indexOf('EARoot')+7,(this.location+"").lastIndexOf('.')).replace(/\//g,':').replace(/EA/g,""));
+	else
+		parent.initPage(src);
+}
+</script>
+</head>
+<body onload="initPage(this);" class="Content">
+<div class="PageBody">
+	
+<img src="EA460.png" usemap="#EA460" border="0" />
+
+<MAP NAME="EA460">
+<area shape="rect" coords="253,284,269,300" href="EA503.htm">
+<area shape="rect" coords="182,283,198,299" href="EA502.htm">
+<area shape="rect" coords="518,69,542,93" href="EA470.htm">
+<area shape="rect" coords="267,209,340,244" href="EA500.htm">
+<area shape="rect" coords="268,276,337,313" href="EA499.htm">
+<area shape="rect" coords="130,273,183,308" href="EA501.htm">
+<area shape="rect" coords="370,62,396,96" href="EA492.htm">
+<area shape="rect" coords="427,63,497,98" href="EA495.htm">
+<area shape="rect" coords="266,62,338,97" href="EA498.htm">
+<area shape="rect" coords="269,126,336,161" href="EA497.htm">
+<area shape="rect" coords="143,62,170,96" href="EA493.htm">
+<area shape="rect" coords="67,61,120,96" href="EA496.htm">
+<area shape="rect" coords="38,71,54,87" href="EA494.htm">
+<area shape="rect" coords="10,10,539,184" href="EA480.htm">
+<area shape="rect" coords="10,184,541,324" href="EA483.htm">
+</MAP>
+
+	<div class="ObjectTitle">Invoice Payment : activity diagram</div>
+	<table border="0" cellpadding="0" cellspacing="0" class="ObjectDetails">
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Created:</td>
+			<td width="85%" class="ObjectDetailsValue">1/18/2004 12:00:00 AM</td>
+		</tr>
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic">Modified:</td>
+			<td width="85%" class="ObjectDetailsValue">10/18/2005 12:00:00 AM</td>
+		</tr>
+		<tr style="padding-top: 10px;">
+			<td width="15%" class="ObjectDetailsTopic"><img src="../../../../images/plus03.gif" align="absmiddle" id="proj" onclick="parent.toggleData(this.id)" />Project:</td>
+			<td width="85%" class="ObjectDetailsValue"></td>			
+		</tr>
+		<tr id="proj00" style="display: none;">
+			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">Author:</td>
+			<td width="85%" class="ObjectDetailsValue"></td>
+		</tr>
+		<tr id="proj01" style="display: none;">
+			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">Version:</td>
+			<td width="85%" class="ObjectDetailsValue">1.0</td>
+		</tr>
+		<tr>
+			<td width="15%" class="ObjectDetailsTopic"><img src="../../../../images/plus03.gif" align="absmiddle" id="adv" onclick="parent.toggleData(this.id)" />Advanced:</td>
+			<td width="85%" class="ObjectDetailsValue"></td>			
+		</tr>
+		<tr id="adv00" style="display: none;">
+			<td width="15%" class="ObjectDetailsTopic" style="padding-left: 18px;">ID:</td>
+			<td width="85%" class="ObjectDetailsValue">{460727A2-F4C4-4c29-8C43-5B0D2A85948B}</td>
+		</tr>
+	</table>
+	<div class="ObjectDetailsNotes">page&nbsp;<WBR>12&nbsp;<WBR>UML&nbsp;<WBR>2.0&nbsp;<WBR>Specification&lt;br&nbsp;<WBR>/&gt;&quot;A&nbsp;<WBR>grouping&nbsp;<WBR>of&nbsp;<WBR>any&nbsp;<WBR>set&nbsp;<WBR>of&nbsp;<WBR>model&nbsp;<WBR>elements&nbsp;<WBR>based&nbsp;<WBR>on&nbsp;<WBR>a&nbsp;<WBR>set&nbsp;<WBR>of&nbsp;<WBR>criteria.&lt;br&nbsp;<WBR>/&gt;1.&nbsp;<WBR>activity&nbsp;<WBR>diagram:&nbsp;<WBR>A&nbsp;<WBR>grouping&nbsp;<WBR>of&nbsp;<WBR>activity&nbsp;<WBR>nodes&nbsp;<WBR>and&nbsp;<WBR>edges.&nbsp;<WBR>Partitions&nbsp;<WBR>divide&nbsp;<WBR>the&nbsp;<WBR>nodes&nbsp;<WBR>and&nbsp;<WBR>edges&nbsp;<WBR>to&nbsp;<WBR>constrain&nbsp;<WBR>and&lt;br&nbsp;<WBR>/&gt;show&nbsp;<WBR>a&nbsp;<WBR>view&nbsp;<WBR>of&nbsp;<WBR>the&nbsp;<WBR>contained&nbsp;<WBR>nodes.&nbsp;<WBR>Partitions&nbsp;<WBR>can&nbsp;<WBR>share&nbsp;<WBR>contents.&nbsp;<WBR>They&nbsp;<WBR>often&nbsp;<WBR>correspond&nbsp;<WBR>to&nbsp;<WBR>organizational&nbsp;<WBR>units&nbsp;<WBR>in&lt;br&nbsp;<WBR>/&gt;a&nbsp;<WBR>business&nbsp;<WBR>model.&nbsp;<WBR>They&nbsp;<WBR>may&nbsp;<WBR>be&nbsp;<WBR>used&nbsp;<WBR>to&nbsp;<WBR>allocate&nbsp;<WBR>characteristics&nbsp;<WBR>or&nbsp;<WBR>resources&nbsp;<WBR>among&nbsp;<WBR>the&nbsp;<WBR>nodes&nbsp;<WBR>of&nbsp;<WBR>an&nbsp;<WBR>activity.&lt;br&nbsp;<WBR>/&gt;2.&nbsp;<WBR>architecture:&nbsp;<WBR>A&nbsp;<WBR>set&nbsp;<WBR>of&nbsp;<WBR>related&nbsp;<WBR>classifiers&nbsp;<WBR>or&nbsp;<WBR>packages&nbsp;<WBR>at&nbsp;<WBR>the&nbsp;<WBR>same&nbsp;<WBR>level&nbsp;<WBR>of&nbsp;<WBR>abstraction&nbsp;<WBR>or&nbsp;<WBR>across&nbsp;<WBR>layers&nbsp;<WBR>in&nbsp;<WBR>a&nbsp;<WBR>layered&lt;br&nbsp;<WBR>/&gt;architecture.&nbsp;<WBR>A&nbsp;<WBR>partition&nbsp;<WBR>represents&nbsp;<WBR>a&nbsp;<WBR>vertical&nbsp;<WBR>slice&nbsp;<WBR>through&nbsp;<WBR>an&nbsp;<WBR>architecture,&nbsp;<WBR>whereas&nbsp;<WBR>a&nbsp;<WBR>layer&nbsp;<WBR>represents&nbsp;<WBR>a&nbsp;<WBR>horizontal&lt;br&nbsp;<WBR>/&gt;slice.&nbsp;<WBR>Contrast:&nbsp;<WBR>layer.&quot;&lt;br&nbsp;<WBR>/&gt;&lt;br&nbsp;<WBR>/&gt;page.&nbsp;<WBR>307&lt;br&nbsp;<WBR>/&gt;&quot;An&nbsp;<WBR>activity&nbsp;<WBR>partition&nbsp;<WBR>is&nbsp;<WBR>a&nbsp;<WBR>kind&nbsp;<WBR>of&nbsp;<WBR>activity&nbsp;<WBR>group&nbsp;<WBR>for&nbsp;<WBR>identifying&nbsp;<WBR>actions&nbsp;<WBR>that&nbsp;<WBR>have&nbsp;<WBR>some&nbsp;<WBR>characteristic&nbsp;<WBR>in&lt;br&nbsp;<WBR>/&gt;common.&quot;</div>
+
+</div>
+ 
+</body>
+</html>

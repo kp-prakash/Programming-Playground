@@ -1,0 +1,11 @@
+tocTab[tocTab.length] = new Array("6.3.1:1", "", "Resources", "EARoot/EA6/EA3/EA1/EA1224.htm", "189.png", "390", "0", "", "Analysis diagram");
+tocTab[tocTab.length] = new Array("6.3.1:2", "", "Resources Overview", "EARoot/EA6/EA3/EA1/EA1226.htm", "176.png", "421", "0", "", "Package diagram");
+tocTab[tocTab.length] = new Array("6.3.1:3", "", "Actor1", "EARoot/EA6/EA3/EA1/EA1228.htm", "6.png", "2315", "0", "", "Actor");
+tocTab[tocTab.length] = new Array("6.3.1:4", "", "Architect", "EARoot/EA6/EA3/EA1/EA1229.htm", "6.png", "2308", "0", "", "Actor");
+tocTab[tocTab.length] = new Array("6.3.1:5", "", "Business Analyst", "EARoot/EA6/EA3/EA1/EA1230.htm", "6.png", "2312", "0", "", "Actor");
+tocTab[tocTab.length] = new Array("6.3.1:6", "", "DBA", "EARoot/EA6/EA3/EA1/EA1231.htm", "6.png", "2643", "0", "", "Actor");
+tocTab[tocTab.length] = new Array("6.3.1:7", "", "Developers", "EARoot/EA6/EA3/EA1/EA1232.htm", "6.png", "2566", "0", "", "Actor");
+tocTab[tocTab.length] = new Array("6.3.1:8", "", "Project Manager", "EARoot/EA6/EA3/EA1/EA1233.htm", "6.png", "2311", "0", "", "Actor");
+tocTab[tocTab.length] = new Array("6.3.1:9", "", "QA", "EARoot/EA6/EA3/EA1/EA1234.htm", "6.png", "2313", "0", "", "Actor");
+tocTab[tocTab.length] = new Array("6.3.1:10", "", "System Analyst", "EARoot/EA6/EA3/EA1/EA1235.htm", "6.png", "2309", "0", "", "Actor");
+tocTab[tocTab.length] = new Array("6.3.1:11", "", "Use Case Modeller", "EARoot/EA6/EA3/EA1/EA1236.htm", "6.png", "2310", "0", "", "Actor");
