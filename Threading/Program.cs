@@ -5,11 +5,60 @@
 
     internal class Program
     {
+        #region Events, Anonymous Methods, Delegates
+        //public class Person
+        //{
+        //    private string _name;
+
+        //    public string Name
+        //    {
+        //        get
+        //        {
+        //            return _name;
+        //        }
+
+        //        set
+        //        {
+        //            if (_name != value && NameChanged != null)
+        //            {
+        //                _name = value;
+        //                NameChanged(_name);
+        //            }
+        //            else
+        //            {
+        //                _name = value;
+        //            }
+        //        }
+        //    }
+
+        //    public Func<string, string, string> Concat = (string s1, string s2) =>
+        //    {
+        //        return s1 + s2;
+        //    };
+
+        //    public event Action<string> NameChanged;
+        //}
+
+        //public static void Main(string[] args)
+        //{
+        //    Person venkat = new Person { Name = "Venkat" };
+        //    venkat.NameChanged += Person_NameChanged;
+        //    venkat.Name = "Venkat";
+        //    venkat.Name = venkat.Concat("Venkat", " Raghvan");
+        //}
+
+        //private static void Person_NameChanged(string name)
+        //{
+        //    Console.WriteLine("New name is : {0}", name);
+        //} 
+        #endregion
+
         #region Threading Basics
 
         //static void Main(string[] args)
         //{
         //    var thread = CreateThread();
+        //    Console.WriteLine("Main Thread! {0}", Thread.CurrentThread.ManagedThreadId);
         //    thread.Start();
         //    thread.Join();
         //    Console.Write("Press any key to exit...");
@@ -24,11 +73,14 @@
 
         //public static void WriteToConsole()
         //{
+        //    Console.WriteLine("From worker thread: {0}", Thread.CurrentThread.ManagedThreadId);
         //    for (int i = 0; i < 500; i++)
         //    {
-        //        Console.WriteLine("Writing to Console...");
+        //        Console.Write("X-->");
+        //        Thread.Sleep(20);
         //    }
-        //}  
+        //    Console.Write("X");
+        //}
 
         #endregion
 
@@ -125,21 +177,27 @@
 
         //static void Main()
         //{
-        //    new Thread(Go).Start();
+        //    Thread.CurrentThread.Name = "Main";
+        //    Thread t = new Thread(Go);
+        //    t.Name = "Test";
+        //    t.Start();
         //    Go();
         //    Console.ReadKey();
         //}
 
         //static void Go()
         //{
+        //    Console.WriteLine("Entered {0} {1}", Thread.CurrentThread.Name, Thread.CurrentThread.ManagedThreadId);
         //    lock (Locker)
         //    {
         //        if (_done)
         //        {
         //            return;
         //        }
-        //        Console.WriteLine("Done"); _done = true;
+        //        _done = true;
+        //        Console.WriteLine("Done - {0} {1}", Thread.CurrentThread.Name, Thread.CurrentThread.ManagedThreadId);
         //    }
+        //    Console.WriteLine("Exit {0} {1}", Thread.CurrentThread.Name, Thread.CurrentThread.ManagedThreadId);
         //}
 
         #endregion
@@ -156,7 +214,7 @@
         //static void Print(string message)
         //{
         //    Console.WriteLine(message);
-        //} 
+        //}
 
         #endregion
 
@@ -191,9 +249,9 @@
         //        new Thread(() => Console.Write(i)).Start();
         //    }
         //    Console.ReadKey();
-            
+
         //    Console.WriteLine();
-            
+
         //    Console.WriteLine("Fixed!");
         //    for (int i = 0; i < 10; i++)
         //    {
@@ -224,7 +282,7 @@
         //}
 
         //static void Go() { throw null; } // Throws a NullReferenceException
-        
+
         //-------------------------------------------------------------------
         //public static void Main()
         //{
@@ -248,20 +306,18 @@
 
         #region Foregorund vs Background Thread
 
-        //static void Main(string[] args)
+        //static void main(string[] args)
         //{
-        //    // If isBackground is set to false, the thread is 
-        //    // runs in the foreground and waits for ReadLine().
-        //    // When set to true the program exits immediately. 
+        //    // if isbackground is set to false, the thread is 
+        //    // runs in the foreground and waits for readline().
+        //    // when set to true the program exits immediately. 
 
-        //    const bool isBackground = true;
-        //    var worker = new Thread(() => Console.ReadLine());
-        //    if (isBackground) worker.IsBackground = true;
-        //    worker.Start();
+        //    const bool isbackground = true;
+        //    var worker = new thread(() => console.readline());
+        //    if (isbackground) worker.isbackground = true;
+        //    worker.start();
         //}
 
         #endregion
-
-
     }
 }

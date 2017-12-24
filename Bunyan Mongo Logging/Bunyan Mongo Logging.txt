@@ -1,0 +1,337 @@
+// logger.js
+
+var bunyan = require('bunyan'),
+    config = require('../config'),
+    loggingConfiguration = config.loggingConfiguration,
+    
+    // Config flag to enable data masking
+    enableDataMask = loggingConfiguration.enableDataMask,
+    LogsModel = require('../models/logs-model'),
+    LogsStream = require('bunyan-mongodb-stream')({
+      model: LogsModel
+    }),
+
+    // TODO: Use some form of Encryption for Log Entries in Prod.
+    // TODO: Ensure that encryption doesn't affect performance.
+    mask = '****MASKED****',
+
+    // See how to use bunyan-format with bunyan-mongo-stream
+    // bformat = require('bunyan-format'),
+    // formatOut = bformat({ outputMode: 'bunyan', levelInString: true }),
+
+    levels = {
+      10: 'trace',
+      20: 'debug',
+      30: 'info',
+      40: 'warn',
+      50: 'error',
+      60: 'fatal'
+    },
+    logger = bunyan.createLogger({
+      name: loggingConfiguration.loggerName,
+      src : loggingConfiguration.enableSrc,
+      color : loggingConfiguration.enableColor,
+      streams: [{
+          type: loggingConfiguration.logFileStreamType,
+          path: loggingConfiguration.logFilePath,
+          level: loggingConfiguration.fileMinLogLevel,
+          period: loggingConfiguration.logRotationPeriod, 
+          count: loggingConfiguration.logCount
+        }, {
+          stream: LogsStream,
+          level: loggingConfiguration.databaseMinLogLevel
+        }],
+      serializers: bunyan.stdSerializers
+    });
+
+// This method is used to mask critical information as part of logs
+logger.mask = function (data) {
+  return (enableDataMask ? mask : data);
+};
+
+// This method generates the payload for logger.
+// Use this to quickly map the data, req, res and err objects to be injected into the log entry.
+logger.generatePayload = function (logObject) {
+  var correlationId = undefined;
+  if (logObject.req) {
+    correlationId = logObject.req.correlationId;
+  }
+
+  return {
+    correlationId: correlationId,
+    req: logger.mask(logObject.req), 
+    res: logger.mask(logObject.res), 
+    err: logger.mask(logObject.err),
+    data: logger.mask(logObject.data)
+  };
+};
+
+// Wraps fatal() method.
+// Maps and masks, req, res, data and err
+logger.logFatal = function (message, req, res, err, data) {
+  logger.fatal(logger.generatePayload({ req: req, res: res , err: err, data: data }), message);
+};
+
+// Wraps error() method and simplifies error logging.
+// Maps and masks, req, res, data and err
+logger.logError = function (message, req, res, err, data) {
+  logger.error(logger.generatePayload({ req: req, res: res , err: err, data: data }), message);
+};
+
+// Wraps warn() method and simplifies logging warnings.
+logger.logWarn = function (message, req, res, data) {
+  logger.warn(logger.generatePayload({ req: req, res: res , data: data }), message);
+};
+
+// Wraps info() method and simplifies info logging.
+// Maps and masks, req, res and data
+logger.logInfo = function (message, req, res, data) {
+  logger.info(logger.generatePayload({ req: req, res: res , data: data }), message);
+};
+
+// Wraps debug() method and simplifies debug logging.
+logger.logDebug = function (message, req, res, data) {
+  logger.debug(logger.generatePayload({ req: req, res: res , data: data }), message);
+};
+
+// Wraps trace() method and simplifies trace logging.
+logger.logTrace = function (message, req, res, data) {
+  logger.trace(logger.generatePayload({ req: req, res: res , data: data }), message);
+};
+
+module.exports = logger;
+
+
+// model
+'use strict';
+
+var config = require('../config'),
+    mongoose = require('mongoose'),
+    Schema = mongoose.Schema,
+    ObjectId = Schema.ObjectId,
+    loggingConfiguration = config.loggingConfiguration;
+
+var logsSchema = new mongoose.Schema({
+  // Correlation Id - all the logs generated as part of satisfying a request will have same correlationId.
+  correlationId: {
+    type: String,
+    index:true
+  },
+  // Log message
+  msg: {
+    type: String,
+    required: true
+  },
+  // Log level. (fatal, error, warn, info, debug, trace)
+  // TODO: Explore logging this as string equivalent in bunyan instead of number.
+  level: {
+    type: Number,
+    required: true,
+    index: true
+  },
+  // Host name.
+  hostname: {
+    type: String
+  },
+  // Process id.
+  pid: {
+    type: Number
+  },
+  // Name of the logger generating this log
+  name: {
+    type: String,
+    required: true
+  },
+  info: {
+    type: mongoose.Schema.Types.Mixed
+  },
+  // User id (need to check if we need this, as this information is avaliable as req.username
+  userId: {
+    type: String,
+    index: true
+  },
+  // Date and time of the log entry
+  time: {
+    type: Date
+  },
+  // Response object
+  res: {
+    type: Object
+  },
+  // Request object
+  req: {
+    type: Object
+  },
+  // "NOTE: { src : true } Not for production use."
+  src: {
+    type: Object
+  },
+  // Error object with exception details.
+  err: {
+    type: Object
+  },
+  // Custom object to set any logging data
+  data: {
+    type: Object
+  },
+  //node-bunyan Version
+  v : {
+    type: Number
+  }
+},
+{
+  capped:
+ {
+    // Maximum # of documents in this collection
+    max: loggingConfiguration.maxDocumentsLogDatabase,
+    // Maximum size of collection
+    size: loggingConfiguration.maxCappedCollectionSize,    
+    autoIndexId: true
+  }
+});
+
+module.exports = mongoose.model('Logs', logsSchema);
+
+// config
+  loggingConfiguration: {
+    // Logger name
+    loggerName : (queueServerFlag ? 'queue-server-log':'assessment-management-services-log'),
+    // Maximum # of documents in this collection
+    maxDocumentsLogDatabase: 100000,
+    // Maximum size of collection = 52428800 bytes = 50 MB 50 * 1024 * 1024 B
+    maxCappedCollectionSize: 52428800,
+    // Bunyan values: 10->trace, 20->debug, 30->info, 40->warn, 50->error, 60->fatal
+    // Logs messages above this level into the database
+    databaseMinLogLevel: (isProductionEnvironment? (isInfoLevelEnabledForProduction ? 'info' : 'error'): 'info'),
+    // Logs messages above this level into the log file
+    fileMinLogLevel: (isProductionEnvironment? (isInfoLevelEnabledForProduction ? 'info' : 'error'): 'trace'),
+    // Log file path
+    logFilePath: (queueServerFlag ? 'queue-server.log': 'assessment-server.log'),
+    // Log file type currently is rotating log file.
+    logFileStreamType : 'rotating-file',
+    // Log rotation duration:
+    // Possible values for duration
+    // "h" (hours), "d" (days), "w" (weeks), "m" (months), "y" (years).
+    // Or one of the following names can be used "hourly" (means 1h), "daily"(1d), "weekly"(1w), "monthly"(1m), "yearly"(1y).
+    // Rotation is done at the start of the scope: top of the hour(h), midnight (d), start of Sunday(w),
+    // start of the1st of the month(m), start of Jan1st(y)
+    // 1 day in production and 1 month for other environments.
+    logRotationPeriod: (isProductionEnvironment? '1m': '1m'),
+    // Number of log file backups. If period is set to days, log count of 31 will backup logs for one month.
+    // Maintains backup for three months in production and 1 year in other environments.
+    logCount: (isProductionEnvironment? 3: 12),
+    // Enable source logging - This is performance intensive and is not prescribed for production.
+    enableSrc: !isProductionEnvironment,
+    // Color code for logging
+    enableColor: true,
+    // Flag to enable data masking. Sensitive information should not be included as part of log.
+    // true for production and false for dev and qa to enable trouble shooting.
+    enableDataMask : isProductionEnvironment,
+    // Number of log entries to fetch - used by logs api.
+    logFetchCount: 100
+  }
+
+
+\\ controller
+'use strict';
+var uuid = require('node-uuid'),
+    logsModel = require('../models/logs-model'),
+    config = require('../config'),
+    loggingConfiguration = config.loggingConfiguration;
+
+// Obtain the log fetch count from logging configuration. If not present defaults to 100.
+var logFetchCount = loggingConfiguration.logFetchCount || 100;
+
+/**
+ * @api {get} /logs Gets application logs
+ * @apiName GetApplicationLogs
+ * @apiGroup Debug Endpoints
+ * @apiPermission API Credentials
+ * @apiVersion 0.1.0
+ *
+ * @apiDescription
+ * Endpoint to return JSON list of 100 most recent, unfiltered application log messages
+ * @apiSuccessExample {json} Success Response Example
+ * [
+ *     {
+ *         "message": "message - error occured",
+ *         "severity" : "error|warn|info|fatal|debug|trace",
+ *         "info" : "stack trace",
+ *         "userId" : "c048-405a-4be2-9344"
+ *     }
+ * ]
+ */
+
+exports.getApplicationLogs = function (req, res, next) {
+  var logData;
+  logsModel.find()
+    .sort({ time: -1 })
+    .limit(logFetchCount)
+    .select('name hostname pid correlationId level time userId msg data req res src err')
+    .select({ '_id': 0 })
+    .exec(function (err, docs) {
+    
+    if (err) {
+      return new Error('An Error occured retrieving application logs.');
+    } else {
+      logData = docs;
+      if (logData) {
+        req.result = logData;
+        return next();
+      } else {
+        req.statusCode = 404;
+        req.statusMessage = "No application logs found available to view.";
+        return next();
+      }
+    }
+
+  });
+};
+
+/**
+ * @api {get} /logs/correlation/:correlationId Gets application logs with same correlationId
+ * @apiName GetApplicationLogsWithCorrelationId
+ * @apiGroup Debug Endpoints
+ * @apiPermission API Credentials
+ * @apiVersion 0.1.0
+ *
+ * @apiDescription
+ * Endpoint to return JSON list of application log messages with same correlationId
+ * @apiSuccessExample {json} Success Response Example
+ * [
+ *     {
+ *         "message": "message - error occured",
+ *         "severity" : "error|warn|info|fatal|debug|trace",
+ *         "info" : "stack trace",
+ *         "userId" : "c048-405a-4be2-9344"
+ *     }
+ * ]
+ */
+
+exports.getApplicationLogsWithCorrelationId = function (req, res, next) {
+  var correlationId = uuid.unparse(uuid.parse(req.params.correlationId)),
+      logData;
+  logsModel.find({
+    'correlationId': correlationId
+  })
+  .sort({ time: 1 })
+  .limit(100)
+  .select('name hostname pid correlationId level time userId msg data req res src err')
+  .select({ '_id': 0 })
+  .exec(function (err, docs) {
+    
+    if (err) {
+      return new Error('An Error occured retrieving application logs with correlationId: ' + correlationId);
+    } else {
+      logData = docs;
+      if (logData) {
+        req.result = logData;
+        return next();
+      } else {
+        req.statusCode = 404;
+        req.statusMessage = "No application logs found with correlationId: " + correlationId;
+        return next();
+      }
+    }
+  });
+};
