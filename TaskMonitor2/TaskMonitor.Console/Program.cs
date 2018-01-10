@@ -1,4 +1,4 @@
-﻿namespace TaskMonitor.Console
+namespace TaskMonitor.Console
 {
     using System.Reflection;
     using System.Threading;
@@ -129,14 +129,23 @@
         /// <param name="task">The task.</param>
         private static void WriteToFile(string fileName, string task)
         {
-            StreamWriter sw = (!File.Exists(fileName))
-                ? File.CreateText(fileName) : File.AppendText(fileName);
-            sw.WriteLine(DateTime.Now.ToString(Settings.Default.DateFormat) + Separator
-                + DateTime.Now.ToString(Settings.Default.DayFormat) + Separator
-                + DateTime.Now.ToString(Settings.Default.TimeFormat) + Separator
-                + task);
-            sw.Close();
-            WriteTask(task);
+            try
+            {
+                StreamWriter sw = (!File.Exists(fileName))
+                    ? File.CreateText(fileName) : File.AppendText(fileName);
+                sw.WriteLine(DateTime.Now.ToString(Settings.Default.DateFormat) + Separator
+                    + DateTime.Now.ToString(Settings.Default.DayFormat) + Separator
+                    + DateTime.Now.ToString(Settings.Default.TimeFormat) + Separator
+                    + task);
+                sw.Close();
+                WriteTask(task);
+            }
+            catch (IOException ioException)
+            {
+                Console.WriteLine(ioException.Message);
+                Console.WriteLine(Settings.Default.PressAnyKeyToContinue);
+                Console.ReadKey();
+            }
         }
     }
 }
